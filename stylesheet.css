@@ -1,0 +1,101 @@
+.navbar {
+  background-color: #1E96BE;
+  font-size: 1.5em;
+  color: #FFFFFF;
+}
+.navbar li {
+  display: inline-block;
+  list-style: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 0% 2% 0% 0%;
+}
+.navbar li a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.navbar li a:hover {
+  color: #ADAEAE;
+}
+
+#top {
+  background-color: #ADAEAE;
+  border-bottom: solid #FFFFFF 1px;
+  max-width: 100%;
+  padding: 5%;
+}
+
+#center {
+  padding-bottom: 10%;
+  padding-top: 10%;
+  background-color: #CCCFFF;
+  border-bottom: solid white 1px;
+}
+
+.centerName {
+  color: #FFFFFF;
+  text-align: center;
+  margin: 5%;
+}
+
+
+
+#bottom {
+  padding-bottom: 1%;
+  padding-top: 1%;
+  background-color: #CCCFFF;
+  color: #1E96BE;
+}
+
+.bottomName {
+  text-align: center;
+}
+.contact {
+  margin: 0% 3% 0% 3%;
+}
+.buttons {
+  text-align: center; 
+}
+.fa {
+  padding: 5% 0% 0% 5%;
+  font-size: 3em;
+}
+
+.img-profile {
+  border: solid #FFFFFF 1px;
+  border-radius: 25px;
+  max-height: 25%;
+  max-width: 25%;
+  float: right;
+}
+
+.info {
+  color: #FFFFFF;
+}
+
+.intro {
+  color: #FFFFFF;
+}
+
+.jobinfo {
+  margin-left: 5em;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  background-color: #5BD6D1;
+  font-family: "Helvetica";
+  color: #FFFFFF;
+  font-size: 1.5em;
+}
+
+#footer {
+  background-color: #1E96BE;
+  color: #FFFFFF;
+  padding: 1%;
+}
+
+
+
+
