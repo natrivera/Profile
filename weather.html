@@ -104,7 +104,7 @@ $(document).ready(function() {
     lat = pos.latitude;
     long = pos.longitude;
     region = pos.region_code;
-    var wapi = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+    var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
     
     $.getJSON(wapi, function(num) {
       city = num.name;
