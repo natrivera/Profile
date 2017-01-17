@@ -58,7 +58,7 @@ button {
 </head>
 
 <body>
-<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
 <div class="title">
   <h1>Local Weather </h1>
 </div>
@@ -70,7 +70,7 @@ button {
       </ul>
     </div>
     <i class="wi wi-night-sleet"></i>
-    <div id="iconId"><img src = "http://openweathermap.org/img/w/01d.png"></div>
+    <div id="iconId"><img src = "https://openweathermap.org/img/w/01d.png"></div>
     <p id="weatherType">Condition</p>
   </div>
   <div id="data">
@@ -97,14 +97,14 @@ $(document).ready(function() {
   var speed;
   var dtemp;
   var iconP;
-  var locApi = "http://ip-api.com/json";
+  var locApi = "https://ip-api.com/json";
   var iconApi = 'https://gist.githubusercontent.com/tbranyen/62d974681dea8ee0caa1/raw/3405bfb2a76b7cbd90fde33d8536f0cd13706955/icons.json';
-  //var iconP = ("<img src='http://openweathermap.org/img/w/" + icon + ".png'>");
+  //var iconP = ("<img src='https://openweathermap.org/img/w/" + icon + ".png'>");
   $.getJSON(locApi, function(pos) {
     lat = pos.lat;
     long = pos.lon;
     region = pos.region;
-    var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+    var wapi = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
     
     $.getJSON(wapi, function(num) {
       city = num.name;
@@ -123,7 +123,7 @@ $(document).ready(function() {
       $("#label").html(label);
       dtemp = ftemp;
      // iconId = weatherIcons[label].icon;
-      iconP = ("<img src='http://openweathermap.org/img/w/" + icon + ".png'>");
+      iconP = ("<img src='https://openweathermap.org/img/w/" + icon + ".png'>");
       $("#iconId").html(iconP);
     });
 
