@@ -1,5 +1,5 @@
 
-Visit this page at <a href="NatRivera.com">NatRivera.com</a>
+Visit this page at <a href="http//www.NatRivera.com">NatRivera.com</a>
 
 ## Welcome to GitHub Pages
 
