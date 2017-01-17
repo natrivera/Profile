@@ -97,13 +97,13 @@ $(document).ready(function() {
   var speed;
   var dtemp;
   var iconP;
-  var locApi = "https://ip-api.com/json";
+  var locApi = "https://freegeoip.net/json/";
   var iconApi = 'https://gist.githubusercontent.com/tbranyen/62d974681dea8ee0caa1/raw/3405bfb2a76b7cbd90fde33d8536f0cd13706955/icons.json';
   //var iconP = ("<img src='https://openweathermap.org/img/w/" + icon + ".png'>");
   $.getJSON(locApi, function(pos) {
-    lat = pos.lat;
-    long = pos.lon;
-    region = pos.region;
+    lat = pos.latitude;
+    long = pos.longitude;
+    region = pos.region_code;
     var wapi = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
     
     $.getJSON(wapi, function(num) {
