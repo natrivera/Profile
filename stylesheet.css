@@ -69,6 +69,14 @@
   float: right;
 }
 
+#chaffey a {
+  text-decoration: none;
+}
+
+#poly a {
+ text-decoration: none; 
+}
+
 .info {
   color: #FFFFFF;
 }
