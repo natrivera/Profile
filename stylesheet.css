@@ -62,10 +62,8 @@
 }
 
 .img-profile {
-  border: solid #FFFFFF 1px;
+  border: solid #FFFFFF 3px;
   border-radius: 25px;
-  max-height: 25%;
-  max-width: 25%;
   float: right;
 }
 
