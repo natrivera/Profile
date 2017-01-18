@@ -17,6 +17,9 @@
 .navbar li a:hover {
   color: #ADAEAE;
 }
+#header button {
+ color: #FFFFFF; 
+}
 
 #top {
   background-color: #ADAEAE;
