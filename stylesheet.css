@@ -67,6 +67,7 @@
 .img-profile {
   border: solid #FFFFFF 3px;
   float: right;
+  padding-bottom: 5em;
 }
 
 #chaffey a {
@@ -79,7 +80,6 @@
 
 .info {
   color: #FFFFFF;
-  padding-top: 5em;
 }
 
 .intro {
