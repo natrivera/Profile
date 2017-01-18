@@ -20,6 +20,9 @@
 #header button {
  color: #FFFFFF; 
 }
+nav {
+ color: #FFFFFF; 
+}
 
 #top {
   background-color: #ADAEAE;
@@ -49,6 +52,9 @@
   background-color: #CCCFFF;
   color: #1E96BE;
 }
+.buttons {
+ text-align: center; 
+}
 
 .bottomName {
   text-align: center;
@@ -64,7 +70,6 @@
 .img-profile {
   border: solid #FFFFFF 3px;
   float: right;
-  padding-bottom: 5em;
 }
 
 #chaffey a {
