@@ -3,24 +3,21 @@
   font-size: 1.5em;
   color: #FFFFFF;
 }
-.navbar li {
+.navbar-nav li {
   display: inline-block;
   list-style: none;
   color: #FFFFFF;
   font-weight: bold;
   padding: 0% 1% 0% 0%;
 }
-.navbar li a {
+.navbar-nav li a {
   text-decoration: none;
   color: #FFFFFF;
 }
-.navbar li a:hover {
+.navbar-nav li a:hover {
   color: #ADAEAE;
 }
 #header button {
- color: #FFFFFF; 
-}
-nav {
  color: #FFFFFF; 
 }
 
