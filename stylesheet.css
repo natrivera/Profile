@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #1E96BE;
+  background-color: #999999;
   font-size: 1.5em;
   color: #FFFFFF;
 }
@@ -22,7 +22,7 @@
 }
 
 #top {
-  background-color: #ADAEAE;
+  background-color: #666666;
   border-bottom: solid #FFFFFF 1px;
   max-width: 100%;
   padding: 5%;
@@ -37,7 +37,7 @@
 #bottom {
   padding-bottom: 1%;
   padding-top: 1%;
-  background-color: #CCCFFF;
+  background-color: #336699;
   color: #1E96BE;
 }
 .buttons {
@@ -102,6 +102,7 @@
 
 body {
   position: relative;
+  background-color: #5BD6D1;
   width: 100%;
   font-family: "Helvetica";
   color: #FFFFFF;
@@ -109,7 +110,7 @@ body {
 }
 
 #footer {
-  background-color: #1E96BE;
+  background-color: #999999;
   color: #FFFFFF;
   padding: 1%;
 }
