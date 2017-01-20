@@ -3,21 +3,21 @@
   font-size: 1.5em;
   color: #FFFFFF;
 }
-.navbar-nav li {
+.nav li {
   display: inline-block;
   list-style: none;
   color: #FFFFFF;
   font-weight: bold;
   padding: 0% 1% 0% 0%;
 }
-.navbar-nav li a {
+.nav li a {
   text-decoration: none;
   color: #FFFFFF;
 }
-.navbar-nav li a:hover {
+.nav li a:hover {
   color: #FFFFFF;
 }
-#header button {
+button {
  color: #FFFFFF; 
 }
 
