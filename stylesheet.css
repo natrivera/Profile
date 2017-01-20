@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #999999;
+  background-color: #336699; 
   font-size: 1.5em;
   color: #FFFFFF;
 }
@@ -37,7 +37,7 @@
 #bottom {
   padding-bottom: 1%;
   padding-top: 1%;
-  background-color: #336699;
+  background-color: #999999;
   color: #000000;
 }
 .buttons {
@@ -110,7 +110,7 @@ body {
 }
 
 #footer {
-  background-color: #999999;
+  background-color: #336699; 
   color: #FFFFFF;
   padding: 1%;
 }
