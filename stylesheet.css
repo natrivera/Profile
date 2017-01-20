@@ -10,11 +10,11 @@
   font-weight: bold;
   padding: 0% 1% 0% 0%;
 }
-.nav li a {
+li a {
   text-decoration: none;
   color: #FFFFFF;
 }
-.nav li a:hover {
+li a:hover {
   color: #FFFFFF;
 }
 button {
