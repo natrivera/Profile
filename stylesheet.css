@@ -1,6 +1,5 @@
 .navbar-default {
     background-color: #336699;
-    border-color: #FFFFFF;
     border-radius: 0;
 }
 
@@ -28,10 +27,6 @@
 
 .navbar-default .navbar-text {
     color: #FFF;
-}
-
-.navbar-default .navbar-toggle {
-    border-color: #336699;
 }
 
 .navbar-default .navbar-toggle:hover,
@@ -72,7 +67,6 @@ a img {
 }
 
 #top {
-  border-bottom: solid #FFFFFF 1px;
   max-width: 100%;
   padding: 5%;
 }
@@ -86,7 +80,7 @@ a img {
 #bottom {
   padding-bottom: 1%;
   padding-top: 1%;
-  background-color: #1E4747;
+  background-color: #666666;
   color: #FFFFFF;
 }
 .buttons {
