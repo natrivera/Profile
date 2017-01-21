@@ -20,6 +20,10 @@ button {
  color: #FFFFFF; 
 }
 
+a img {
+ position: absolute; 
+}
+
 #top {
   background-color: #666666;
   border-bottom: solid #FFFFFF 1px;
@@ -53,6 +57,10 @@ button {
   padding: 5% 0% 0% 5%;
   font-size: 3em;
   color: #FFFFFF;
+}
+
+.fa:hover {
+  color: #000000;
 }
 
 .img-profile {
