@@ -21,7 +21,7 @@ button {
 }
 
 a img {
- position: relative; 
+  vertical-align: middle;
 }
 
 #top {
