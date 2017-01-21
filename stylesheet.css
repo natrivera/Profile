@@ -151,7 +151,7 @@ a img {
 }
 
 .carousel .item img {
-  max-width: 768px;
+  max-width: 600px;
   min-width: auto;
 }
 
