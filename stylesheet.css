@@ -157,6 +157,8 @@ a img {
   min-height: 150px;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+
 body {
   position: relative;
   background-color: #5BD6D1;
