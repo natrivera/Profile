@@ -41,6 +41,8 @@
 .navbar-brand {
   line-height: 1;
   vertical-align: middle;
+  object-fit: contain;
+
 }
 
 
@@ -65,11 +67,6 @@
 }
 button {
  color: #FFFFFF; 
-}
-
-a img {
-  vertical-align: super;
-  margin-bottom: 1em;
 }
 
 #top {
