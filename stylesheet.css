@@ -87,7 +87,7 @@ a img {
 #bottom {
   padding-bottom: 1%;
   padding-top: 1%;
-  background-color: #999999;
+  background-color: #6EFFFF;
   color: #FFFFFF;
 }
 .buttons {
@@ -161,7 +161,7 @@ a img {
 
 body {
   position: relative;
-  background-color: #6EFFFF;
+  background-color: #999999;
   width: 100%;
   font-family: "Libre Baskerville", serif;
   color: #FFFFFF;
