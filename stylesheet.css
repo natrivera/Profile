@@ -150,6 +150,12 @@ a img {
   min-height: 150px;
 }
 
+.carousel .item img {
+  max-width: 768px;
+  min-width: auto;
+}
+
+
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
 
 body {
