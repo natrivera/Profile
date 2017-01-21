@@ -72,7 +72,6 @@ a img {
 }
 
 #top {
-  background-color: #666666;
   border-bottom: solid #FFFFFF 1px;
   max-width: 100%;
   padding: 5%;
@@ -161,7 +160,7 @@ a img {
 
 body {
   position: relative;
-  background-color: #999999;
+  background-color: #666666;
   width: 100%;
   font-family: "Libre Baskerville", serif;
   color: #FFFFFF;
@@ -169,7 +168,7 @@ body {
 }
 
 #footer {
-  background-color: #999999; 
+  background-color: #336699; 
   color: #FFFFFF;
   padding: 1%;
 }
