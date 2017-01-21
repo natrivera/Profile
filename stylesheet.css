@@ -38,6 +38,14 @@
     background-color: #FFF;
 }
 
+.brand {
+  @elementHeight: 20px;
+  padding: ((@navbarHeight - @elementHeight) / 2 - 2) 20px ((@navbarHeight - @elementHeight) / 2 + 2);
+  font-size: 20px;
+  line-height: 1;
+}
+
+
 
 .navbar {
   background-color: #336699; 
