@@ -55,9 +55,14 @@ a img {
   margin: 0% 3% 0% 3%;
 }
 
-.conform input  > .conform textarea {
+.conform input {
  color: #000000; 
 }
+
+ .conform textarea {
+ color: #000000;  
+}
+
 .fa {
   padding: 5% 0% 0% 5%;
   font-size: 3em;
