@@ -9,11 +9,11 @@
   color: #FFFFFF;
   font-weight: bold;
 }
-li a {
+.nav li a {
   text-decoration: none;
   color: #FFFFFF;
 }
-li a:hover {
+.nav li a:hover {
   color: #000000;
 }
 button {
@@ -22,6 +22,7 @@ button {
 
 a img {
   vertical-align: super;
+  padding-bottom: 1em;
 }
 
 #top {
