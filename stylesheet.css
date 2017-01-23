@@ -120,6 +120,10 @@ button {
   border-radius: 25px;
 }
 
+#directvjob {
+ float: left;   
+}
+
 #chaffey a {
   text-decoration: none;
     color: #FFFFFF;
