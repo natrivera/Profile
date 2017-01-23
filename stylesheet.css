@@ -146,6 +146,10 @@ button {
  border: solid #FFFFFF 3px;    
 }
 
+#directvdicv {
+ margin-top: 5%;   
+}
+
 .podcast {
  background-color: #DDDDDD;
   min-width: 300px;
