@@ -120,6 +120,11 @@ button {
   border-radius: 25px;
 }
 
+#canyonedge {
+  border: solid #FFFFFF 3px;
+
+}
+
 #chaffey a {
   text-decoration: none;
     color: #FFFFFF;
