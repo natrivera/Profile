@@ -156,25 +156,22 @@ button {
 }
 
 .podcast {
- background-color: #DDDDDD;
   min-width: 300px;
   min-height: 300px;
 }
 
 .photograph {
-  background-color: #BBBBBB;
   min-width: 300px;
   min-height: 300px;
 }
 
 .interest {
-  background-color: #000000;
   min-width: 300px;
   min-height: 300px;
 }
 
 .unit {
-  background color: #FFFFFF;
+  margin-top: 10%;
   min-width: 150px;
   min-height: 150px;
 }
