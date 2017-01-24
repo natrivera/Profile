@@ -176,6 +176,10 @@ button {
   min-height: 150px;
 }
 
+.pics {
+  border: solid #000000 3px;
+}
+
 .carousel .item img {
   max-width: 600px;
   min-width: auto;
