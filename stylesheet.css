@@ -83,7 +83,7 @@ button {
 #bottom {
   padding-bottom: 1%;
   padding-top: 1%;
-  background-color: #666666;
+  background-color: #1e262c;
   color: #FFFFFF;
 }
 .buttons {
@@ -198,7 +198,7 @@ button {
 
 body {
   position: relative;
-  background-color: #6A6A6A;
+  background-color: #1e262c;
   width: 100%;
   font-family: "Libre Baskerville", serif;
   color: #FFFFFF;
