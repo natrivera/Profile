@@ -1,5 +1,5 @@
 .navbar-default {
-    background-color: #336699;
+    background-color: #DAA520;
     border-radius: 0;
 }
 
@@ -15,7 +15,7 @@
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    background-color: #336699;
+    background-color: #DAA520;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -31,7 +31,7 @@
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #336699;
+    background-color: #DAA520;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -48,7 +48,7 @@
 
 
 .navbar {
-  background-color: #336699; 
+  background-color: #DAA520; 
   font-size: 1.5em;
   color: #FFFFFF;
 }
@@ -206,7 +206,7 @@ body {
 }
 
 #footer {
-  background-color: #336699; 
+  background-color: #DAA520; 
   color: #FFFFFF;
   padding: 1%;
 }
