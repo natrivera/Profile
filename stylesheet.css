@@ -1,5 +1,5 @@
 .navbar-default {
-    background-color: #DAA520;
+    background-color: #CE661C;
     border-radius: 0;
 }
 
@@ -15,14 +15,14 @@
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    background-color: #DAA520;
+    background-color: #CE661C;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     color: #FFF;
-    background-color: #336699;
+    background-color: #CE661C;
 }
 
 .navbar-default .navbar-text {
@@ -31,7 +31,7 @@
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #DAA520;
+    background-color: #CE661C;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -48,7 +48,7 @@
 
 
 .navbar {
-  background-color: #DAA520; 
+  background-color: #CE661C; 
   font-size: 1.5em;
   color: #FFFFFF;
 }
@@ -206,7 +206,7 @@ body {
 }
 
 #footer {
-  background-color: #DAA520; 
+  background-color: #CE661C; 
   color: #FFFFFF;
   padding: 1%;
 }
