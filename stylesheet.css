@@ -96,16 +96,15 @@ button {
 .bottomName {
   text-align: center;
 }
-.contact {
-  margin: 0% 3% 0% 3%;
-}
 
 .conform input {
- color: #000000; 
+ color: #FFFFFF;
+ background-color: #000000;
 }
 
  .conform textarea {
- color: #000000;  
+ color: #FFFFFF;  
+ background-color: #000000;
 }
 
 .fa {
