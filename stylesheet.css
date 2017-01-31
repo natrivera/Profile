@@ -89,6 +89,10 @@ button {
   background-color: #1e262c;
   color: #FFFFFF;
 }
+.contact {
+  margin: 0% 3% 0% 3%;
+}
+
 .buttons {
  text-align: center; 
 }
