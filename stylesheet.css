@@ -105,7 +105,8 @@ button {
 .social {
  background-color: #000000;
  border: solid #000000 3px;
- border-radius: 25px;   
+ border-radius: 10px;
+ min-height: 100%;
 }
 
 .comform {
