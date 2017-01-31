@@ -100,15 +100,21 @@ button {
 .bottomName {
   text-align: center;
 }
+.comform {
+ text-align: left;
+ font-size: 1.5em;
+}
 
 .conform input {
  color: #FFFFFF;
  background-color: #000000;
+ border: solid #000000 3px;
 }
 
  .conform textarea {
  color: #FFFFFF;  
  background-color: #000000;
+ border: solid #000000 3px;
 }
 
 .fa {
