@@ -216,6 +216,8 @@ form {
   animation-name: slidein;
 }
 
+
+/*
 @keyframes slidein {
   from {
     margin-left: 100%;
@@ -227,5 +229,5 @@ form {
     width: 100%;
   }
 }
-
+*/
 
