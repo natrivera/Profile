@@ -86,7 +86,7 @@ button {
 
 #bottom {
   padding-bottom: 10%;
-  padding-top: 10%;
+  padding-top: 5%;
   background-color: #1e262c;
   color: #FFFFFF;
 }
@@ -100,7 +100,7 @@ button {
 
 .bottomName {
   text-align: center;
-  padding: 0% 0% 10% 0%;
+  padding-bottom: 10%;
 }
 .comform {
  text-align: left;
