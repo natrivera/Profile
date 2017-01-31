@@ -102,6 +102,12 @@ button {
   text-align: center;
   padding-bottom: 10%;
 }
+.social {
+ background-color: #000000;
+ border: solid #000000 3px;
+ border-radius: 25px;   
+}
+
 .comform {
  text-align: left;
  font-size: 1.5em;
