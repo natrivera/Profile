@@ -139,6 +139,8 @@ button {
 .img-profile {
   border: solid #FFFFFF 3px;
   border-radius: 25px;
+  display: block;
+  margin: auto;
 }
 
 #canyonedge {
