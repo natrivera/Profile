@@ -78,6 +78,10 @@ button {
   padding-top: 5%;
 }
 
+.aboutme {
+ background-image: url("fave shots/meandcanyon.JPG");   
+}
+
 .centerName {
   color: #FFFFFF;
   text-align: center;
