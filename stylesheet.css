@@ -131,13 +131,13 @@ button {
 .conform input {
  color: #FFFFFF;
  background-color: #000000;
- border: solid #000000 3px;
+ /* border: solid #000000 3px; */
 }
 
  .conform textarea {
  color: #FFFFFF;  
  background-color: #000000;
- border: solid #000000 3px;
+ /* border: solid #000000 3px; */
 }
 
 .fa {
