@@ -78,6 +78,10 @@ button {
   padding-top: 5%;
 }
 
+#top h1 {
+  text-align: center;  
+}
+
 .aboutme h3 {
  display: block;
  margin: auto;
