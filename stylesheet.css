@@ -150,6 +150,10 @@ button {
   color: #000000;
 }
 
+.index {
+ background-image: url("profileimg.jpg");   
+}
+
 .img-profile {
   border: solid #FFFFFF 3px;
   border-radius: 25px;
