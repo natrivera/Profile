@@ -45,6 +45,11 @@
 
 }
 
+.dropdown {
+ background-color: #CE661C;
+ color: #FFF;
+}
+
 .navbar {
   background-color: #CE661C; 
   font-size: 1.5em;
