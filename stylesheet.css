@@ -79,7 +79,7 @@ button {
 }
 .index {
  background-image: url("profileimg.jpg");   
- background-size: cover;
+ background-size: contain;
 }
 
 #top h1 {
