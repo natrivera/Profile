@@ -75,7 +75,7 @@ button {
   left: 0;
   top: 0;
   overflow: hidden;
-  padding-top: 5%;
+  padding-top: 2%;
 }
 .index {
  background-image: url("profileimg.jpg");   
@@ -114,6 +114,7 @@ button {
   padding-top: 10%;
   background-color: #1e262c;
   color: #FFFFFF;
+  overflow: hidden;
 }
 .contact {
   margin: 0% 3% 0% 3%;
