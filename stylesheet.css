@@ -81,6 +81,8 @@ button {
  background-image: url("profileimg.jpg");   
  background-size: cover;
  background-repeat: no-repeat;
+ min-height: 500px;
+ color: #000000;
 }
 
 #top h1 {
