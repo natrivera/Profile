@@ -48,6 +48,9 @@
 .navbar-default .navbar-nav .open .dropdown-menu>li>a, .navbar-default .navbar-nav .open .dropdown-menu {
  background-color: #CE661C;
  color: #FFF;
+ display: inline-block;
+ list-style: none;
+ font-weight: bold;
 }
 
 .navbar {
