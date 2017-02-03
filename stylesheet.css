@@ -80,6 +80,7 @@ button {
 .index {
  background-image: url("profileimg.jpg");   
  background-size: contain;
+ background-repeat: no-repeat;
 }
 
 #top h1 {
