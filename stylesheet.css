@@ -45,7 +45,7 @@
 
 }
 
-.dropdown {
+.navbar-default .navbar-nav .open .dropdown-menu>li>a, .navbar-default .navbar-nav .open .dropdown-menu {
  background-color: #CE661C;
  color: #FFF;
 }
