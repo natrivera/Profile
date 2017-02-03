@@ -45,8 +45,6 @@
 
 }
 
-
-
 .navbar {
   background-color: #CE661C; 
   font-size: 1.5em;
@@ -126,7 +124,7 @@ button {
 
 .bottomName {
   text-align: center;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
 }
 .social {
  background-color: #000000;
