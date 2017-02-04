@@ -93,15 +93,14 @@
 }
 
 #bumper {
-min-height: 400px;   
+min-height: 200px;   
 }
 #introduction {
  vertical-align: bottom; 
  font-size: 2.5em;
- color: #000000;
  overflow: hidden; 
  margin: auto;
- min-height: 600px;
+ min-height: 700px;
 }
 
 #top h1 {
