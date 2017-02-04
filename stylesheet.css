@@ -82,8 +82,9 @@
 }
 .index {
  background-image: url("profileimg.jpg");   
- background-size: cover;
+ background-size: contain;
  background-repeat: no-repeat;
+ min-width: 600px;
  
 }
 #bumper {
