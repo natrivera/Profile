@@ -91,10 +91,6 @@
  width: 100%;
  position: absolute;
 }
-
-#bumper {
-min-height: 200px;   
-}
 #introduction {
  vertical-align: bottom; 
  font-size: 2.5em;
