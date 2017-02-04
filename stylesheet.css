@@ -82,7 +82,7 @@
 }
 .index {
  background-image: url("profileimg.jpg");   
- background-size: cover;
+ background-size: contain;
  background-repeat: no-repeat;
  min-height: 800px;
  min-width: 800px;
@@ -91,7 +91,7 @@
 }
 #introduction {
  vertical-align: bottom; 
- font-size: 1.5em;
+ font-size: 2.5em;
  color: #000000;
 }
 #bumper {
@@ -131,6 +131,7 @@
 
 .buttons {
  text-align: center; 
+ padding-top: 10%;
 }
 
 .bottomName {
