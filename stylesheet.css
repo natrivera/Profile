@@ -53,6 +53,10 @@
  font-weight: bold;
 }
 
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  color: #000000;
+ }
+
 .navbar {
   background-color: #CE661C; 
   font-size: 1.5em;
