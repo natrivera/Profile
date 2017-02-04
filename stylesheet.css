@@ -80,16 +80,13 @@
   overflow: hidden;
   padding-top: 2%;
 }
-.index {
- background-image: url("imgpro.jpg");   
+.index { 
  background-size: cover;
  background-repeat: no-repeat;
- min-height: 900px;
- max-width: 100%;
  overflow: hidden; 
 }
 .index img {
- z-index: -1;
+ z-index: -99;
  width: 100%;
 }
 
