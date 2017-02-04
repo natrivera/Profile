@@ -51,7 +51,6 @@
  display: inline-block;
  list-style: none;
  font-weight: bold;
- font-size: 1.5em;
 }
 
 .navbar {
@@ -87,10 +86,11 @@
  background-repeat: no-repeat;
  min-height: 800px;
  color: #000000;
- vertical-align:middle;
- font-size: 1em;
+ font-size: 1.5em;
 }
-
+#introduction {
+ vertical-align: middle;   
+}
 #bumper {
  min-height: 500px;
 }
