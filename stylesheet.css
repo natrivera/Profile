@@ -88,8 +88,7 @@
 }
 .index img {
  z-index: -99;
- min-width: 100%;
- min-height: 100%;
+ width: 100%;
  position: absolute;
 }
 
@@ -102,6 +101,7 @@ min-height: 400px;
  color: #000000;
  overflow: hidden; 
  margin: auto;
+ min-height: 600px;
 }
 
 #top h1 {
