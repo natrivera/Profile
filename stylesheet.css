@@ -94,9 +94,6 @@
  font-size: 2.5em;
  color: #000000;
 }
-#bumper {
- min-height: 600px;
-}
 
 #top h1 {
   text-align: center;  
@@ -129,8 +126,7 @@
   margin: 0% 3% 0% 3%;
 }
 
-.buttons {
- text-align: center; 
+.buttons { 
  padding-top: 10%;
 }
 
@@ -163,7 +159,6 @@
 }
 
 .fa {
-  padding: 5% 0% 0% 5%;
   font-size: 3em;
   color: #FFFFFF;
 }
@@ -171,8 +166,6 @@
 .fa:hover {
   color: #000000;
 }
-
-
 
 .img-profile {
   border: solid #FFFFFF 3px;
