@@ -84,6 +84,7 @@
  background-image: url("profileimg.jpg");   
  background-size: contain;
  background-repeat: no-repeat;
+ min-width: 100%;
 }
 #introduction {
  vertical-align: bottom; 
