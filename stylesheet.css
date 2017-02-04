@@ -84,6 +84,7 @@
  background-size: cover;
  background-repeat: no-repeat;
  overflow: hidden; 
+ z-index: -1;
 }
 .index img {
  z-index: -99;
