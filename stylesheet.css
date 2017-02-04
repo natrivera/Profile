@@ -98,6 +98,9 @@
  margin: auto;
  min-height: 700px;
 }
+#introduction .fa {
+ font-size: 1.5em;
+}
 
 #top h1 {
   text-align: center;  
