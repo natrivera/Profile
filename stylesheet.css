@@ -84,8 +84,7 @@
  background-image: url("profileimg.jpg");   
  background-size: contain;
  background-repeat: no-repeat;
- min-width: 900px;
- min-height: 900px;
+ 
 }
 #bumper {
 min-height: 400px;   
