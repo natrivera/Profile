@@ -82,7 +82,7 @@
 }
 .index {
  background-image: url("profileimg.jpg");   
- background-size: contain;
+ background-size: cover;
  background-repeat: no-repeat;
  min-width: 600px;
  
