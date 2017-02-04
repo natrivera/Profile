@@ -85,15 +85,17 @@
  background-size: cover;
  background-repeat: no-repeat;
  min-height: 800px;
- color: #000000;
- font-size: 1.5em;
+ min-width: 800px;
+ 
+ 
 }
 #introduction {
- vertical-align: text-bottom;   
+ vertical-align: bottom; 
+ font-size: 1.5em;
+ color: #000000;
 }
 #bumper {
  min-height: 600px;
- min-width: 600px;
 }
 
 #top h1 {
