@@ -82,7 +82,7 @@
 }
 .index {
  background-image: url("profileimg.jpg");   
- background-size: contain;
+ background-size: cover;
  background-repeat: no-repeat;
  
 }
@@ -93,6 +93,7 @@ min-height: 400px;
  vertical-align: bottom; 
  font-size: 2.5em;
  color: #000000;
+ overflow: hidden; 
 }
 
 #top h1 {
