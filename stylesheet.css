@@ -87,11 +87,7 @@
  min-width: 600px;
  min-height: 900px;
  max-width: 100%;
-}
-.indexTop {
- overflow: hidden;
- max-width: 100%;
- margin: auto;
+ overflow: hidden; 
 }
 
 #bumper {
