@@ -86,8 +86,13 @@
  background-repeat: no-repeat;
  min-width: 600px;
  min-height: 600px;
- 
+ max-width: 100%;
 }
+.indexTop {
+ overflow: hidden;
+ max-width: 100%;
+}
+
 #bumper {
 min-height: 400px;   
 }
