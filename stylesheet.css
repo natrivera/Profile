@@ -51,6 +51,7 @@
  display: inline-block;
  list-style: none;
  font-weight: bold;
+ font-size: 1.5em;
 }
 
 .navbar {
@@ -71,9 +72,6 @@
 .nav li a:hover {
   color: #000000;
 }
-button {
- color: #FFFFFF; 
-}
 
 #top {
  height: 100%;
@@ -89,6 +87,8 @@ button {
  background-repeat: no-repeat;
  min-height: 800px;
  color: #000000;
+ vertical-align:middle;
+ font-size: 2em;
 }
 
 #bumper {
