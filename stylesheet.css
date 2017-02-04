@@ -15,7 +15,7 @@
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    background-color: gray;
+    background-color: #e6e6e6;
     color: #000000;
 }
 
@@ -37,13 +37,6 @@
 
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #FFF;
-}
-
-.navbar-brand {
-  line-height: 1;
-  vertical-align: middle;
-  object-fit: contain;
-
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a,
