@@ -15,7 +15,8 @@
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    background-color: #CE661C;
+    background-color: gray;
+    color: #000000;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -45,7 +46,8 @@
 
 }
 
-.navbar-default .navbar-nav .open .dropdown-menu>li>a, .navbar-default .navbar-nav .open .dropdown-menu {
+.navbar-default .navbar-nav .open .dropdown-menu>li>a,
+.navbar-default .navbar-nav .open .dropdown-menu {
  background-color: #CE661C;
  color: #FFF;
  display: inline-block;
@@ -53,7 +55,8 @@
  font-weight: bold;
 }
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
   color: #000000;
  }
 
