@@ -103,6 +103,13 @@
 #introduction .fa {
  font-size: 1em;
 }
+.aboutme {
+ z-index: -1;   
+}
+
+.aboutme img {
+ position: absolute;   
+}
 
 #top h1 {
   text-align: center;  
