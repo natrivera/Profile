@@ -130,11 +130,12 @@
   overflow: hidden;
 }
 .contact {
-  margin: 0% 3% 0% 3%;
+  margin: auto;
 }
 
 .buttons { 
- padding-top: 10%;
+ margin-top: 10%;
+ margin-bottom: 2%;
 }
 
 .bottomName {
@@ -151,6 +152,7 @@
 .comform {
  text-align: left;
  font-size: 1.5em;
+ margin-bottom: 2%;
 }
 
 .conform input {
