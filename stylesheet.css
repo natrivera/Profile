@@ -88,7 +88,6 @@
 
 .comform {
  text-align: left;
- font-size: 1.5em;
  margin-bottom: 2%;
 }
 
@@ -105,7 +104,6 @@
 }
 
 .fa {
-  font-size: 3em;
   color: #FFFFFF;
 }
 
@@ -198,7 +196,6 @@
  bottom: 0px;   
  position: fixed;
  color: #000000;
- font-size: .5em;
 }
 
 
@@ -209,16 +206,11 @@ body {
   background-color: #1e262c;
   width: 100%;
   font-family: 'Oxygen', sans-serif;
-  color: #FFFFFF;
-  font-size: 1.5em;  
+  color: #FFFFFF;  
 }
 
 #footer {
-   background: #141470; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#141470, #0101FF); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#141470, #0101FF); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#141470, #0101FF); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#141470, #0101FF); /* Standard syntax */
+   background-color: #000000; 
   color: #FFFFFF;
   padding: 1%;
 }
