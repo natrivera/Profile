@@ -250,12 +250,12 @@
 .unit {
   margin-top: 10%;
   overflow: hidden;
-  background-color: #000000;
   border-radius: 10px;
 }
 
 .unit img {
- max-height: 100%;   
+ max-height: 100%;
+ width: auto;
 }
 
 .pics {
