@@ -93,7 +93,7 @@
     <div id="bottom" style="min-height: 100%">
         
         <div class="contact">
-		<h1 data-aos="slide-up" data-aos-duration="800" data-aos-delay="800" class="bottomName">Contact Me</h1>
+		<h1 onClick="counter" data-aos="slide-up" data-aos-duration="800" data-aos-delay="800" class="bottomName">Contact Me</h1>
 		
 	<div class="row">
 		
@@ -162,7 +162,7 @@
 
 
     <div id="footer">
-        <p>page by Nat Rivera</p>
+        <p>page by Nat Rivera   <img id="counter" class="hidden-xs hidden-sm hidden-md hidden-lg hidden-xl" src="http://hitwebcounter.com/counter/counter.php?page=6590448&style=0007&nbdigits=5&type=ip&initCount=0"  border="0" ></p>
     </div>
 	
 	 <script>
@@ -180,15 +180,15 @@
 		    }
 	   });	 
 		 
+		//show the counter
+		 $(".bottomName").click(function() {
+		 $("#counter").css("");
+		 
+		 });
+		 
 	  </script>
-	
 
-	
-	<img src="http://hitwebcounter.com/counter/counter.php?page=6590448&style=0007&nbdigits=5&type=ip&initCount=0"  border="0" >
-	                                       
-           
-                            
-
+	                               
 </body>
 
 </html>
