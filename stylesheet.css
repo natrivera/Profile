@@ -301,13 +301,13 @@
 }
 
 
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskervill|eOpen+Sans|Oswald|Oxygen');
 
 body {
   position: relative;
   background-color: #1e262c;
   width: 100%;
-  font-family: "Libre Baskerville", serif;
+  font-family: 'Oxygen', sans-serif;
   color: #FFFFFF;
   font-size: 1.5em;  
 }
