@@ -15,6 +15,7 @@
    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 	
+    <script src="profile.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -164,30 +165,6 @@
     <div id="footer">
         <p>page by Nat Rivera   <img id="counter" class="hidden-xs hidden-sm hidden-md hidden-lg hidden-xl" src="http://hitwebcounter.com/counter/counter.php?page=6590448&style=0007&nbdigits=5&type=ip&initCount=0"  border="0" ></p>
     </div>
-	
-	 <script>
-	    //run animations	 
-	    AOS.init();
-		 
-		 
-	   //move picture on top	 
-	   	$("#mask").click(function() {
-	   	if ($("#introduction").css("z-index") == "10") {
-		    	$("#introduction").css("z-index", "100");
-		    }
-		    else {
-		    	$("#introduction").css("z-index", "10");
-		    }
-	   });	 
-		 
-		//show the counter
-		 $(".bottomName").click(function() {
-		 
-			 $("#counter").removeAttr("class");
-		 
-		 });
-		 
-	  </script>
 
 	                               
 </body>
