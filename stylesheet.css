@@ -243,18 +243,13 @@
 }
 
 .photograph {
-  min-width: 300px;
-  min-height: 300px;
-}
-
-.interest {
-  min-width: 300px;
-  min-height: 300px;
+  overflow: hidden;
 }
 
 .unit {
   margin-top: 10%;
   max-height: 100%;
+  overflow: hidden;
 }
 
 .pics {
