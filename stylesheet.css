@@ -78,6 +78,10 @@
  margin-bottom: 2%;
 }
 
+.buttons .fa {
+ font-size: 1.5em; 
+}
+
 .comform {
  text-align: left;
  margin-bottom: 2%;
@@ -187,10 +191,10 @@
 
 body {
   position: relative;
-  background-color: #1e262c;
+  /* background-color: #1e262c; */
   width: 100%;
   font-family: 'Oxygen', sans-serif;
-  color: #FFFFFF;  
+  /* color: #FFFFFF; */ 
 }
 
 #footer {
