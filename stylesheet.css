@@ -1,5 +1,6 @@
 .navbar {
  background-color: #556d7c;
+ font-size: 2em;
 }
 .navbar-default {
     background: #556d7c;
@@ -22,7 +23,7 @@
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    background-color: #404040;
+    background-color: #e7e7e7;
 }
 
 .navbar-default .navbar-nav > .active > a,
