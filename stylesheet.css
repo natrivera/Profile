@@ -249,8 +249,13 @@
 
 .unit {
   margin-top: 10%;
-  max-height: 100%;
   overflow: hidden;
+  background-color: #000000;
+  border-radius: 10px;
+}
+
+.unit img {
+ max-height: 100%;   
 }
 
 .pics {
