@@ -97,8 +97,8 @@
  overflow: hidden; 
  margin: auto;
  min-height: 700px;
- border-radius: 25px;
- padding: 1%;
+ border-radius: 10px;
+ padding: 0% 1% 0% 1%;
 }
 #introduction .fa {
  font-size: 1em;
