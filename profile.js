@@ -5,7 +5,9 @@
 $(document).ready(function() {
 	
 	//run animations	 
-	    AOS.init();
+	    AOS.init({
+	    data-aos-once: true;
+	    });
 
     //add animation to the form
     $(".conform").attr("data-aos","flip-up");
