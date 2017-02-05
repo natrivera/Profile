@@ -10,9 +10,9 @@ $(document).ready(function() {
 	    });
 
     //add animation to the form
-    $(".conform").attr("data-aos","flip-up");
-    $(".conform").attr("data-aos-delay","800");
-    $(".conform").attr("data-aos-duration","3000");
+  //  $(".conform").attr("data-aos","flip-up");
+  //  $(".conform").attr("data-aos-delay","800");
+  //  $(".conform").attr("data-aos-duration","3000");
 	
 	
 	 //move picture on top
