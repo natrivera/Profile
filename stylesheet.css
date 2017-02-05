@@ -134,8 +134,7 @@
 }
 
 .buttons { 
- margin-top: 10%;
- margin-bottom: 2%;
+ margin: auto;
 }
 
 .bottomName {
@@ -147,6 +146,7 @@
  border: solid #000000 3px;
  border-radius: 10px;
  min-height: 100%;
+ margin-bottom: 2%;
 }
 
 .comform {
