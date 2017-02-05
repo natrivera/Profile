@@ -1,10 +1,5 @@
 #top {
- height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
   overflow: hidden;
-  padding-top: 2%;
 }
 .index { 
  background-size: cover;
@@ -19,16 +14,13 @@
 }
 #introduction {
  vertical-align: bottom; 
- font-size: 2.5em;
  overflow: hidden; 
  margin: auto;
  min-height: 700px;
  border-radius: 10px;
  padding: 0% 1% 0% 1%;
 }
-#introduction .fa {
- font-size: 1em;
-}
+
 .aboutme {
  z-index: -1;   
 }
@@ -132,10 +124,6 @@
  color: #000000;   
 }
 
-#chaffey img {
- border: solid #FFFFFF 3px;  
-}
-
 #poly a {
  text-decoration: none; 
     color: #FFFFFF;
@@ -143,10 +131,6 @@
 
 #poly a:hover {
  color: #000000;   
-}
-
-#poly img {
- border: solid #FFFFFF 3px;    
 }
 
 #directvdicv {
