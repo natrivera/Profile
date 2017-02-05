@@ -51,6 +51,7 @@
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
   color: #000000;
+  background-color: #e6e6e6;
  }
 
 .navbar {
