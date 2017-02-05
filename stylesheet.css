@@ -47,12 +47,13 @@
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a,
 .navbar-default .navbar-nav .open .dropdown-menu {
+ background-color: #556d7c;
  color: #FFF;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-   color: #FFF;
+   color: #000;
  }
 
 
