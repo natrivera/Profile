@@ -6,7 +6,7 @@ $(document).ready(function() {
 	
 	//run animations	 
 	    AOS.init({
-	    data-aos-once: true;
+	    once: true;
 	    });
 
     //add animation to the form
