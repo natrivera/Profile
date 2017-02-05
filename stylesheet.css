@@ -270,8 +270,9 @@
 #back {
  right: 0px;
  bottom: 0px;   
- position: relative;
+ position: fixed;
  color: #000000;
+ font-size: .5em;
 }
 
 
