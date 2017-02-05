@@ -19,12 +19,6 @@
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    background: #141470; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#141470, #0101FF); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#141470, #0101FF); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#141470, #0101FF); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#141470, #0101FF); /* Standard syntax */
-    color: #000000;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -70,8 +64,7 @@
 
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-  color: #000000;
-  background-color: #e6e6e6;
+
  }
 
 .navbar {
