@@ -75,14 +75,13 @@
 
 .index img {
  z-index: -99;
+ width: 100%;
  position: absolute;
 }
 
 #introduction {
- vertical-align: bottom; 
  overflow: hidden; 
  margin: auto;
- min-height: 700px;
  border-radius: 10px;
  padding: 0% 1% 0% 1%;
 }
