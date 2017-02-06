@@ -123,6 +123,7 @@
 }
 .contact {
   margin: auto;
+  max-width: 98%;
 }
 
 .buttons { 
