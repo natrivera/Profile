@@ -84,6 +84,7 @@
  margin: auto;
  border-radius: 10px;
  padding: 0% 1% 0% 1%;
+ min-height: 700px;
 }
 
 .aboutme {
