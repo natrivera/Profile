@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskervill|eOpen+Sans|Oswald|Oxygen');
+
 .navbar {
  font-family: "Oswald", sans-serif;
  background-color: #556d7c;
@@ -12,6 +14,7 @@
     border-radius: 0;
     border-color: #404040;
     color: #FFFFFF;
+    font-family: "Oswald", sans-serif;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -247,9 +250,6 @@
  position: fixed;
  color: #000000;
 }
-
-
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskervill|eOpen+Sans|Oswald|Oxygen');
 
 body {
   position: relative;
