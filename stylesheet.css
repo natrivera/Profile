@@ -62,21 +62,23 @@
    color: #000;
  }
 
-
 #top {
   overflow: hidden;
 }
+
 .index { 
  background-size: cover;
  background-repeat: no-repeat;
  overflow: hidden; 
  z-index: -1;
 }
+
 .index img {
  z-index: -99;
  width: 100%;
  position: absolute;
 }
+
 #introduction {
  vertical-align: bottom; 
  overflow: hidden; 
@@ -123,12 +125,10 @@
 }
 .contact {
   margin: auto;
-  max-width: 98%;
 }
 
 .buttons { 
- margin: auto;
- padding-top: 10%;
+ margin: auto; 
  text-align: center;
 }
 
@@ -142,6 +142,11 @@
  border-radius: 10px;
  min-height: 100%;
  margin-bottom: 2%;
+ max-width: 98%;
+}
+
+.social h3 {
+ padding-bottom: 10%;
 }
 
 .buttons .fa {
@@ -149,7 +154,7 @@
 }
 
 .buttons .fa:hover {
- color: #000000; 
+ color:  #1e262c; 
 }
 
 .comform {
