@@ -230,6 +230,7 @@
 }
 
 .unit img {
+ margin-top: 2%;
  max-width: 100%;
  -webkit-transition: all 1s ease; /* Safari and Chrome */
  -moz-transition: all 1s ease; /* Firefox */
@@ -238,7 +239,7 @@
   transition: all 1s ease;
 }
 
-.unit:hover img {
+.unit img:hover {
  -webkit-transform:scale(1.25); /* Safari and Chrome */
   -moz-transform:scale(1.25); /* Firefox */
   -ms-transform:scale(1.25); /* IE 9 */
