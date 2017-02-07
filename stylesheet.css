@@ -208,11 +208,6 @@
  text-align: center;   
 }
 
-.podcast {
-  min-width: 300px;
-  min-height: 300px;
-}
-
 .pod {
  border-bottom: solid #FFFFFF 3px;   
 }
@@ -222,9 +217,7 @@
 }
 
 .unit {
-  margin-top: 10%;
   overflow: hidden;
-  border-radius: 10px;
   z-index: -1;
 }
 
@@ -234,18 +227,11 @@
 }
 
 .unit img:hover {
- position: absolute;
- top:-25px;
- left:-35px;
-  width:500px;
-  height:auto;
-  display:block;
-  z-index:999;
- 
-}
-
-.pics {
-  border: solid #000000 3px;
+ -webkit-transform:scale(1.25); /* Safari and Chrome */
+  -moz-transform:scale(1.25); /* Firefox */
+  -ms-transform:scale(1.25); /* IE 9 */
+  -o-transform:scale(1.25); /* Opera */
+  transform:scale(1.25);
 }
 
 .carousel .item img {
