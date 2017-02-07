@@ -4,7 +4,6 @@
  font-family: "Oswald", sans-serif;
  background-color: #556d7c;
  font-size: 1.5em;
- text-align: center;
 }
 .navbar-default {
     background: #556d7c;
@@ -16,7 +15,6 @@
     border-color: #404040;
     color: #FFFFFF;
     font-family: "Oswald", sans-serif;
-    text-align: center;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -56,6 +54,11 @@
 .navbar-default .navbar-nav .open .dropdown-menu {
  background-color: #556d7c;
  color: #FFF;
+ text-align: center;
+}
+
+.navbar-collapse {
+ text-align: center;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
