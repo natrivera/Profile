@@ -242,7 +242,7 @@
 }
 
 .image img:hover {
-     width: 200%;
+     z-index: 101;
     -webkit-transform:scale(2); /* Safari and Chrome */
     -moz-transform:scale(2); /* Firefox */
     -ms-transform:scale(2); /* IE 9 */
