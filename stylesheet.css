@@ -256,8 +256,9 @@
      transform:scale(2);
 }
 
-.image .img-responsive {
+.image .img-responsive img:hover {
    max-width: 200%;
+   max-height: 200%;
 }
 
 
