@@ -221,6 +221,14 @@
   z-index: -1;
 }
 
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .unit img {
  max-width: 100%;
  -webkit-transition: all 1s ease; /* Safari and Chrome */
