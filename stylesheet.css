@@ -177,13 +177,6 @@
   color: #FFFFFF;
 }
 
-.img-profile {
-  border: solid #FFFFFF 3px;
-  border-radius: 25px;
-  display: block;
-  margin: auto;
-}
-
 #canyonedge {
   border: solid #FFFFFF 3px;
 
@@ -238,6 +231,13 @@
 .unit img {
  max-height: 100%;
  width: auto;
+}
+
+.unit img:hover {
+ position: absolute;
+ top: 0;
+ left: 0;
+ 
 }
 
 .pics {
