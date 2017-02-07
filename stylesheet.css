@@ -248,11 +248,16 @@
 
 .image img:hover {
      z-index: 101;
+     max-width: 200%
     -webkit-transform:scale(2); /* Safari and Chrome */
     -moz-transform:scale(2); /* Firefox */
     -ms-transform:scale(2); /* IE 9 */
     -o-transform:scale(2); /* Opera */
      transform:scale(2);
+}
+
+.image .img-responsive {
+   max-width: 200%;
 }
 
 
