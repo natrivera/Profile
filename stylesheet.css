@@ -235,8 +235,12 @@
 
 .unit img:hover {
  position: absolute;
- top: 0;
- left: 0;
+ top:-25px;
+ left:-35px;
+  width:500px;
+  height:auto;
+  display:block;
+  z-index:999;
  
 }
 
