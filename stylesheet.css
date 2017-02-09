@@ -156,14 +156,11 @@
 
 .buttons .fa {
  font-size: 3em; 
+ margin: auto;
 }
 
 .buttons .fa:hover {
  color:  #1e262c; 
-}
-
-.buttons a {
- margin: auto;
 }
 
 .comform {
