@@ -267,7 +267,7 @@ $(".button").click(function(){
     embed = gif.data[0].embed_url;
     
    $(".gif").html("<iframe class='giphy-embed' src='" + embed + "'></iframe><p><a target= '_blank' href='" + search + "'>via GIPHY</a></p>" );
-   $("iframe").css("position","fixed");
+   $("iframe").css("position","relative");
    $("iframe").css("top","0px"); 
    $("iframe").css("left","0px"); 
    $("iframe").css("overflow","hidden");
