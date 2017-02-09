@@ -162,6 +162,10 @@
  color:  #1e262c; 
 }
 
+.buttons a {
+ margin: auto;
+}
+
 .comform {
  text-align: left;
  margin-bottom: 2%;
