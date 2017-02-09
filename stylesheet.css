@@ -123,7 +123,6 @@
 #bottom {
   padding-bottom: 5%;
   padding-top: 10%;
-  background-color: #1e262c;
   color: #FFFFFF;
   overflow: hidden;
 }
@@ -276,7 +275,8 @@
 
 body {
   position: relative;
-  background-color: #1e262c; 
+  /*   background-color: #1e262c;  */ 
+  background-color: #333;
   width: 100%;
   font-family: 'Oxygen', sans-serif;
   color: #FFFFFF;
