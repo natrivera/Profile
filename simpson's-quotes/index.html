@@ -260,7 +260,18 @@ $(".button").click(function(){
     search = gif.data[0].images.fixed_height.url;
     embed = gif.data[0].embed_url;
     
-   $(".gif").html("<iframe frameBorder= '0' class= 'giphy-embed' src='" + embed + "' allowFullScreen></iframe><p><a target= '_blank' href='" + search + "'>via GIPHY</a></p>" );
+   $(".gif").html("<iframe style='   position:fixed; 
+	                                    top:0px; 
+	                                    left:0px; 
+	                                    bottom:0px; 
+	                                    right:0px; 
+	                                    width:100%; 
+	                                    height:100%; 
+	                                    border:none; 
+	                                    margin:0; 
+	                                    padding:0; 
+	                                    overflow:hidden;' 
+                  class='giphy-embed' src='" + embed + "'></iframe><p><a target= '_blank' href='" + search + "'>via GIPHY</a></p>" );
     
   });
 });
