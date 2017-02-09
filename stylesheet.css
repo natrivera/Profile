@@ -131,11 +131,6 @@
   margin: auto;
 }
 
-.buttons { 
- margin: auto; 
- text-align: center;
-}
-
 .bottomName {
   text-align: center;
   padding-bottom: 5%;
@@ -151,7 +146,12 @@
 }
 
 .social h3 {
- padding-bottom: 10%;
+ margin-bottom: 20%;
+}
+
+.buttons { 
+ margin: auto; 
+ text-align: center;
 }
 
 .buttons .fa {
