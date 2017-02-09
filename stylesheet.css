@@ -146,7 +146,8 @@
  border-radius: 10px;
  min-height: 100%;
  margin-bottom: 2%;
- max-width: 98%;
+ display: block;
+ text-align: center;
 }
 
 .social h3 {
