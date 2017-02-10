@@ -88,9 +88,12 @@ hr {
  height: 5px;
  background-color:#fee822;
  text-align: center;
+ width: 90%;
 }
 
 hr:after {
+ color: #fee822;
+ font-size; 3em;
  content:"</>";
  display: inline-block;
  position: relative;
