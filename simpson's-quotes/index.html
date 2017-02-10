@@ -111,6 +111,7 @@ min-height: 500px;
         <div class="row" id="sim">      
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 		      <div class="display"></div>
+		      <div id="instruct">Click on the cloud for a quote.<div>
                </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 			<div class="gif"></div>
@@ -304,6 +305,7 @@ $(".button").click(function(){
   var twitter = "https://twitter.com/home/?status=" + unicode + " %23SimpsonsQuotes";
   var facebook = "https://www.facebook.com/share.php?u=http://www.cpp.edu/~natividadr/quote.html"
   gyphy = "https://api.giphy.com/v1/gifs/search?q=simpsons+" + quotes[number] + "&api_key=dc6zaTOxFJmzC";
+  $("#instruct").remove();
   $(".display").html("<strong><h1><i class = 'fa fa-2x fa-pull-left fa-quote-left'></i> " + quotes[number] + "</h1></strong><div class='button'><p onClick='click' class='fa fa-refresh'></p></div><a target='_blank' href='"+ twitter  +"'><p class='fa fa-twitter'></p></a><a target='_blank' href='"+ facebook  +"'><p class='fa  fa-facebook'></p></a>");
   $("#sim").css("border", "solid yellow 4px");
   $("#sim").css("margin-top", "1%");
