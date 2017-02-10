@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskervill|eOpen+Sans|Oswald|Oxygen|Ubuntu');
 
 .navbar {
- font-family: "Oswald", sans-serif;
+ font-family: "Ubuntu", sans-serif;
  background-color: #556d7c;
  font-size: 1.5em;
 }
@@ -14,7 +14,7 @@
     border-radius: 0;
     border-color: #404040;
     color: #FFFFFF;
-    font-family: "Oswald", sans-serif;
+    font-family: "Ubuntu", sans-serif;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -160,11 +160,11 @@
 
 .buttons .fa {
  font-size: 3em;
- color: #d6d6d6;
+ color: #4ba6b5;
 }
 
 .buttons .fa:hover {
- color:  #4ba6b5;
+ color:  #333;
 }
 
 .comform {
