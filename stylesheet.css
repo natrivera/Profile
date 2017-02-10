@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskervill|eOpen+Sans|Oswald|Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskervill|eOpen+Sans|Oswald|Oxygen|Ubuntu');
 
 .navbar {
  font-family: "Oswald", sans-serif;
@@ -114,6 +114,10 @@
  margin: auto;   
 }
 
+.intro {
+ color: #d6d6d6;
+}
+
 .centerName {
   color: #FFFFFF;
   text-align: center;
@@ -133,6 +137,7 @@
 .bottomName {
   text-align: center;
   padding-bottom: 5%;
+ color: #d6d6d6;
 }
 .social {
  background-color: #000000;
@@ -154,7 +159,8 @@
 }
 
 .buttons .fa {
- font-size: 3em; 
+ font-size: 3em;
+ color: #d6d6d6;
 }
 
 .buttons .fa:hover {
@@ -203,6 +209,18 @@
 
 #poly a:hover {
  color: #000000;   
+}
+
+#poly h2,
+#poly h3,
+#chaffey h3,
+#chaffey h3 {
+ color: #d6d6d6;
+}
+
+.jobs h2,
+.jobs h3 {
+ color: #d6d6d6;
 }
 
 #directvdicv {
@@ -278,7 +296,7 @@ body {
   /*   background-color: #1e262c;  */ 
   background-color: #333;
   width: 100%;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Ubintu', sans-serif;
   color: #FFFFFF;
 }
 
