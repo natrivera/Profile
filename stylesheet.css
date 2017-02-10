@@ -86,9 +86,9 @@
 
 hr {
  border: none;
- height: 10px;
- color: #4ba6b5;
- background-color: #4ba6b5;
+ height: 5px;
+ background-color:#fee822;
+ width: 75%;
  content: "\f121"
 }
 
