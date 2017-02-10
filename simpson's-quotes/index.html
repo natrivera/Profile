@@ -297,7 +297,7 @@ $(".button").click(function(){
   var twitter = "https://twitter.com/home/?status=" + unicode + " %23SimpsonsQuotes";
   var facebook = "https://www.facebook.com/share.php?u=http://www.cpp.edu/~natividadr/quote.html"
   gyphy = "https://api.giphy.com/v1/gifs/search?q=simpsons+" + quotes[number] + "&api_key=dc6zaTOxFJmzC";
-  $(".display").html("<strong><h1><i class = 'fa fa-2x fa-pull-left fa-quote-left'></i> " + quotes[number] + "</h1></strong><i onClick='click' class='fa fa-refresh'></i><a target='_blank' href='"+ twitter  +"'><p class='fa fa-twitter'></p></a><a target='_blank' href='"+ facebook  +"'><p class='fa  fa-facebook'></p></a>");
+  $(".display").html("<strong><h1><i class = 'fa fa-2x fa-pull-left fa-quote-left'></i> " + quotes[number] + "</h1></strong><a onClick='click'><i class='fa fa-refresh'></i></a><a target='_blank' href='"+ twitter  +"'><p class='fa fa-twitter'></p></a><a target='_blank' href='"+ facebook  +"'><p class='fa  fa-facebook'></p></a>");
   $("#sim").css("border", "solid yellow 4px");
   $("#sim").css("margin-top", "1%");
   $("#sim").css("padding", "1%");
