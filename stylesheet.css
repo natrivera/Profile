@@ -89,9 +89,10 @@ hr {
  height: 5px;
  background-color:#fee822;
  width: 90%;
- content: "\003c"
+ content: "\003c";
   font-size: 3em;
 }
+
 
 #introduction {
  overflow: hidden; 
