@@ -92,6 +92,12 @@ hr {
 }
 
 hr:after {
+  border: none;
+ height: 5px;
+ background-color:#fee822;
+ width: 90%;
+ display: block;
+	margin-top: 2px;
  content: "</>";
   font-size: 3em;
 }
