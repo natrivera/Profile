@@ -84,6 +84,11 @@
  position: absolute;
 }
 
+hr {
+ color: #4ba6b5;
+ content: "\f121"
+}
+
 #introduction {
  overflow: hidden; 
  margin: auto;
