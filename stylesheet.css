@@ -116,7 +116,7 @@
 }
 
 .intro {
- 
+ font-size: 3em;
  color: #4ba6b5;
 }
 
@@ -141,6 +141,7 @@
 }
 
 .bottomName {
+  font-size: 3em;
   text-align: center;
   padding-bottom: 5%;
  color: #4ba6b5;
@@ -239,6 +240,10 @@
 
 .pod {
  border-bottom: solid #FFFFFF 3px;   
+}
+
+.podcasts h2 {
+ color: #4ba6b5;
 }
 
 .photograph {
