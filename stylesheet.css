@@ -85,7 +85,10 @@
 }
 
 hr {
+ border: none;
+ height: 1px;
  color: #4ba6b5;
+ background-color: #4ba6b5;
  content: "\f121"
 }
 
