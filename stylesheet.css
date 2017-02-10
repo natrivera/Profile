@@ -91,7 +91,7 @@ hr {
  width: 90%;
 }
 
-hr :after {
+hr:after {
  content: "\003c";
   font-size: 3em;
 }
