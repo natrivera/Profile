@@ -85,23 +85,18 @@
 }
 
 hr {
- border: none;
  height: 5px;
  background-color:#fee822;
- width: 90%;
+ text-align: center;
 }
 
 hr:after {
-  border: none;
- height: 5px;
- background-color:#fee822;
- width: 90%;
- display: block;
-	margin-top: 2px;
- content: "</>";
-  font-size: 3em;
+ content:"</>";
+ display: inline-block;
+ position: relative;
+	
+	
 }
-
 
 #introduction {
  overflow: hidden; 
