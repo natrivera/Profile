@@ -70,6 +70,7 @@ width: 100%;
 left:0px;
 bottom:0px;
 font-size: 1.5em;
+color: #000000;
 }
 	
 #footer a {
@@ -118,7 +119,7 @@ min-height: 500px;
        
   </div>
 	 <div id="footer">
-		 <p>page by <a href="/">Nat Rivera</a></p><i class="hit fa fa-ellipsis-h"></i><img class="counter hidden-xs hidden-sm hidden-md hidden-lg hidden-xl" src="http://hitwebcounter.com/counter/counter.php?page=6594696&style=0024&nbdigits=5&type=ip&initCount=0" border="0" >
+		 <p>page by <a href="/">Nat Rivera</a></p><p class="hit fa fa-ellipsis-h"></p><img class="counter hidden-xs hidden-sm hidden-md hidden-lg hidden-xl" src="http://hitwebcounter.com/counter/counter.php?page=6594696&style=0024&nbdigits=5&type=ip&initCount=0" border="0" >
     </div>
 <script>
 
@@ -288,6 +289,14 @@ var quotes = [
 var search;
 var gyphy;
 var embed;
+	
+$(document).ready(function() {	
+	//show the counter
+	$(".hit").click(function() {
+		 
+		$("#counter").removeAttr("class");
+	});	
+});
 
 $(".button").click(function(){
   number = Math.floor((Math.random() * quotes.length) + 1);
@@ -319,13 +328,7 @@ $(".button").click(function(){
   });
 });
 
-$(document).ready(function() {	
-	//show the counter
-	$(".hit").click(function() {
-		 
-		$("#counter").removeAttr("class");
-	});	
-});
+
 	
 </script>
 </body>
