@@ -289,7 +289,7 @@ var gyphy;
 var embed;
 
 $(".button").click(function(){
-  number = Math.floor(Math.random() * quotes.length);
+  number = Math.floor((Math.random() * quotes.length) + 1);
   var unicode = encodeURIComponent(quotes[number]).replace(/[!'()*]/g, escape);
   var twitter = "https://twitter.com/home/?status=" + unicode + " %23SimpsonsQuotes";
   var facebook = "https://www.facebook.com/share.php?u=http://www.cpp.edu/~natividadr/quote.html"
