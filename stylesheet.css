@@ -89,7 +89,9 @@
   border: none; 
   height: 5px;
   background-color: #fee822; 
-  text-align: center;
+  text-align: left;
+  width: 75%;
+  
 }
 
 /*
