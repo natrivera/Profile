@@ -93,7 +93,7 @@ hr {
 
 hr:after {
  color: #fee822;
- font-size; 3em;
+ font-size: 3em;
  content:"</>";
  display: inline-block;
  position: relative;
