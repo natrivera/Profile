@@ -84,14 +84,14 @@
  position: absolute;
 }
 
-hr {
+#introduction hr {
  height: 5px;
  background-color:#fee822;
  text-align: center;
  width: 90%;
 }
 
-hr:after {
+#introduction hr:after {
  color: #fee822;
  font-size: 3em;
  content:"</>";
