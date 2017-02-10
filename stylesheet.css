@@ -89,7 +89,7 @@ hr {
  height: 5px;
  background-color:#fee822;
  width: 90%;
- content: "</>"
+ content: "\003c"
   font-size: 3em;
 }
 
