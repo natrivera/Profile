@@ -92,7 +92,7 @@ hr {
 }
 
 hr:after {
- content: "\003c";
+ content: "</>";
   font-size: 3em;
 }
 
