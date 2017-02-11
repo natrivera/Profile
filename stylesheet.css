@@ -86,6 +86,7 @@
 
 #introduction hr {
   padding: 0;
+  margin-top: 10px;
   border: none; 
   height: 5px;
   background-color: #fee822;  
