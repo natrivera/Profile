@@ -44,7 +44,7 @@ $(document).ready(function() {
   	});
 	
 	$( "a" ).click(function() {
-  		$( ".clickup" ).remove();
+  		$( ".clickup" ).empty();
 	});
 	
 	
