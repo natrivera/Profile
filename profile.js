@@ -16,16 +16,32 @@ $(document).ready(function() {
 	
 	$(window).one('scroll',function() {
   
-  		$("body").append("<div class='clickup' target='#'><p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></div>");
+  		$("body").append("<div class='clickup'><a href='#header'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
 	});	
 	
 	
-	$('.clickup').on('click' , function(){
-	    $('html, body').animate({
-	        scrollTop: $( $(this).attr('target') ).offset().top
-	    }, 800);
-	    return false;
-	});
+	// Add smooth scrolling to all links
+  	$("a").on('click', function(event) {
+
+  	  // Make sure this.hash has a value before overriding default behavior
+  	  if (this.hash !== "") {
+  	    // Prevent default anchor click behavior
+  	    event.preventDefault();
+
+  	    // Store hash
+  	    var hash = this.hash;
+
+      	// Using jQuery's animate() method to add smooth page scroll
+      	// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      	$('html, body').animate({
+      	  scrollTop: $(hash).offset().top
+      	}, 800, function(){
+   
+      	  // Add hash (#) to URL when done scrolling (default click behavior)
+      	  window.location.hash = hash;
+      	});
+    	} // End if
+  	});
 	
 	
 	 //move picture on top
