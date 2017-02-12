@@ -335,7 +335,17 @@
 }
 
 .clickup {
- font-size: 2em;
+ font-size: 3em;
+}
+
+.clickedup a:hover {
+ text-decoration: none;
+ color: #000;
+}
+
+.clicked a:visited {
+ text-decoration: none;
+ color: #FFF;
 }
 
 body {
