@@ -16,13 +16,13 @@ $(document).ready(function() {
 	
 	$(window).one('scroll',function() {
   
-  		$("body").append("<div class='clickup'><a href='#'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
+  		$("body").append("<div class='clickup' target='#'><p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></div>");
 	});	
 	
 	
-	$('a').click(function(){
+	$('.clickup').click(function(){
 	    $('html, body').animate({
-	        scrollTop: $( $(this).attr('href') ).offset().top
+	        scrollTop: $( $(this).attr('target') ).offset().top
 	    }, 800);
 	    return false;
 	});
