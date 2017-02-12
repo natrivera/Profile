@@ -16,7 +16,7 @@ $(document).ready(function() {
 	
 	$(window).one('scroll',function() {
   
-  		$("body").append("<div class='clickup'><a data-aos='slide-up' href='#header'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
+  		$("body").append("<div class='clickup' onClick=''><a data-aos='slide-up' href='#header'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
 	});	
 	
 	
@@ -42,6 +42,10 @@ $(document).ready(function() {
       	});
     	} // End if
   	});
+	
+	$( "a" ).click(function() {
+  		$( ".clickup" ).remove();
+	});
 	
 	
 	 //move picture on top
