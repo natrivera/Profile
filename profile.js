@@ -20,7 +20,7 @@ $(document).ready(function() {
 	});	
 	
 	
-	$('.clickup').click(function(){
+	$('.clickup').on('click' , function(){
 	    $('html, body').animate({
 	        scrollTop: $( $(this).attr('target') ).offset().top
 	    }, 800);
