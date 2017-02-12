@@ -14,6 +14,11 @@ $(document).ready(function() {
   //  $(".conform").attr("data-aos-delay","800");
   //  $(".conform").attr("data-aos-duration","3000");
 	
+	$(document).scroll(function() {
+  		$("body").append("<div><a href='#'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
+		
+	});
+	
 	
 	 //move picture on top
 	$("#mask").click(function() {
