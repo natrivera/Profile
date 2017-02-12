@@ -338,12 +338,12 @@
  font-size: 3em;
 }
 
-.clickedup a:hover {
+.clickup a:hover {
  text-decoration: none;
  color: #000;
 }
 
-.clicked a:visited {
+.clickup a:visited {
  text-decoration: none;
  color: #FFF;
 }
