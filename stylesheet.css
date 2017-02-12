@@ -334,6 +334,10 @@
  color: #000000;
 }
 
+.clickup {
+ font-size: 2em;
+}
+
 body {
   position: relative;
   /*   background-color: #1e262c;  */ 
