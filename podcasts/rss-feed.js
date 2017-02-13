@@ -1,4 +1,4 @@
--(function() {
+(function() {
   var a = window;
   var b = "";
   for (i = 0; i < a.rssfeed_url.length; i++) {
