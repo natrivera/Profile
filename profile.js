@@ -43,10 +43,6 @@ $(document).ready(function() {
     	} // End if
   	});
 	
-	$( "a" ).click(function() {
-  		$( ".clickup" ).empty();
-	});
-	
 	
 	 //move picture on top
 	$("#mask").click(function() {
