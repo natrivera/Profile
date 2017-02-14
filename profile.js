@@ -10,7 +10,7 @@ $(document).ready(function() {
 	    });
 
   		//add uplink
-  		$("body").append("<div class='clickup' onClick=''><a href='#'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
+  		$("body").append("<div class='clickup' onClick=''><a data-aos='fade-up' href='#'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
 		
 		//When distance from top = 250px fade button in/out
         	$(window).scroll(function(){
