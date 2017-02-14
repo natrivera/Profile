@@ -8,7 +8,10 @@ $(document).ready(function() {
 	    AOS.init({
 	    once: true,
 	    });
-
+	
+	$('form').attr('data-aos', 'zoom-out');
+	$('#form').attr('data-aos-duration', '200');
+			
   		//add uplink
   		$("body").append("<div class='clickup' onClick=''><a data-aos='fade-up' href='#'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
 		
