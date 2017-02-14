@@ -348,6 +348,11 @@
  color: #FFF;
 }
 
+.blackbox {
+ background: rgba(0,0,0,.8);
+ border-radius: 10px;
+}
+
 body {
   position: relative;
   /*   background-color: #1e262c;  */ 
