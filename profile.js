@@ -19,9 +19,9 @@ $(document).ready(function() {
 		//When distance from top = 250px fade button in/out
         	$(window).scroll(function(){
          	   if ($(this).scrollTop() > 250) {
-         	       $('.clickup').fadeIn(800);
+         	       $('.clickup').fadeIn(1);
          	   } else {
-         	       $('.clickup').fadeOut(800);
+         	       $('.clickup').fadeOut(1);
          	   }
         	});
  	
