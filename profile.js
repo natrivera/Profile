@@ -10,7 +10,7 @@ $(document).ready(function() {
 	    });
 	
 	$('form').attr('data-aos', 'flip-down');
-	$('#form').attr('data-aos-duration', '800');
+	$('form').attr('data-aos-duration', '800');
 	$('form').attr('data-aos-delay', '800');
 	
   		//add uplink
