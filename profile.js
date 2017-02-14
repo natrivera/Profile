@@ -9,15 +9,23 @@ $(document).ready(function() {
 	    once: true,
 	    });
 
-    //add animation to the form
-  //  $(".conform").attr("data-aos","flip-up");
-  //  $(".conform").attr("data-aos-delay","800");
-  //  $(".conform").attr("data-aos-duration","3000");
-	
-	$(window).one('scroll',function() {
-  
+  		//add uplink
   		$("body").append("<div class='clickup' onClick=''><a data-aos='slide-up' href='#header'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
-	});	
+		
+		//When distance from top = 250px fade button in/out
+        	$(window).scroll(function(){
+         	   if ($(this).scrollTop() > 250) {
+         	       $('.clickup').fadeIn(300);
+         	   } else {
+         	       $('.clickup').fadeOut(300);
+         	   }
+        	});
+ 	
+        	//On click scroll to top of page t = 1000ms
+        	$('.clickup').click(function(){
+        	    $("html, body").animate({ scrollTop: 0 }, 1000);
+        	    return false;
+        	});	
 	
 	
 	// Add smooth scrolling to all links
