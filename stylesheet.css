@@ -332,6 +332,10 @@
  font-size: 3em;
 }
 
+.display {
+ z-index: -99;
+}
+
 body {
   position: relative;
   /*   background-color: #1e262c;  */ 
