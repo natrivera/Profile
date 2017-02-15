@@ -355,6 +355,14 @@
  margin-top: 2%;
 }
 
+.podplay h2 {
+ color: #4ba6b5;
+}
+
+.podplay i {
+ font-size: 3em;
+}
+
 body {
   position: relative;
   /*   background-color: #1e262c;  */ 
