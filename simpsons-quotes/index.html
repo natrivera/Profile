@@ -106,8 +106,8 @@ text-align: center;
 <body>
 
 
-<div class="container-fluid" id="simpsons">
-	
+<div class="container-fluid">
+<div id="simpsons">	
      <div class= 'header'>
 	     <div class="row">
 		     
@@ -129,8 +129,8 @@ text-align: center;
 		</div>
      </div>
   
-      
-        <div class="row" id="sim">      
+      	<div id="sim">
+           <div class="row">      
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
 		      <div class="display">
 		      		<div class='button'>
@@ -142,19 +142,18 @@ text-align: center;
 			<div class="gif"></div>
                </div>
           </div>
+	</div>
        
-  </div>
-	
-	<div ><h2 id="instruct">Click on the cloud for a quote.</h2><div>
+ 	
+	<div><h2 id="instruct">Click on the cloud for a quote.</h2></div>
+ </div>
+</div>
 		
 	 <div id="footer">
 		 <p>page by <a href="/">Nat Rivera</a></p>
 		 <img id="counter" class="hidden-xs hidden-sm hidden-md hidden-lg hidden-xl" src="http://hitwebcounter.com/counter/counter.php?page=6594696&style=0024&nbdigits=5&type=ip&initCount=0" border="0" >
         </div>
 <script>
-
-
-var number;
 var quotes = [
    "I'd rather let a thousand guilty men go free than chase after them. -Chief Wiggum",
    "Well, crying isn't gonna bring him back, unless your tears smell like dog food. So you can either sit there crying and eating can after can of dog food until your tears smell enough like dog food to make your dog come back, or you can go out there and find your dog. -Homer Simpson",
@@ -319,7 +318,7 @@ var quotes = [
 var search;
 var gyphy;
 var embed;
-	
+var number;	
 $(document).ready(function() {	
 	//show the counter
 	$(".hit").click(function() {
