@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+ 
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+
+body {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+}
+
+#outside {
+  border: 3px solid #fff;
+  width: 340px;
+  margin: auto;
+  text-align: center;
+}
+
+#spacer {
+  height: 75px;
+  font-size: 1.5em;
+}
+
+#game {
+  margin-left: 1%;
+  text-align: center;
+  width: 300px;
+}
+
+.board {
+  height: 100px;
+  width: 110px;
+}
+
+.chosen {
+  border: 3px solid #fff;
+}
+
+#choose {
+  margin: 3% 0% 3% 0%;
+}
+
+#again button {
+  background-color: #333;
+  border: none;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+#again button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.won {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.top {
+  border-top: solid 3px #fff;
+}
+
+.right {
+  border-right: solid 3px #fff;
+}
+
+.bottom {
+  border-bottom: solid 3px #fff;
+}
+
+.left {
+  border-left: solid 3px #fff;
+}
+
+</style>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div id="outside">
+      <div id="spacer">Tic Tac Toe
+        <div id="message">X's turn</div>
+      </div>
+      <div id="game">
+        <div class="row">
+          <div class="col-4">
+            <div id="00" class="board bottom right" onClick="click"></div>
+          </div>
+          <div class="col-4">
+            <div id="01" class="board left bottom right" onClick="click"></div>
+          </div>
+          <div class="col-4">
+            <div id="02" class="board left bottom" onClick="click"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div id="10" class="board top right bottom" onClick="click"></div>
+          </div>
+          <div class="col-4">
+            <div id="11" class="board top right bottom left" onClick="click"></div>
+          </div>
+          <div class="col-4">
+            <div id="12" class="board top bottom left" onClick="click"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div id="20" class="board top right" onClick="click"></div>
+          </div>
+          <div class="col-4">
+            <div id="21" class="board top right left" onClick="click"></div>
+          </div>
+          <div class="col-4">
+            <div id="22" class="board top left" onClick="click"></div>
+          </div>
+        </div>
+      </div>
+      <div id="choose">
+        <i id="x" class="fa fa-3x fa-times chosen" onClick="click" aria-hidden="true"></i>
+        <i id="o" class="fa fa-3x fa-circle-o" onClick="click" aria-hidden="true"></i>
+      </div>
+      <div id="again">
+        <button class="again" onClick="click">Reset</button>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+var started = false;
+var x, number1, number2;
+var count = 0;
+var won1 = "";
+var won2, won3, message, currId;
+var arr = [
+  [5, 5, 5],
+  [5, 5, 5],
+  [5, 5, 5]
+];
+
+//player = true means player = X
+var player = true;
+
+$("#choose").click(function() {
+
+  if (started === false) {
+    //choose player
+    $("#x").toggleClass("chosen");
+    $("#o").toggleClass("chosen");
+
+    turn();
+  }
+});
+
+//when the board is clicked
+$(".board").click(function() {
+  
+  //check if box is empty
+  if ($(this).html() === "") { 
+    
+      $(this).toggleClass("current");
+      game();
+      $(this).toggleClass("current");
+      computer();
+  }
+});
+
+function computer() {
+  var num;
+  var random = [];
+  
+  //fill an array with empty spots
+  for(var i = 0; i < 3; i++)
+    {
+      for(var j = 0; j < 3; j++)
+        {
+          var str = $("#" + i + j).html();
+          if(str === "")
+            {
+                random.push("#" + i + j);
+            }
+        }
+    }
+  
+  //randomize a number from open spots
+  num = random.length;
+  num =  Math.floor(Math.random() * num);
+  
+  //cumputer play after 1 sec
+  setTimeout(function(){  
+    $(random[num]).toggleClass("current");
+    game();
+    $(random[num]).toggleClass("current");
+  }, 800);    
+}
+
+function game() {
+    play();
+    check();
+}
+
+function play() {
+
+  count++;
+
+  //get the array position from id
+  currId = $(".current").attr("id");
+  number1 = (currId).slice(0, 1);
+  number2 = (currId).slice(1, 2);
+
+  //mark the board load the array x = true  o = false
+  if (player === true) {
+    $(".current").html("<i class='fa fa-5x fa-times' aria-hidden='true'></i>");
+    arr[number1][number2] = true;
+
+  } else {
+    $(".current").html("<i class='fa fa-5x fa-circle-o' aria-hidden='true'></i>");
+    arr[number1][number2] = false;
+  }
+
+  //cannot change playerSymbol after starting
+  started = true;
+
+  turn();
+
+  //show active player
+  $("#x").toggleClass("chosen");
+  $("#o").toggleClass("chosen");
+
+}
+
+function turn() {
+  //switch player
+  if (player === true) {
+    player = false;
+    $("#message").html("O's turn");
+  } else {
+    player = true;
+    $("#message").html("X's turn");
+  }
+}
+
+function toggleWon() {
+  $("#" + won1 + "").toggleClass("won");
+  $("#" + won2 + "").toggleClass("won");
+  $("#" + won3 + "").toggleClass("won");
+}
+
+$(".again").click(function() {
+  clear();
+  $(".again").html("Reset");
+  if (player === true) {
+    $("#message").html("X's turn");
+  } else {
+    $("#message").html("O's turn");
+  }
+});
+
+function fill() {
+  for(var i = 0; i < 3; i++)
+    {
+      for(var j = 0; j < 3; j++)
+        {
+          var str = $("#" + i + j).html();
+          if(str === "")
+            {
+                $("#" + i + j).html("<i style='color:#333;'class='fa fa-5x fa-square' aria-hidden='true'></i>");
+            }
+        }
+    }
+}
+
+function clear() {
+  arr = [
+    [],
+    [],
+    []
+  ];
+  count = 0;
+  $(".board").html("");
+  started = false;
+  if (won1 !== "") {
+    toggleWon();
+    won1 = "";
+    won2 = "";
+    won3 = "";
+  }
+}
+
+function check() {
+
+  if (arr[0][0] === true & arr[0][1] === true & arr[0][2] === true) {
+    message = "X WINS!";
+    won1 = "00";
+    won2 = "01";
+    won3 = "02";
+
+  }
+  if (arr[1][0] === true & arr[1][1] === true & arr[1][2] === true) {
+    message = "X WINS!";
+    won1 = "10";
+    won2 = "11";
+    won3 = "12";
+  }
+  if (arr[2][0] === true & arr[2][1] === true & arr[2][2] === true) {
+    message = "X WINS!";
+    won1 = "20";
+    won2 = "21";
+    won3 = "22";
+  }
+  if (arr[0][0] === true & arr[1][0] === true & arr[2][0] === true) {
+    message = "X WINS!";
+    won1 = "00";
+    won2 = "10";
+    won3 = "20";
+  }
+  if (arr[0][1] === true & arr[1][1] === true & arr[2][1] === true) {
+    message = "X WINS!";
+    won1 = "01";
+    won2 = "11";
+    won3 = "21";
+  }
+  if (arr[0][2] === true & arr[1][2] === true & arr[2][2] === true) {
+    message = "X WINS!";
+    won1 = "02";
+    won2 = "12";
+    won3 = "22";
+  }
+  if (arr[0][0] === true & arr[1][1] === true & arr[2][2] === true) {
+    message = "X WINS!";
+    won1 = "00";
+    won2 = "11";
+    won3 = "22";
+  }
+  if (arr[0][2] === true & arr[1][1] === true & arr[2][0] === true) {
+    message = "X WINS!";
+    won1 = "02";
+    won2 = "11";
+    won3 = "20";
+  }
+  if (arr[0][0] === false & arr[0][1] === false & arr[0][2] === false) {
+    message = "O WINS!";
+    won1 = "00";
+    won2 = "01";
+    won3 = "02";
+  }
+  if (arr[1][0] === false & arr[1][1] === false & arr[1][2] === false) {
+    message = "O WINS!";
+    won1 = "10";
+    won2 = "11";
+    won3 = "12";
+  }
+  if (arr[2][0] === false & arr[2][1] === false & arr[2][2] === false) {
+    message = "O WINS!";
+    won1 = "20";
+    won2 = "21";
+    won3 = "22";
+  }
+  if (arr[0][0] === false & arr[1][0] === false & arr[2][0] === false) {
+    message = "O WINS!";
+    won1 = "00";
+    won2 = "10";
+    won3 = "20";
+  }
+  if (arr[0][1] === false & arr[1][1] === false & arr[2][1] === false) {
+    message = "O WINS!";
+    won1 = "01";
+    won2 = "11";
+    won3 = "21";
+  }
+  if (arr[0][2] === false & arr[1][2] === false & arr[2][2] === false) {
+    message = "O WINS!";
+    won1 = "02";
+    won2 = "12";
+    won3 = "22";
+  }
+  if (arr[0][0] === false & arr[1][1] === false & arr[2][2] === false) {
+    message = "O WINS!";
+    won1 = "00";
+    won2 = "11";
+    won3 = "22";
+  }
+  if (arr[0][2] === false & arr[1][1] === false & arr[2][0] === false) {
+    message = "O WINS!";
+    won1 = "02";
+    won2 = "11";
+    won3 = "20";
+  }
+  if (won1 !== "") {
+    $("#message").html(message);
+    $(".again").html("Play Again");
+    toggleWon();
+    fill();
+  }
+
+  if (count === 9) {
+    if (won1 === "") {
+      $("#message").html("Tie Game!");
+      $(".again").html("Play Again");
+    }
+
+  }
+}
+
+</script>
+</body>
+</html>
