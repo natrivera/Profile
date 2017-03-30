@@ -112,7 +112,7 @@ body {
   <div class="container-fluid">
     <div id="outside">
       <div id="spacer">Tic Tac Toe
-        <div id="message">X's turn</div>
+        <div id="message">Choose a symbol (X or O)</div>
       </div>
       <div id="game">
         <div class="row">
@@ -183,6 +183,7 @@ $(document).ready(function() {
 
 $("#choose").click(function() {
 
+  $("#message").css("color" , "#fff");
   if (started === false) {
     //choose player
     $("#x").toggleClass("chosen");
@@ -195,6 +196,7 @@ $("#choose").click(function() {
 //when the board is clicked
 $(".board").click(function() {
   
+  $("#message").css("color" , "#fff");
   //check if box is empty
   if ($(this).html() === "") { 
     
