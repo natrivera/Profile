@@ -330,7 +330,7 @@ function run() {
   var facebook = "https://www.facebook.com/share.php?u=http://natrivera.com/simpsons-quotes/"
   gyphy = "https://api.giphy.com/v1/gifs/search?q=The%20Simpsons%20+" + quotes[number] + "&api_key=dc6zaTOxFJmzC";
 
-  $("html, body").animate({ scrollTop: 250 }, 1000);
+  $("html, body").animate({ scrollTop: $(".display").offset().top }, 1000);
   $("#here").removeAttr("class");
   $(".display").html("<strong><h1><i class = 'fa fa-2x fa-pull-left fa-quote-left'></i> " + quotes[number] + "</h1></strong><a target='_blank' href='"+ twitter  +"'><p class='fa fa-twitter'></p></a><a target='_blank' href='"+ facebook  +"'><p class='fa  fa-facebook'></p></a>");
   $("#sim").css("border", "solid yellow 4px");
