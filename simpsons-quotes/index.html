@@ -318,16 +318,9 @@ var quotes = [
 var search;
 var gyphy;
 var embed;
-var number;	
-$(document).ready(function() {	
-	//show the counter
-	$(".hit").click(function() {
-		 
-		$("#counter").removeAttr("class");
-	});	
-});
-
-$(".button").click(function(){
+var number;
+	
+function run() {
   number = Math.floor((Math.random() * quotes.length) + 1);
   var unicode = encodeURIComponent(quotes[number]).replace(/[!'()*]/g, escape);
   var twitter = "https://twitter.com/home/?status=" + unicode + "%23SimpsonsQuotes";
@@ -357,6 +350,26 @@ $(".button").click(function(){
    $("iframe").css("adding","0"); 
 	                    
   });
+}
+
+$(".button").click(function(){
+	run();
+});
+	
+$(document).ready(function() {
+	
+	//show the counter
+	$(".hit").click(function() {		 
+		$("#counter").removeAttr("class");
+	});
+  
+  setTimeout(function() {
+      run();      
+   }, 2000);
+  
+    setInterval(function(){ 
+    run();
+    }, 12000);
 });
 
 
