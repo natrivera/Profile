@@ -112,7 +112,7 @@ body {
   <div class="container-fluid">
     <div id="outside">
       <div id="spacer">Tic Tac Toe
-        <div id="message">Choose a symbol (X or O)</div>
+        <div id="message"></div>
       </div>
       <div id="game">
         <div class="row">
@@ -164,6 +164,7 @@ body {
 var started = false;
 var x, number1, number2;
 var count = 0;
+var message = "Choose a symbol (X or O)";
 var won1 = "";
 var won2, won3, message, currId;
 var arr = [
@@ -176,10 +177,22 @@ var arr = [
 var player = true;
    
 $(document).ready(function() {
-  setTimeout(function() {
-     $("#message").css("color" , "yellow");      
-   }, 1000); 
-});  
+  
+  fill();
+  $("#message").css("color" , "yellow");
+    
+    var j = 0;
+  setInterval(function() {
+    var s = message.charAt(j);
+    $("#message").append(s);
+
+    if (j < message.length) {
+      j++;
+    }
+           
+   }, 100);
+  
+}); 
 
 $("#choose").click(function() {
 
