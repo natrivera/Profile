@@ -132,6 +132,9 @@ text-align: center;
       	<div id="sim">
            <div class="row">      
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+		      <div class="hidden-xs hidden-sm hidden-md hidden-lg hidden-x" id="here"> 
+			      	<img  class="img img-responsive" src="/pics/simplogo.png">
+			      </div>
 		      <div class="display">
 		      		<div class='button'>
          		 		<img class='clouds' onClick='click' src='/pics/clickcloud.png'>
@@ -327,7 +330,7 @@ function run() {
   var facebook = "https://www.facebook.com/share.php?u=http://natrivera.com/simpsons-quotes/"
   gyphy = "https://api.giphy.com/v1/gifs/search?q=The%20Simpsons%20+" + quotes[number] + "&api_key=dc6zaTOxFJmzC";
 	
-  
+  $("#here).removeAttr("class");
   $(".display").html("<strong><h1><i class = 'fa fa-2x fa-pull-left fa-quote-left'></i> " + quotes[number] + "</h1></strong><a target='_blank' href='"+ twitter  +"'><p class='fa fa-twitter'></p></a><a target='_blank' href='"+ facebook  +"'><p class='fa  fa-facebook'></p></a>");
   $("#sim").css("border", "solid yellow 4px");
   $("#sim").css("margin-top", "1%");
