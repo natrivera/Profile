@@ -166,7 +166,8 @@ var x, number1, number2;
 var count = 0;
 var message = "Choose a symbol (X or O)";
 var won1 = "";
-var won2, won3, message, currId;
+var won2, won3, currId;
+var first = 0;
 var arr = [
   [5, 5, 5],
   [5, 5, 5],
@@ -196,6 +197,12 @@ $(document).ready(function() {
 
 $("#choose").click(function() {
 
+  if(first === 0)
+    {
+      clear();
+      first = 1;
+    }
+  
   $("#message").css("color" , "#fff");
   if (started === false) {
     //choose player
