@@ -5,7 +5,7 @@
 $(document).ready(function() {
 	
 	$("head").append("<script src='//cdn.rawgit.com/web-animations/web-animations-js/2.2.2/web-animations.min.js'></script><script src='//cdn.rawgit.com/gibbok/animatelo/1.0.1/dist/animatelo.min.js'></script>)");
-	window.animatelo.shake('form');
+	
 
 	//run animations	 
 	    AOS.init({
@@ -53,6 +53,6 @@ $(document).ready(function() {
 	ga('create', 'UA-91896922-1', 'auto');
   	ga('send', 'pageview');
 
-	
+	window.animatelo.shake('form');
 	
 });
