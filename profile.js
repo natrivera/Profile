@@ -53,6 +53,6 @@ $(document).ready(function() {
 	ga('create', 'UA-91896922-1', 'auto');
   	ga('send', 'pageview');
 
-	window.animatelo.shake('form');
+	animatelo.shake('form');
 	
 });
