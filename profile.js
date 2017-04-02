@@ -8,9 +8,9 @@ $(document).ready(function() {
 	window.animatelo.shake('form');
 
 	//run animations	 
-//	    AOS.init({
-//	    once: true,
-//	    });
+	    AOS.init({
+	    once: true,
+	    });
 	
 //	$('form').attr('data-aos', 'flip-down');
 //	$('form').attr('data-aos-duration', '400');
