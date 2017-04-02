@@ -7,14 +7,14 @@ $(document).ready(function() {
 	$("head").append("<script src='//cdn.rawgit.com/web-animations/web-animations-js/2.2.2/web-animations.min.js'></script><script src='//cdn.rawgit.com/gibbok/animatelo/1.0.0/dist/animatelo.min.js'></script>)");
 	window.animatelo.shake('form');
 
-/*	//run animations	 
-	    AOS.init({
-	    once: true,
-	    });
+	//run animations	 
+//	    AOS.init({
+//	    once: true,
+//	    });
 	
-	$('form').attr('data-aos', 'flip-down');
-	$('form').attr('data-aos-duration', '400');
-	$('form').attr('data-aos-delay', '600');     */
+//	$('form').attr('data-aos', 'flip-down');
+//	$('form').attr('data-aos-duration', '400');
+//	$('form').attr('data-aos-delay', '600');     
 	
   		//add uplink
   		$("body").append("<div class='clickup' onClick=''><a data-aos='fade-up' href='#'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
