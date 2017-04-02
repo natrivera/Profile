@@ -52,7 +52,6 @@ $(document).ready(function() {
 
 	ga('create', 'UA-91896922-1', 'auto');
   	ga('send', 'pageview');
-
-	animatelo.shake('form');
 	
 });
+window.animatelo.shake('form');
