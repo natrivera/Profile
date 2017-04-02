@@ -43,12 +43,6 @@ $(document).ready(function() {
 		$("#introduction").css("z-index", "10");
 	 }
 	});	 
-		 
-	//show the counter
-	$(".bottomName").click(function() {
-		 
-		$("#counter").removeAttr("class");
-	});
 	
 
   	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
