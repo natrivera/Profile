@@ -162,12 +162,12 @@ body {
 
 <script>
 var started = false;
+var message = "Select a symbol (X or O)";
 var x, number1, number2;
+var first = 0;
 var count = 0;
-var message = "Choose a symbol (X or O)";
 var won1 = "";
 var won2, won3, currId;
-var first = 0;
 var arr = [
   [5, 5, 5],
   [5, 5, 5],
@@ -175,14 +175,14 @@ var arr = [
 ];
 
 //player = true means player = X
-var player = true;
-   
+var player;
+
 $(document).ready(function() {
-  
+
   fill();
-  $("#message").css("color" , "yellow");
-    
-    var j = 0;
+  $("#message").css("color", "yellow");
+
+  var j = 0;
   setInterval(function() {
     var s = message.charAt(j);
     $("#message").append(s);
@@ -190,75 +190,87 @@ $(document).ready(function() {
     if (j < message.length) {
       j++;
     }
-           
-   }, 100);
-  
-}); 
 
-$("#choose").click(function() {
+  }, 100);
 
-  if(first === 0)
-    {
-      clear();
-      first = 1;
-    }
-  
-  $("#message").css("color" , "#fff");
-  if (started === false) {
-    //choose player
+});
+
+$("#x").click(function() {
+  if ($("#x").hasClass("chosen")) {
     $("#x").toggleClass("chosen");
     $("#o").toggleClass("chosen");
+  } else if (!$("#o").hasClass("chosen") && !$("#x").hasClass("chosen")) {
+    $("#o").toggleClass("chosen");
+  }
+  player = false;
+  choose();
+});
+$("#o").click(function() {
+  if ($("#o").hasClass("chosen")) {
+    $("#x").toggleClass("chosen");
+    $("#o").toggleClass("chosen");
+  } else if (!$("#x").hasClass("chosen") && !$("#o").hasClass("chosen")) {
+    $("#x").toggleClass("chosen");
+  }
+  player = true;
+  choose();
+});
 
+function choose() {
+  if (first === 0) {
+    clear();
+    first = 1;
+  }
+
+  $("#message").css("color", "#fff");
+  if (started === false) {
     turn();
   }
-});
+}
 
 //when the board is clicked
 $(".board").click(function() {
-  
-  $("#message").css("color" , "#fff");
+
+  $("#message").css("color", "#fff");
   //check if box is empty
-  if ($(this).html() === "") { 
-    
-      $(this).toggleClass("current");
-      game();
-      $(this).toggleClass("current");
-      computer();
+  if ($(this).html() === "") {
+
+    $(this).toggleClass("current");
+    game();
+    $(this).toggleClass("current");
+    computer();
   }
 });
 
 function computer() {
   var num;
   var random = [];
-  
+
   //fill an array with empty spots
-  for(var i = 0; i < 3; i++)
-    {
-      for(var j = 0; j < 3; j++)
-        {
-          var str = $("#" + i + j).html();
-          if(str === "")
-            {
-                random.push("#" + i + j);
-            }
-        }
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
+      var str = $("#" + i + j).html();
+      if (str === "") {
+        random.push("#" + i + j);
+      }
     }
-  
+  }
+
   //randomize a number from open spots
   num = random.length;
-  num =  Math.floor(Math.random() * num);
-  
+  num = Math.floor(Math.random() * num);
+
   //cumputer play after 1 sec
-  setTimeout(function(){  
+  setTimeout(function() {
     $(random[num]).toggleClass("current");
     game();
     $(random[num]).toggleClass("current");
-  }, 800);    
+  }, 800);
 }
 
 function game() {
-    play();
-    check();
+  play();
+  check();
 }
 
 function play() {
@@ -283,15 +295,11 @@ function play() {
   //cannot change playerSymbol after starting
   started = true;
 
-  turn();
-
-  //show active player
-  $("#x").toggleClass("chosen");
-  $("#o").toggleClass("chosen");
+  turn(); 
 
 }
 
-function turn() {
+function turn() { 
   //switch player
   if (player === true) {
     player = false;
@@ -300,6 +308,9 @@ function turn() {
     player = true;
     $("#message").html("X's turn");
   }
+   //show active player
+  $("#x").toggleClass("chosen");
+  $("#o").toggleClass("chosen");
 }
 
 function toggleWon() {
@@ -310,6 +321,7 @@ function toggleWon() {
 
 $(".again").click(function() {
   clear();
+  $(".again").css("background-color", "#333");
   $(".again").html("Reset");
   if (player === true) {
     $("#message").html("X's turn");
@@ -319,17 +331,14 @@ $(".again").click(function() {
 });
 
 function fill() {
-  for(var i = 0; i < 3; i++)
-    {
-      for(var j = 0; j < 3; j++)
-        {
-          var str = $("#" + i + j).html();
-          if(str === "")
-            {
-                $("#" + i + j).html("<i style='color:#222;'class='fa fa-5x fa-square' aria-hidden='true'></i>");
-            }
-        }
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
+      var str = $("#" + i + j).html();
+      if (str === "") {
+        $("#" + i + j).html("<i style='color:#222;'class='fa fa-5x fa-square' aria-hidden='true'></i>");
+      }
     }
+  }
 }
 
 function clear() {
@@ -451,6 +460,7 @@ function check() {
   if (won1 !== "") {
     $("#message").html("Player " + message);
     $(".again").html("Play Again");
+    $(".again").css("background-color", "rgba(255, 255, 255, 0.5)");
     toggleWon();
     fill();
   }
@@ -459,11 +469,11 @@ function check() {
     if (won1 === "") {
       $("#message").html("Tie Game!");
       $(".again").html("Play Again");
+      $(".again").css("background-color", "rgba(255, 255, 255, 0.5)");
     }
 
   }
 }
-
 </script>
 </body>
 </html>
