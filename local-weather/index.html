@@ -8,7 +8,8 @@
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
+  <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
   <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
   <script src="/profile.js"></script>
@@ -16,118 +17,149 @@
 
 <style>
 body {
-  background-color: #36454f; 
-  font:400 100%/1.3 'Oleo Script', Helvetica, sans-serif;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/c/c0/LA_San_Gabriel_Mountains.jpg"); 
+  
+  font-family: 'Oleo Script', sans-serif;
   color: #FFFFFF;
-  text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+  text-align: center;
+  font-size: 1.5em;
+}
+#spacer {
+  height: 50px;
 }
 .title {
-  text-align: center;
-  font-size: 200%;
+  margin: 2%;
+  font-size: 2em;
 }
-.info {
-  text-align: center;
-  font-size: 150%;
+.row {
+  margin: 0%;
 }
 img {
-  width: 40%;
-  height: 40%;
-  margin: -15% 0% -5% 0%;
-  
+  width: 200%;
 }
 .display {
-  background-color: #000000;
+  background-color: rgba(0,0,0,.5);
   margin: auto;
-  width: 70%;
-  border-radius: 10px;
-  border: solid 4px #2d2d2d;
+  border-radius: 15px;
+  border: solid 4px #000;
+  padding: 1%;
+  max-width: 500px;
 }
 .temperature li {
   list-style: none;
   display: inline-block;
-  padding-right: 1%;
-  margin: -15% 2% 0% 0%;
 }
 #kfc:hover {
   color: #0000ff;  
 }
-#weatherType {
-  font-size: 200%;
-  margin-top: -05%;
-  margin-bottom: 0%;
-}
 button {
   background-color: transparent;
   color: #FFFFFF;
-  font-size: 150%;
   border-color: transparent;
 }
-#homelink img{
-max-width: 15%;
-}
+
 
 </style>
 </head>
 
 <body>
-  <div id="homelink">
-    <a href="/"><img src="/pics/name.png"></a>
-  </div>
   
-<div class="title">
-  <h1>Local Weather </h1>
-</div>
-<div class="info">
-  <h2 id="city">Your City</h2>
-  <div class="display">
-    <div class="temperature"><ul>
-      <li><h2 id="temp">???</h2></li><li><h2 id= "kfc">&degF</h2></li>
-      </ul>
+  <div class="container">
+    <div id="spacer"></div>
+    <div class="display">
+      <div class="title">
+        <h1 id="city">Your City</h1>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div>
+            <p id="time"></p>
+            <p id="wind"></p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="temperature">
+            <ul>
+              <li>
+                <p id="temp">???</p></li>
+              <li>
+                <p id="kfc">&degF</p></li>
+              <li>
+                <div id="iconId">
+                  <img src="http://openweathermap.org/img/w/01d.png">
+                </div>
+              </li>
+            </ul>
+            <p id="weatherType">Condition</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <i class="wi wi-night-sleet"></i>
-    <div id="iconId"><img src = "https://openweathermap.org/img/w/01d.png"></div>
-    <p id="weatherType">Condition</p>
   </div>
-  <div id="data">
-  </div>
-</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <script>
 $(document).ready(function() {
   var data = document.getElementById("data");
-  var lat;
-  var long;
-  var region;
-  var ftemp;
-  var ctemp;
-  var city;
-  var icon;
-  var iconId;
-  var weatherType;
-  var label;
-  var ktemp;
-  var ftemp;
-  var ctemp;
-  var speed;
-  var dtemp;
-  var iconP;
-  var locApi = "https://freegeoip.net/json/";
+  var lat, sunset, direction, sunrise;
+  var now = new Date(), hours = now.getHours();
+  var long, region, ftemp, ctemp, city, icon, iconId, weatherType, label;
+  var ktemp, speed, dtemp;
+  var locApi = "http://ip-api.com/json";
   var iconApi = 'https://gist.githubusercontent.com/tbranyen/62d974681dea8ee0caa1/raw/3405bfb2a76b7cbd90fde33d8536f0cd13706955/icons.json';
-  //var iconP = ("<img src='https://openweathermap.org/img/w/" + icon + ".png'>");
-  $.getJSON(locApi, function(pos) {
-    lat = pos.latitude;
-    long = pos.longitude;
-    region = pos.region_code;
-    var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+  var iconP = ("<img src='http://openweathermap.org/img/w/" + icon + ".png'>");
+  
+  setInterval(function() {
+ 
+  now = new Date();
+     
+  //calculate mins and seconds
+  var ampm = "AM";
+  var date = now.toDateString();
+  hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+    if(seconds < 10) {
+      seconds = "0" + seconds.toString();
+    }
+    if (minutes < 10) {
+      minutes = "0" + minutes.toString();
+    }
+    if(hours > 12) {
+      hours -= 12;
+      ampm = "PM";
+    } else {
+      ampm = "AM";
+    }
     
+  $("#time").html(date);
+  $("#time").append("<p>" + hours + ":" + minutes + ":" + seconds + " " + ampm + "</p>");
+     
+  }, 1000);
+  
+  
+  
+  $.getJSON(locApi, function(pos) {
+    lat = pos.lat;
+    long = pos.lon;
+    region = pos.region;
+    var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+   
     $.getJSON(wapi, function(num) {
       city = num.name;
+      sunrise = new Date(num.sys.sunrise * 1000).getHours();
+      sunset = new Date(num.sys.sunset * 1000).getHours();
+      if(hours > sunset || hours < sunrise) {
+      $("body").css("background", "url('https://c1.staticflickr.com/8/7271/7475904040_24a05ca634_b.jpg')");
+    }  
       weatherType = num.weather[0].description;
       icon = num.weather[0].icon;
       label = num.weather[0].id;
       ktemp = num.main.temp;
       speed = num.wind.speed;
+      direction = num.wind.deg;
       ftemp = Math.round((ktemp * (9 / 5)) - 459.67);
       ctemp = Math.round(ktemp - 273);
       $("#temp").html(ftemp);
@@ -137,13 +169,13 @@ $(document).ready(function() {
       $("#icon").html(icon);
       $("#label").html(label);
       dtemp = ftemp;
-     // iconId = weatherIcons[label].icon;
-      iconP = ("<img src='https://openweathermap.org/img/w/" + icon + ".png'>");
+      var iconP = "<img src='http://openweathermap.org/img/w/" + icon + ".png'>";
       $("#iconId").html(iconP);
+      
+      direction = getCardinal(direction);
+      
+      $("#wind").html("Winds: "  + speed + " mph " + direction);
     });
-
-//console.log(wapi);
-//console.log(icon);
   });
   $("#kfc").click(function() {
     if (dtemp === ftemp) {
@@ -159,6 +191,33 @@ $(document).ready(function() {
   });
 
 });
+ function getCardinal(angle) {
+        //easy to customize by changing the number of directions you have 
+       // thank you basarat from github     
+        var directions = 8;
+        
+        var degree = 360 / directions;
+        angle = angle + degree/2;
+        
+        if (angle >= 0 * degree && angle < 1 * degree)
+            return "N";
+        if (angle >= 1 * degree && angle < 2 * degree)
+            return "NE";
+        if (angle >= 2 * degree && angle < 3 * degree)
+            return "E";
+        if (angle >= 3 * degree && angle < 4 * degree)
+            return "SE";
+        if (angle >= 4 * degree && angle < 5 * degree)
+            return "S";
+        if (angle >= 5 * degree && angle < 6 * degree)
+            return "SW";
+        if (angle >= 6 * degree && angle < 7 * degree)
+            return "W";
+        if (angle >= 7 * degree && angle < 8 * degree)
+            return "NW";
+        //Should never happen: 
+        return "N";
+    }
 </script>
 </body>
 </html>
