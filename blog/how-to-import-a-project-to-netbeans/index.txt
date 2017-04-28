@@ -3,9 +3,9 @@
 <html>
 <head>
 
-<title>My DATA SELFie | Blog by Nat Rivera</title>
+<title>Import a project to NetBeans | Blog by Nat Rivera</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <meta name="description" content="What your Facebook activity looks like to advertisers. #DataScience #MachineLearning">
+    <meta name="description" content="Learn to import a project to netbeans">
     <meta name="keywords" content="Nat Rivera">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -74,7 +74,7 @@
     </div>	
 	
 	
-<iframe src="https://itsnatrivera.wordpress.com/2017/02/26/your-data-selfie/" 
+<iframe src="https://itsnatrivera.wordpress.com/2017/04/28/how-to-import-a-project-in-netbeans/" 
 	style="position:fixed; 
 	       top:0px; 
 	       left:0px; 
