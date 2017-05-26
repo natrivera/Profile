@@ -321,6 +321,8 @@ function toggleWon() {
   $("#" + won1 + "").toggleClass("won");
   $("#" + won2 + "").toggleClass("won");
   $("#" + won3 + "").toggleClass("won");
+  var audio = new Audio('bell-ringing-04.mp3');
+  audio.play();
 }
 
 $(".again").click(function() {
