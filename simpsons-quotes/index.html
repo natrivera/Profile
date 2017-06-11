@@ -337,8 +337,9 @@ function run() {
   $("#sim").css("margin-top", "1%");
   $("#sim").css("padding", "1%");
   $.getJSON(gyphy, function(gif){
-    search = gif.data[0].images.fixed_height.url;
-    embed = gif.data[0].embed_url;
+    var num = Math.floor((Math.random() * 24) + 1);
+    search = gif.data[num].images.fixed_height.url;
+    embed = gif.data[num].embed_url;
     
    $(".gif").html("<iframe class='giphy-embed' src='" + embed + "'></iframe><p><a target= '_blank' href='" + search + "'>via GIPHY</a></p>" );
    $("iframe").css("position","relative");
