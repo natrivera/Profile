@@ -321,14 +321,19 @@ var quotes = [
 var search;
 var gyphy;
 var embed;
-var number;
+var number = 0;
 var starter = 0;
 	
 function run() {
-  //random number to get a random quote
-  number = Math.floor((Math.random() * quotes.length));
 	
-  var now = quotes[number];
+	var arrayQ = "http://natrivera.com/simpsons-quotes/quote.json";
+	$.getJSON(arrayQ, function(q){
+		 //random number to get a random quote
+  		number = Math.floor((Math.random() * q.quotes.length));
+		var now = q.quotes[num];	
+	});
+	
+ 
   var num1 = now.lastIndexOf("-");
   var person = now.substring(num1 + 1);
   var said = now.substring(0, (num1 - 1));
