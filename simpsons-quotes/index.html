@@ -169,12 +169,12 @@ text-align: center;
 function run() {
 	//random number to get a random quote
         number = Math.floor((Math.random() * 158));
-	var bool = true;
-	while (bool)
+	var bool = 0;
+	while (bool == 0)
 	{
 		if (!$.inArray(number, numbers))
 		{
-			bool = false;
+			bool = 1;
 			numbers.push(number);
 		}
 		else if ($.inArray(number, numbers))
@@ -183,7 +183,8 @@ function run() {
 		}
 		else
 		{
-			bool = false;
+			bool = 1;
+			number = Math.floor((Math.random() * 158));
 		}
 	}
 	
