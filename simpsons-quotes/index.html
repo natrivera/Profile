@@ -157,7 +157,7 @@ text-align: center;
 		 	<img align="right" id="counter" class="hidden-xs hidden-sm hidden-md hidden-lg hidden-xl" src="http://hitwebcounter.com/counter/counter.php?page=6594696&style=0024&nbdigits=5&type=ip&initCount=0" border="0" > 	
 	</div>
 <script>
-	var numbers = new Array(5);
+	var numbers = [];
 	var search;
 	var gyphy;
 	var embed;
@@ -167,6 +167,12 @@ text-align: center;
 	var arrayQ = "http://natrivera.com/simpsons-quotes/quote.json";
 		
 function run() {
+	
+	if(numbers.length > 20)
+	{
+		numbers.pop();
+	}
+	
 	//random number to get a random quote
         number = Math.floor((Math.random() * 158));
 	var bool = 0;
