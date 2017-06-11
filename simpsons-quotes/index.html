@@ -324,7 +324,7 @@ var embed;
 var number;
 	
 function run() {
-  number = Math.floor((Math.random() * quotes.length) + 1);
+  number = Math.floor((Math.random() * quotes.length));
   var unicode = encodeURIComponent(quotes[number]).replace(/[!'()*]/g, escape);
   var twitter = "https://twitter.com/home/?status=" + unicode + "%23SimpsonsQuotes";
   var facebook = "https://www.facebook.com/share.php?u=http://natrivera.com/simpsons-quotes/"
