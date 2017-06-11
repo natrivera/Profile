@@ -356,6 +356,17 @@ function run() {
 	
   $.getJSON(gyphy, function(gif){
     var num = Math.floor((Math.random() * 3) );
+	  
+    for (var i = 0; i < 25; i++)
+    {
+    	var source = gif.data[i].source;
+	if(source.equals("http://www.simpsonsworld.com"))
+	{
+	   num = i;
+	   i = 25;
+	}
+    }
+	    
     search = gif.data[num].images.fixed_height.url;
     embed = gif.data[num].embed_url;
     
