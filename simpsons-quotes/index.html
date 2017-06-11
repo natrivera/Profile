@@ -341,7 +341,7 @@ function run() {
   var facebook = "https://www.facebook.com/share.php?u=http://natrivera.com/simpsons-quotes/"
   
   //url to look up gif
-  gyphy = "https://api.giphy.com/v1/gifs/search?q=The%20Simpsons%20+" + person + said + "%20The%20Simpsons%20&api_key=dc6zaTOxFJmzC";
+  gyphy = "https://api.giphy.com/v1/gifs/search?q=" + person + "%20" + said + "%20The%20Simpsons%20&api_key=dc6zaTOxFJmzC";
 
   if(starter == 0) {	
 	$("html, body").animate({ scrollTop: $(".display").offset().top }, 1000);
@@ -349,7 +349,7 @@ function run() {
    }
   
   $("#here").removeAttr("class");	
-  $(".display").html("<strong><h1><i class = 'fa fa-2x fa-pull-left fa-quote-left'></i> " + said + "\n" + person + "</h1></strong><a target='_blank' href='"+ twitter  +"'><p class='fa fa-twitter'></p></a><a target='_blank' href='"+ facebook  +"'><p class='fa  fa-facebook'></p></a>");
+  $(".display").html("<strong><h1><i class = 'fa fa-2x fa-pull-left fa-quote-left'></i> " + said + "P\nP" + person + "</h1></strong><a target='_blank' href='"+ twitter  +"'><p class='fa fa-twitter'></p></a><a target='_blank' href='"+ facebook  +"'><p class='fa  fa-facebook'></p></a>");
   $("#sim").css("border", "solid yellow 4px");
   $("#sim").css("margin-top", "1%");
   $("#sim").css("padding", "1%");
