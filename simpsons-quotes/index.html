@@ -325,15 +325,18 @@ var number;
 var starter = 0;
 	
 function run() {
-	//random number to get a random quote
+  //random number to get a random quote
   number = Math.floor((Math.random() * quotes.length));
-	//prepare qoate for URL
+  var now = quotes[number];
+  var num1 = now.lastIndexOf("-");
+  var person = now.substring(num1);
+  //prepare qoate for URL
   var unicode = encodeURIComponent(quotes[number]).replace(/[!'()*]/g, escape);
-	//twitter url with quote & facebook
+  //twitter url with quote & facebook
   var twitter = "https://twitter.com/home/?status=" + unicode + "%23SimpsonsQuotes";
   var facebook = "https://www.facebook.com/share.php?u=http://natrivera.com/simpsons-quotes/"
   //
-  gyphy = "https://api.giphy.com/v1/gifs/search?q=The%20Simpsons%20+" + quotes[number] + "&api_key=dc6zaTOxFJmzC";
+  gyphy = "https://api.giphy.com/v1/gifs/search?q=The%20Simpsons%20+" + person + quotes[number] + "&api_key=dc6zaTOxFJmzC";
 
   if(starter == 0) {	
 	$("html, body").animate({ scrollTop: $(".display").offset().top }, 1000);
