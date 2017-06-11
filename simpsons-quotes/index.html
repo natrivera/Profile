@@ -359,8 +359,8 @@ function run() {
 	  
     for (var i = 0; i < 25; i++)
     {
-    	var source = gif.data[i].source;
-	if(source.equals("http://www.simpsonsworld.com"))
+    	var slug = gif.data[i].slug;
+	if(slug.indexOf("simpsons") !== -1)
 	{
 	   num = i;
 	   i = 25;
