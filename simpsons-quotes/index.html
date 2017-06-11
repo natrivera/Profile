@@ -172,20 +172,16 @@ function run() {
 	var bool = 0;
 	while (bool == 0)
 	{
-		if (!$.inArray(number, numbers))
+		if ($.inArray(number, numbers) == -1)
 		{
 			bool = 1;
 			numbers.push(number);
 		}
-		else if ($.inArray(number, numbers))
+		else 
 		{
 			number = Math.floor((Math.random() * 158));
 		}
-		else
-		{
-			bool = 1;
-			number = Math.floor((Math.random() * 158));
-		}
+		
 	}
 	
 	
