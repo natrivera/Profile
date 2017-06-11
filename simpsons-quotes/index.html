@@ -337,7 +337,7 @@ function run() {
   $("#sim").css("margin-top", "1%");
   $("#sim").css("padding", "1%");
   $.getJSON(gyphy, function(gif){
-    var num = Math.floor((Math.random() * 24) + 1);
+    var num = Math.floor((Math.random() * 5) + 1);
     search = gif.data[num].images.fixed_height.url;
     embed = gif.data[num].embed_url;
     
