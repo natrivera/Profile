@@ -177,9 +177,13 @@ function run() {
 			bool = false;
 			numbers.push(number);
 		}
-		else 
+		else if ($.inArray(number, numbers))
 		{
 			number = Math.floor((Math.random() * 158));
+		}
+		else
+		{
+			bool = false;
 		}
 	}
 	
