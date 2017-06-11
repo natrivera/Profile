@@ -1,4 +1,5 @@
-quotes = [
+{
+   quotes :[
    "I'd rather let a thousand guilty men go free than chase after them. -Chief Wiggum",
    "Well, crying isn't gonna bring him back, unless your tears smell like dog food. So you can either sit there crying and eating can after can of dog food until your tears smell enough like dog food to make your dog come back, or you can go out there and find your dog. -Homer Simpson",
    "Go out on a Tuesday? Who am I, Charlie Sheen? -Marge Simpson",
@@ -17,11 +18,11 @@ quotes = [
    "(on phone) Lord, give me guidance...That's right, the guidance department. Thank you, Mrs. Lord. -Principal Skinner",
    "But look! I got some cool pogs: Alf pogs! Remember Alf? He's back...in pog form! -Milhouse Van Houten",
    "Ha ha wha. Oh, sorry I'm late. There was trouble at the lab with the running and the exploding and the crying when the monkeys stole the glasses off my head. Wh-ha ha. -Professor Frink",
-   "\"We the purple?\" What the hell was that? –Father of losing child contestant",
+   "\"We the purple?\" What the hell was that? â€“Father of losing child contestant",
    "Ow, my eye! I'm not supposed to get pudding in it. -Lenny",
    "A philanthropist. A humanitarian. A man of peace. These are just a few of the men who have come to spit on Montgomery Burns' grave. -Kent Brockman",
    "Sit perfectly still. Only I may dance. -Conan O'Brien",
-   "I wash myself with a rag on a stick. – Future Bart Simpson",
+   "I wash myself with a rag on a stick. â€“ Future Bart Simpson",
    "People, please. We're all frightened and horny, but we can't let some killer dolphins keep us from living and scoring! -Mayor Quimby",
    "My Homer is not a communist. He may be a liar, a pig, an idiot, a communist, but he is not a porn star. -Grampa Simpson",
    "Save me, Jebus! -Homer Simpson",
@@ -37,7 +38,7 @@ quotes = [
    "Tonight, on \"Wings\"... ah, who cares? -TV Announcer",
    "Inflammable means flammable? What a country. -Dr. Nick Riviera",
    "I can't believe you don't shut up! -Apu Nahasapeemapetilon",
-   "Ah, alcohol and night-swimming. It's a winning combination. –Lenny",
+   "Ah, alcohol and night-swimming. It's a winning combination. â€“Lenny",
    "I would kill everyone in this room for a drop of sweet beer. -Homer Simpson",
    "My eyes! The goggles do nothing! -Rainier Wolfcastle",
    "Priceless like a mother's love, or the good kind of priceless? -Bart Simpson",
@@ -58,9 +59,9 @@ quotes = [
    "Inside every hardened criminal beats the heart of a ten-year-old boy. -Bart Simpson",
    "It's not easy to juggle a pregnant wife and a troubled child, but somehow I managed to fit in eight hours of TV a day. -Homer Simpson",
    "Chat away. I'll just amuse myself with some pornographic playing cards. -Mayor Quimby",
-   "When are they gonna get to the fireworks factory? (begins to cry) –Milhouse Van Houten",
+   "When are they gonna get to the fireworks factory? (begins to cry) â€“Milhouse Van Houten",
    "Oh, loneliness and cheeseburgers are a dangerous mix. -Comic Book Guy",
-   "Skinner said the teachers will crack any minute purple monkey dishwasher. –Random Teacher",
+   "Skinner said the teachers will crack any minute purple monkey dishwasher. â€“Random Teacher",
    "Just because I don't care doesn't mean that I don't understand. -Homer Simpson",
    "My bones are so brittle. But I always drink plenty of...malk? -Bart Simpson",
    "Me fail English? That's unpossible. -Ralph Wiggum",
@@ -158,4 +159,5 @@ quotes = [
    "You have 24 hours to give us our money. And to show you we're serious...you have 12 hours. -Fat Tony",
    "I can't wait to eat that monkey. -Grandpa Simpson",
    "Uh, did I say corpse hatch? I meant innocence tube. -Mr Burns"
-];
+]
+}
