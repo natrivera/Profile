@@ -180,7 +180,7 @@ function run() {
   var said = now.substring(0, (num1 - 1));
 	
   //prepare qoate for URL
-  var unicode = encodeURIComponent(quotes[number]).replace(/[!'()*]/g, escape);
+  var unicode = encodeURIComponent(now).replace(/[!'()*]/g, escape);
 	
   //twitter url with quote & facebook
   var twitter = "https://twitter.com/home/?status=" + unicode + "%23SimpsonsQuotes";
