@@ -157,27 +157,7 @@ text-align: center;
 		 	<img align="right" id="counter" class="hidden-xs hidden-sm hidden-md hidden-lg hidden-xl" src="http://hitwebcounter.com/counter/counter.php?page=6594696&style=0024&nbdigits=5&type=ip&initCount=0" border="0" > 	
 	</div>
 <script>
-	
-$(".button").click(function(){
-	run();
-});
-	
-$(document).ready(function() {
-	
-	//show the counter
-	$(".hit").click(function() {		 
-		$("#counter").removeAttr("class");
-	});
-  
-  setTimeout(function() {
-      run();      
-   }, 2000);
-  
-    setInterval(function(){ 
-    run();
-    }, 12000);
-});	
-	
+		
 function run() {
 	
 	var search;
@@ -251,6 +231,21 @@ function run() {
 	  
   }); //end of getJSON function
 } //end of run funtion
+	
+$(".button").click(function(){
+	run();
+});//end of click funtion
+	
+$(document).ready(function() {
+	
+  setTimeout(function() {
+      run();      
+   }, 2000);
+  
+    setInterval(function(){ 
+    run();
+    }, 12000);
+});//end of document ready	
 	
 </script>
 </body>
