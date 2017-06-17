@@ -322,6 +322,7 @@
  border-radius: 10px;
  margin: 15% 15% 0% 15%;
  padding: 5%;
+ outline:1px solid black;
 }
 
 .blackbox h2 {
