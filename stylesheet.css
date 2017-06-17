@@ -320,8 +320,8 @@
 .blackbox {
  background: rgba(0,0,0,.5);
  border-radius: 10px;
- padding: 2%;
- margin-top: 2%;
+ padding: 15%;
+ /*margin-top: 2%;*/
 }
 
 .podplay h2 {
