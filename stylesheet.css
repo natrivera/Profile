@@ -324,6 +324,10 @@
  padding: 5%;
 }
 
+.blackbox h2 {
+ margin-top: 0%;
+}
+
 .podplay h2 {
  color: #4ba6b5;
 }
