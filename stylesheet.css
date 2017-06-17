@@ -323,7 +323,7 @@
  margin: 15% 15% 0% 15%;
  padding: 5%;
  border: rgba(0,0,0,.5) solid 5px;
- box-shadow: 0px 0px 0px 1px #333 inset;
+ box-shadow: 0px 0px 0px 10px #333 inset;
 }
 
 .blackbox h2 {
