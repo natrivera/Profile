@@ -323,8 +323,8 @@
  margin: 15% 15% 0% 15%;
  padding: 5%;
  outline: 5px solid black;
- outline-offset: 15%;
- outline-radius; 10%;
+ outline-offset: 30px;
+ outline-radius: 10px;
 }
 
 .blackbox h2 {
