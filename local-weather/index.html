@@ -105,18 +105,17 @@ button {
   </div>
 
 <script>
+  
 $(document).ready(function() {
   var data = document.getElementById("data");
-  var lat, sunset, direction, sunrise;
+  var lat = 34.07;
+  var long = -119.68;
+  var region = "CA";
   var now = new Date(), hours = now.getHours();
-  var long, region, ftemp, ctemp, city, icon, iconId, weatherType, label;
-  var ktemp, speed, dtemp;
   var locApi = "http://ip-api.com/json";
-  var iconApi = 'https://gist.githubusercontent.com/tbranyen/62d974681dea8ee0caa1/raw/3405bfb2a76b7cbd90fde33d8536f0cd13706955/icons.json';
-  var iconP = ("<img src='http://openweathermap.org/img/w/" + icon + ".png'>");
-  
+   
+  //show the time and date
   setInterval(function() {
- 
   now = new Date();
      
   //calculate mins and seconds
@@ -143,46 +142,36 @@ $(document).ready(function() {
      
   }, 1000);
   
+  //get the location
+  if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getLatLong);
+    
+        function getLatLong(position) {
+          lat =   position.coords.latitude; 
+          long =  position.coords.longitude;
+          run(lat , long , region);
+        }   
+  } else {
   
-  
-  $.getJSON(locApi, function(pos) {
-    lat = pos.lat;
-    long = pos.lon;
-    region = pos.region;
-    var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
-   
-    $.getJSON(wapi, function(num) {
-      city = num.name;
-      sunrise = new Date(num.sys.sunrise * 1000).getHours();
-      sunset = new Date(num.sys.sunset * 1000).getHours();
-      if(hours > sunset || hours < sunrise) {
-      $("body").css("background", "url('https://c1.staticflickr.com/8/7271/7475904040_24a05ca634_b.jpg')");
-    }  
-      weatherType = num.weather[0].description;
-      icon = num.weather[0].icon;
-      label = num.weather[0].id;
-      ktemp = num.main.temp;
-      speed = num.wind.speed;
-      direction = num.wind.deg;
-      ftemp = Math.round((ktemp * (9 / 5)) - 459.67);
-      ctemp = Math.round(ktemp - 273);
-      $("#temp").html(ftemp);
-      $("#weatherType").html(weatherType);
-      $("#speed").html(speed);
-      $("#city").html(city + ", " + region);
-      $("#icon").html(icon);
-      $("#label").html(label);
-      dtemp = ftemp;
-      var iconP = "<img src='http://openweathermap.org/img/w/" + icon + ".png'>";
-      $("#iconId").html(iconP);
-      
-      direction = getCardinal(direction);
-      
-      $("#wind").html("Winds: "  + speed + " mph " + direction);
-    });
-  });
+    $.getJSON(locApi, function(pos) {
+      lat = pos.lat;
+      long = pos.lon;
+      region = pos.region;
+
+      run(lat , long , region);
+      });
+  }
+    
+  //when the temp is switched between f or c
   $("#kfc").click(function() {
-    if (dtemp === ftemp) {
+      far();
+  });
+
+});
+
+function far() {
+  
+   if (dtemp === ftemp) {
       $("#kfc").html("&degC");
       $("#temp").html(ctemp);
       dtemp = ctemp;
@@ -191,10 +180,61 @@ $(document).ready(function() {
       $("#temp").html(ftemp);
       dtemp = ftemp;
     }
+}
 
-  });
+function run(lat , long , region) {
+  
+    var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+   
+    $.getJSON(wapi, function(num) {
+      
+      
+      //parse out all the needed info
+      var city = num.name;
+      
+      var weatherType = num.weather[0].description;
+      var icon = num.weather[0].icon;
+      var label = num.weather[0].id;
+      var ktemp = num.main.temp;
+      var speed = num.wind.speed;
+      var direction = num.wind.deg;
+      var ftemp = Math.round((ktemp * (9 / 5)) - 459.67);
+      var ctemp = Math.round(ktemp - 273);
+      var dtemp = ftemp;
+       
+      //load the info the site
+      $("#temp").html(ftemp);
+      
+      $("#weatherType").html(weatherType);
+      $("#speed").html(speed);
+      
+      $("#city").html(city + ", " + region);
+      $("#icon").html(icon);
+      $("#label").html(label);
+     
+      //get and load the icon url
+      var iconP = "<img src='http://openweathermap.org/img/w/" + icon + ".png'>";
+      $("#iconId").html(iconP);
+      
+      //use function to get and load wind direcction
+      direction = getCardinal(direction);
+      $("#wind").html("Winds: " + speed + " mph " + direction);  
+      
+      
+      var sunrise = new Date(num.sys.sunrise * 1000).getHours();
+      var sunset = new Date(num.sys.sunset * 1000).getHours();
+      
+      //change the background if time is after sunset
+      if(hours > sunset || hours < sunrise) {
+      $("body").css("background", "url('https://c1.staticflickr.com/8/7271/7475904040_24a05ca634_b.jpg')");
+      //$("body").css("background-color" , "#00009a");
+    } 
+    });
+   
+}
 
-});
+
+ //function to show wind direction
  function getCardinal(angle) {
         //easy to customize by changing the number of directions you have 
        // thank you basarat from github     
