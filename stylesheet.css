@@ -112,14 +112,16 @@
  padding: 0% 1% 0% 1%;
  min-height: 700px;
 }
-
+#wrapper {
+position: absolute;
+}
 #about-me {
  background: url("/pics/meandcanyon.JPG"); 
  background-repeat: no-repeat;
  background-size: 1600px 768px;
  background-position: center 0;
  z-index: -99;
- position: absolute;
+ position: relative;
 }
 #about-info {
 z-index: 99;
