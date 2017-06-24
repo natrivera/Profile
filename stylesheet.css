@@ -113,8 +113,8 @@
  min-height: 700px;
 }
 
-.aboutme {
- z-index: -1;   
+#about-me {
+ background: url("/pics/meandcanyon.JPG"); 
 }
 
 .aboutme img {
