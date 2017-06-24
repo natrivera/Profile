@@ -115,6 +115,9 @@
 
 #about-me {
  background: url("/pics/meandcanyon.JPG"); 
+ background-repeat: no-repeat;
+ background-size: 1600px 768px;
+ background-position; center 0;
 }
 
 .aboutme img {
