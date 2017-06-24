@@ -118,6 +118,10 @@
  background-repeat: no-repeat;
  background-size: 1600px 768px;
  background-position: center 0;
+ z-index: -99;
+}
+#about-info {
+z-index: 99;
 }
 
 .aboutme img {
