@@ -333,12 +333,15 @@ function turn() {
   $("#o").toggleClass("chosen");
 }
 
-function toggleWon() {
+function toggleWon(numb) {
   $("#" + won1 + "").toggleClass("won");
   $("#" + won2 + "").toggleClass("won");
   $("#" + won3 + "").toggleClass("won");
-  var audio = new Audio('bell-ringing-04.mp3');
-  audio.play();
+  if(numb == 1)
+  {
+    var audio = new Audio('bell-ringing-04.mp3');
+    audio.play();
+  }
 }
 
 $(".again").click(function() {
@@ -373,7 +376,7 @@ function clear() {
   $(".board").html("");
   started = false;
   if (won1 !== "") {
-    toggleWon();
+    toggleWon(0);
     won1 = "";
     won2 = "";
     won3 = "";
@@ -521,7 +524,7 @@ function check() {
     $("#message").html("Player " + message);
     $(".again").html("Play Again");
     $(".again").css("background-color", "rgba(255, 255, 255, 0.5)");
-    toggleWon();
+    toggleWon(1);
     fill();
   }
 
