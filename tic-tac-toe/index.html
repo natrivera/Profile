@@ -244,7 +244,7 @@ $(".board").click(function() {
 });
 
 function computer() {
-  console.log(arr);
+  //console.log(arr);
   var num;
   var random = [];
 
@@ -258,7 +258,7 @@ function computer() {
     }
   }
   var audio = new Audio('button-09.mp3');
-  audio.play()
+  audio.play();
   
   if(random.length > 0)
     {
@@ -290,7 +290,7 @@ function computer() {
 function game() {
   play();
   check();
-  console.log(arr);
+  //console.log(arr);
 }
 
 function play() {
@@ -408,7 +408,7 @@ function subarr() {
       
       if(arrsum == 5 || arrsum == 7)
         {
-          console.log("there is a " + arrsum + " at position " + i);
+          //console.log("there is a " + arrsum + " at position " + i);
           for(var j = 0; j < 3; j++)
             {
               if(temp[j] == 5)
@@ -530,6 +530,8 @@ function check() {
 
   if (count === 9) {
     if (won1 === "") {
+      var audio = new Audio('Error.mp3');
+      audio.play();
       $("#message").html("Tie Game!");
       $(".again").html("Play Again");
       $(".again").css("background-color", "rgba(255, 255, 255, 0.5)");
