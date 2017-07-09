@@ -244,6 +244,11 @@ function subarr(number) {
   var complic = [["00", "10", "20", "00", "01", "02", "00", "02" ],
                  ["01", "11", "21", "10", "11", "12", "11", "11"],
                  ["02", "12", "22", "20", "21", "22", "22", "20"]];
+   
+   if(arr[1][1] === 5)
+    {
+      answer = "11";
+    }
   
   //loop through all 8 possible winning combinations
   for (var i = 0; i < aggregate.length; i++)
