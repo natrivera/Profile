@@ -221,7 +221,6 @@ function run() {
   $("#sim").css("border", "solid yellow 4px");
   $("#sim").css("margin-top", "1%");
   $("#sim").css("padding", "1%");
-  $(".display").append("<div class='button'><img class='clouds' onClick='click' src='/pics/clickcloud.png'></div>");
 	
   $.getJSON(gyphy, function(gif){
     var num = Math.floor((Math.random() * 3) );
@@ -253,12 +252,16 @@ function run() {
    $("iframe").css("adding","0"); 
 	  
   }); //end of getJSON function
-	console.log(numbers);
+	//console.log(numbers);
 } //end of run funtion
 	
 $(".button").click(function(){
 	run();
 });//end of click funtion
+	
+$("#here").click(function(){
+	run();
+});//end of click funtion	
 	
 $(document).ready(function() {
 	
