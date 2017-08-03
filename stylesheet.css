@@ -229,13 +229,11 @@ z-index: 99;
 .linkbutton {
 text-align: center;
 margin: 5%; 
+box-shadow: 0px 4px 4px 4px #000; 
 }
 
-.linkbutton a {
-box-shadow: 0px 4px 4px 4px #000;
-}
 
-.linkbutton a:hover {
+.linkbutton:hover {
 box-shadow: 0px 4px 4px 4px #FFF;
 }
 
