@@ -232,7 +232,11 @@ margin: 5%;
 }
 
 .linkbutton button {
-box-shadow: 0px 4px 4px 4px #111;
+box-shadow: 0px 4px 4px 4px #000;
+}
+
+.linkbutton button:hover {
+box-shadow: 0px 4px 4px 4px #FFF;
 }
 
 .fa {
