@@ -118,7 +118,7 @@ text-align: center;
 		     	</div>
 		     
 		     	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-       				<img  class="logo hit" src="/pics/simplogo.png">
+       				<img  class="logo hit" onClick='click' src="/pics/simplogo.png">
 		     	</div>
 		     
 		     	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
@@ -148,7 +148,7 @@ text-align: center;
 	</div>
        
  	
-	<div><h2 id="instruct">Click on the cloud for a quote.</h2></div>
+	<div><h2 id="instruct">Click on the logo for a quote.</h2></div>
  </div>
 </div>
 		
@@ -260,6 +260,10 @@ $(".button").click(function(){
 });//end of click funtion
 	
 $("#here").click(function(){
+	run();
+});//end of click funtion
+	
+$(".logo").click(function(){
 	run();
 });//end of click funtion	
 	
