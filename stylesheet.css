@@ -231,11 +231,11 @@ text-align: center;
 margin: 5%; 
 }
 
-.linkbutton button {
+.linkbutton a {
 box-shadow: 0px 4px 4px 4px #000;
 }
 
-.linkbutton button:hover {
+.linkbutton a:hover {
 box-shadow: 0px 4px 4px 4px #FFF;
 }
 
