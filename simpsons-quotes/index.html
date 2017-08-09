@@ -211,10 +211,6 @@ function run() {
   //url to look up gif
   gyphy = "https://api.giphy.com/v1/gifs/search?q=" + person + " %20from" + " %20The%20Simpsons%20 " + said + "&api_key=dc6zaTOxFJmzC";
 
-  if(starter == 0) {	
-	$("html, body").animate({ scrollTop: $(".display").offset().top }, 1000);
-	starter++;
-   }
   $(".header").html("");
   $("#here").removeAttr("class");	
   $(".display").html("<strong><h1><i class = 'fa fa-2x fa-pull-left fa-quote-left'></i> " + said + "<br/><strong align='right'>" + person + "</strong></h1></strong><a target='_blank' href='"+ twitter  +"'><p class='fa fa-twitter'></p></a><a target='_blank' href='"+ facebook  +"'><p class='fa  fa-facebook'></p></a>");
