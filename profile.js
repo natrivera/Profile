@@ -54,7 +54,7 @@ $(document).ready(function() {
 	//hide the catalog info in academic work page
 	$(".catalog").click(function() {
 		alert("This is a test");
-		hideout();
+		hideOut();
 	}); 
 	
 
