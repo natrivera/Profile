@@ -1,14 +1,15 @@
  	 
 function hideOut(num) {
 	var information = "catalog" + num.toString();
+	var string = "#" + num.toString();
 	var x = document.getElementById(information);
 	
     if (x.style.display === 'none') {
         x.style.display = 'block';
-	    $("#" + num).class("fa fa-caret-up catalog");
+	    $(string).class("fa fa-caret-up catalog");
     } else {
         x.style.display = 'none';
-	    $("#" + num).class("fa fa-caret-down catalog");
+	    $(string).class("fa fa-caret-down catalog");
     }
 }	 
 
