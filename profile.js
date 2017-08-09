@@ -56,6 +56,7 @@ $(document).ready(function() {
 	//hide the catalog info in academic work page
 	$(".catalog").click(function() {
 		var i = $(this).attr('id');
+		alert("This is the info    " + i);
 		hideOut(i);
 	}); 
 	
