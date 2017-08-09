@@ -1,6 +1,6 @@
  	 
-function hideOut() {
-var x = document.getElementById('catalog');
+function hideOut(num) {
+var x = document.getElementById('catalog') + num;
     if (x.style.display === 'none') {
         x.style.display = 'block';
     } else {
@@ -53,8 +53,8 @@ $(document).ready(function() {
 	
 	//hide the catalog info in academic work page
 	$(".catalog").click(function() {
-		
-		hideOut();
+		var i = $(this).attr('id');
+		hideOut(i);
 	}); 
 	
 
