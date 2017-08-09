@@ -6,10 +6,12 @@ function hideOut(num) {
 	
     if (x.style.display === 'none') {
         x.style.display = 'block';
-	    $(string).class("fa fa-caret-up catalog");
+	    $(string).removeClass("fa-caret-down");
+	    $(string).addClass("fa-caret-up");
     } else {
         x.style.display = 'none';
-	    $(string).class("fa fa-caret-down catalog");
+	    $(string).removeClass("fa-caret-up");
+	    $(string).addClass("fa-caret-down");
     }
 }	 
 
