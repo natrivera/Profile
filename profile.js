@@ -1,8 +1,8 @@
  	 
 function hideOut(num) {
 	var information = "catalog" + num.toString();
-var x = document.getElementById(information);
-	alert(information);
+	var x = document.getElementById(information);
+	
     if (x.style.display === 'none') {
         x.style.display = 'block';
     } else {
@@ -56,7 +56,6 @@ $(document).ready(function() {
 	//hide the catalog info in academic work page
 	$(".catalog").click(function() {
 		var i = this.id;
-		alert("This is the info    " + i);
 		hideOut(i);
 	}); 
 	
