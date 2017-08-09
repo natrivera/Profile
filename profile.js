@@ -1,6 +1,6 @@
  	 
 function hideOut(num) {
-var x = document.getElementById('catalog') + num.toString();
+var x = document.getElementById('catalog' + num);
 	alert(x);
     if (x.style.display === 'none') {
         x.style.display = 'block';
