@@ -1,6 +1,6 @@
  	 
 function hideOut() {
-var x = document.getElementById('myDIV');
+var x = document.getElementById('catalog');
     if (x.style.display === 'none') {
         x.style.display = 'block';
     } else {
@@ -50,6 +50,11 @@ $(document).ready(function() {
 		$("#introduction").css("z-index", "10");
 	 }
 	});	 
+	
+	//hide the catalog info in academic work page
+	$(".catalog").click(function() {
+	hideout();
+	}); 
 	
 
   	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
