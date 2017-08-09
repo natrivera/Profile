@@ -265,6 +265,10 @@ box-shadow: 0px 4px 4px 4px #FFF;
  color: #000000;   
 }
 
+.catalog {
+float: right;
+}
+
 #poly h2,
 #poly h3,
 #chaffey h3,
