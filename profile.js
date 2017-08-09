@@ -1,7 +1,8 @@
  	 
 function hideOut(num) {
-var x = document.getElementById('catalog' + num);
-	alert(x);
+	var information = "catalog" + num;
+var x = document.getElementById(information);
+	alert(information);
     if (x.style.display === 'none') {
         x.style.display = 'block';
     } else {
