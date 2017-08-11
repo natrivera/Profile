@@ -58,6 +58,18 @@ button {
 #solutions {
   text-align: center;
 }
+    #link {
+    position: relative;
+    bottom: 0;    
+    } 
+    #link a {
+    color: #FFF;
+    text-decoration: none;    
+    }
+    #link a:hover {
+    text-decoration: none;
+    color: #000;    
+    }
 </style>
 <body>
 <div class="container-fluid">
@@ -67,7 +79,7 @@ button {
     <br>
     <input id="input" value="100"></input><button id="run" onClick="click">Run</button>
     <div id="results"></div>
-    <div id="link" style="bottom: 0; position: fixed;">Page by <a href="/" target="_blank" style="color: #fff; text-decoration:none;">Nat Rivera</a></div>
+    <div id="link">Page by <a href="/" target="_blank">Nat Rivera</a></div>
   </div>
 </div>
 <div id="solutions"></div>
