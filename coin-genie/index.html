@@ -1,0 +1,163 @@
+<head>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bentham" />
+<title>Coind Genie | by Nat Rivera</title>
+    <meta name="description" content="View all the combinations that add up to a dollar.">
+    <meta name="keywords" content="Nat Rivera">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+    
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/profile.js"></script>
+  </head>
+<style>
+body {
+  background-color: #85bb65;
+  color: #FFF;
+  font-family: Bentham;
+  font-size: 1.3em;
+}
+#tittle {
+  text-align: center;
+  font-size:  3em;
+}
+#display {
+  background-color: #2F4F4F;
+  font-weight: bold;
+  border-radius: 15px;
+  margin: 5px auto 5px auto;
+  padding: 10px;
+  max-width: 400px;
+  min-height: 400px;
+  border: 20px solid #000;
+  text-align: center;
+}
+input {
+  color: #FFF;
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid #000000;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0% 2% 0% 0%;
+  max-width: 200px;
+}
+button {
+  background-color: #000;
+  color: #FFF;
+  border: none;
+  font-size: 24px;
+  margin-top: 2%;
+}
+#solutions {
+  text-align: center;
+}
+</style>
+<body>
+<div class="container-fluid">
+  <div id="tittle">Coin Genie</div>
+  <div id="display">
+    <div id="answer">Enter a number from <strong>1 to 100</strong> and I'll return the number of coin combinations that add up to your number.</div>
+    <br>
+    <input id="input" value="100"></input><button id="run" onClick="click">Run</button>
+    <div id="results"></div>
+  </div>
+</div>
+<div id="solutions"></div>
+<script>
+//when button is clicked run the function
+$("#run").click(function() {
+  run();
+});
+
+//add click function to search input
+$("#input").keyup(function (e) {
+    if (e.keyCode == 13) {
+        run();
+    }
+});
+
+function run() {
+  //clear any output
+  $("#solutions").html("");
+  //declare the variables
+  var penny = 1;
+  var nickel = 5;
+  var dime = 10;
+  var quarter = 25;
+  var half = 50;
+  var dollar = 100;
+  var addsUp = 0;
+  //get the input and convert it to an integer
+  var input = document.getElementById("input").value;
+  var look = parseInt(input);
+  var array = [];
+  var beggining = "D - h - q - d - n - p";
+  array.push(beggining);
+  var message = "";
+  var numb = 0;
+
+  //if number is larger than 100 do not run
+  //else run the logic
+  if (look > 101) {
+    message = "<br>Sorry, I cannot work with numbers that large.";
+  } else if (isNaN(look)){
+    message = "\"" + input + "\" is not a valid entry.<br>Please enter a number.<br>i.e 45";
+  } else if (look < 0) {
+    message = "Please enter a positive number.";
+  } else {
+    //loop through all possible combinations of coins
+    for (var a = 0; a < 101; a++) {
+      for (var b = 0; b < 21; b++) {
+        for (var c = 0; c < 11; c++) {
+          for (var d = 0; d < 5; d++) {
+            for (var e = 0; e < 3; e++) {
+              for (var f = 0; f < 2; f++) {
+                //multiply the coin cominations by the coin value
+                //add up all the coins
+                //if they add up to 100 move up the counter
+                //also create a string of the amounts for the output
+                var sum = 0;
+                var dollars = f * dollar;
+                var halves = e * half;
+                var quarters = d * quarter;
+                var dimes = c * dime;
+                var nickels = b * nickel;
+                var pennies = a * penny;
+                sum = dollars + halves + quarters + dimes + nickels + pennies;
+                numb++;
+                if (sum === look) {
+                  addsUp++;
+                  var string =
+                    "" + f + " - " + e + " - " + d + " - " + c + " - " + b + " - " + a;
+                  array.push(string);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    //message will contain the counter
+    message = "<br><h2><strong>" + addsUp + "</strong></h2> <h3>Combinations <br>Add up to <strong>" + look + "¢</strong></h3" }
+  
+  //display message
+  //loop through array that has the correct combinations
+  $("#results").html(message);
+  $("#results").append("<br><br>I tried <strong>" + numb + "</strong> different combinations.");
+  for (var i = 0; i < array.length; i++) {
+   
+    $("#solutions").append( array[i]);
+    $("#solutions").append("<br>");
+    
+  }
+}
+
+</script>
+</body>
