@@ -1,0 +1,378 @@
+<head>
+
+<title>Financial Calculator | by Nat Rivera</title>
+    <meta name="description" content="Calculate the Net Present Value of your cash flows and more.">
+    <meta name="keywords" content="Nat Rivera">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+	
+   <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/profile.js"></script>
+<style>
+body {
+  background-color: #d3d3d3;
+  color: #000;
+  font: 2em;
+}
+#default {
+  height: 50vw;
+  text-align: center;
+  margin: 20%;
+}
+
+input , textarea {
+  background-color: #0003;
+  border: none;
+  border-bottom: 3px solid #fff;
+  margin: 2% 0% 1% -2%;
+  color: #000;
+  font-size: 1.5em;
+}
+button {
+  background-color: #0003;
+  color: #000;
+  border: none;
+  font-size: 1.5em;
+  margin: 2% 0% 2% 0%;
+}
+#calc button {
+  margin-left: -2%;
+}
+#footer {
+  bottom: 0;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="options">
+      <button id="bondytm" class="options" onClick="click">BOND YTM</button>
+      <button id="wacc" class="options" onClick="click">WACC</button>
+      <button id="npv" class="options" onClick="click">NPV</button>
+      <button id="presentvalue" class="options" onClick="click">PV</button>
+      <button id="futurevalue" class="options" onClick="click">FV</button>
+      <button id="interestrate" class="options" onClick="click">I/Y</button>
+      <button id="terms" class="options" onClick="click">N</button>
+      <div id="calc">
+        <div id="default">
+          <h1>Pick a Calculator<h1>
+        </div>
+        <div id="oppresentvalue" style="display:none;">
+          Present value<br>
+          <input id="interestprv"><br>I/Y<br>
+          <input id="nprv"><br>N<br>
+          <input id="pvprv" disabled="disabled" value="---------------------"><br>Present Value<br>
+          <input id="fvprv"><br>Future Value<br>
+          
+          <button id="prv" onClick="click">Calculate</button><br>
+          <input id="displayprv" disabled="disabled">
+        </div>
+        <div id="opfuturevalue" style="display:none;">
+          Future Value<br>
+          <input id="interestfrv"><br>I/Y<br>
+          <input id="nfrv"><br>N<br>
+          <input id="pvfrv"><br>Present Value<br>
+          <input id="fvfrv" disabled="disabled" value="-------------------"><br>Future Value<br>
+          
+          <button id="frv" onClick="click">Calculate</button><br>
+          <input id="displayfrv" disabled="disabled">
+        </div>
+        <div id="opinterestrate" style="display:none;">
+          Rate<br>
+          <input id="interestrte" disabled="disabled" value="-----------------"><br>I/Y<br>
+          <input id="nrte"><br>N<br>
+          <input id="pvrte"><br>Present Value<br>
+          <input id="fvrte"><br>Future Value<br>
+          
+          <button id="rte" onClick="click">Calculate</button><br>
+          <input id="displayrte" disabled="disabled"><br>
+        </div>
+        <div id="opterms" style="display:none;">
+          Number of Terms<br>
+          <input id="interesttrm"><br>I/Y<br>
+          <input id="ntrm" disabled="disabled" value="-------------------"><br>N<br>
+          <input id="pvtrm"><br>Present Value<br>
+          <input id="fvtrm"><br>Future Value<br>
+          
+          <button id="trm" onClick="click">Calculate</button><br>
+            <input id="displaytrm" disabled="disabled"></input><br>
+        </div>
+          <div id="opnpv" style="display:none;">
+            NPV<br>
+          <input id="interestnpvone"><br>I/Y<br>
+          <input id="initnpvone"><br>Initial Cash<br>
+            <textarea id="cfnpvone"></textarea><br>Cash Flows (comma separated)<br>                   
+          <button id="npvone" onClick="click">Calculate</button><br>
+            <input id="displaynpvone" disabled="disabled"></input><br>
+        </div>
+        <div id="opwacc" style="display:none;">
+          WACC - Enter Whole Numbers<br>
+          <div class="row">
+            <div class="col-sm-6"><input id="wewac"><br>We - Weight of Equity<br></div>
+            <div class="col-sm-6"><input id="rewac"><br>Re - Cost of Equity<br></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><input id="wdwac"><br>Wd - Weight of Debt<br></div>
+            <div class="col-sm-6"><input id="rdwac"><br>Rd - Cost of Debt<br></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6"><input id="wpwac"><br>Wp - Weight of Preffered Stock<br></div>
+            <div class="col-sm-6"><input id="rpwac"><br>Rp - Cost of Preffered Stock<br></div>
+            </div>
+          <div class="row">
+            <div class="col-sm-6"><input id="taxwac"><br>Tax - Tax Rate<br></div>
+              </div>
+          <div class="row">
+            <div class="col-sm-6"><button id="wac" onClick="click">Calculate</button><br></div>
+            <div class="col-sm-6"><input id="displaywac" disabled="disabled"></input><br></div>
+          </div>
+        </div>
+        <div id="opbondytm" style="display:none;">
+          Bond YTM Approx.<br>
+          <input id="interestytm" disabled="disabled" value="-----------------"><br>I/Y<br>
+          <input id="nytm"><br>N<br>
+          <input id="pvytm"><br>Present Value<br>
+          <input id="fvytm"><br>Future Value<br>
+          <input id="pmtytm"><br>Payment<br>
+          <div class="row">
+            <div class="col-sm-6"><button id="ytm" onClick="click">Calculate</button><br></div>
+            <div class="col-sm-6"><input id="displayytm" disabled="disabled"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div id="footer">Created by <a target="_blank" href="http://natrivera.com/">Nat Rivera</a></div>
+<script>
+
+function PV(future , n , int) {
+  int = int / 100;
+  var pv = future / (Math.pow((1 + int), n));
+  pv = Math.round(pv * 100) / 100;
+  return pv;
+}
+function FV(present , n , int) {
+  int = int / 100;
+  var fv = present * (Math.pow((1 + int), n));
+  fv = Math.round(fv * 100) / 100;
+  return fv;
+}
+function RATE(present , n , future) {
+  var number = future / present;
+  var rate = (Math.pow(number, (1 / n))) - 1;
+  rate = Math.round(rate * 10000) / 100;
+  return rate;
+}
+function TERM(present , rate , future) {
+  rate = rate / 100;
+  var number = future / present;
+  var terms = Math.log(number) / Math.log(1 + rate);
+  terms = Math.round(terms * 100) / 100;
+  return terms;
+}
+function WACC(We , Re , Wd , Rd , Wp , Rp , tax) {
+  var value = We + Wd + Wp;
+  tax = tax / 100;
+  We = We / value;
+  Re = Re / 100;
+  Wd = Wd / value; 
+  Rd = Rd / 100;
+  Wp = Wp / value;
+  Rp = Rp / 100;
+  var wacc = (We * Re) + (Wd * Rd) * (1 - tax) + (Wp * Rp);
+  wacc = Math.round(wacc * 1000) / 10;
+  return wacc;
+}
+
+function NPV(int , initial , arr) {
+  var npv = 0;
+  int = int / 100;
+  
+  for(var i = 0; i < arr.length; i++) {
+    var number = parseInt(arr[i]);
+    var t = i + 1;
+    npv += number / (Math.pow((1 + int) , t));
+  }
+  npv -= initial;
+  npv = Math.round(npv * 100) / 100;
+  return npv;
+}
+
+function YTM(pmt , future , present , terms) {
+  //C+((F-P)/n))/(F+P)/2
+  //($100+(($1,000-$920)/10))/($1,000+$920)/2
+  var ytm = (pmt + ((future - present) / terms)) / ((future + present) / 2);
+  ytm = Math.round(ytm * 10000) / 100;
+  return ytm;
+}
+
+$(".options").click(function() {
+  var chosen = this.id;
+  chosen = "#op" + chosen;
+  $("#presentvalue").css("background-color" , "#0003");
+  $("#futurevalue").css("background-color" , "#0003");
+  $("#interestrate").css("background-color" , "#0003");
+  $("#terms").css("background-color" , "#0003");
+  $("#npv").css("background-color" , "#0003");
+  $("#wacc").css("background-color" , "#0003");
+  $("#bondytm").css("background-color" , "#0003");
+  $(this).css("background-color" , "transparent");
+  $("#default").css("display" , "none");
+  $("#opnpv").css("display" , "none");
+  $("#opwacc").css("display" , "none");
+  $("#opfuturevalue").css("display" , "none");
+  $("#oppresentvalue").css("display" , "none");
+  $("#opterms").css("display" , "none");
+  $("#opinterestrate").css("display" , "none");
+  $("#opbondytm").css("display" , "none");
+  $(chosen).css("display" , "block");
+});
+
+
+$("#prv").click(function() {
+  var did = this.id;
+  var interest = parseInt($("#interest" + did).val());
+  var terms = parseInt($("#n" + did).val());
+  var presentval = parseInt($("#pv" + did).val());
+  var futureval = parseInt($("#fv" + did).val());
+  var payment = parseInt($("#pmt" + did).val());
+  
+  var pv = PV(futureval , terms , interest);
+  if(isNaN(pv)) {
+    $("#display" + did).val("ERROR");
+  } else {
+    $("#display" + did).val(pv + " Present Value");
+    $("#pv" + did).val(pv);
+  }
+  
+});
+
+$("#frv").click(function() {
+  var did = this.id;
+  var interest = parseInt($("#interest" + did).val());
+  var terms = parseInt($("#n" + did).val());
+  var presentval = parseInt($("#pv" + did).val());
+  var futureval = parseInt($("#fv" + did).val());
+  var payment = parseInt($("#pmt" + did).val());
+  
+  var fv = FV(presentval , terms , interest);
+  if(isNaN(fv)) {
+    $("#display" + did).val("ERROR");
+  } else {
+    $("#display" + did).val(fv + " Future Value");
+    $("#fv" + did).val(fv);
+  }
+  
+});
+
+$("#rte").click(function() {
+  var did = this.id;
+  var interest = parseInt($("#interest" + did).val());
+  var terms = parseInt($("#n" + did).val());
+  var presentval = parseInt($("#pv" + did).val());
+  var futureval = parseInt($("#fv" + did).val());
+  var payment = parseInt($("#pmt" + did).val());
+  
+  var rate = RATE(presentval , terms , futureval);
+  if(isNaN(rate)) {
+    $("#display" + did).val("ERROR");
+  } else {
+    $("#display" + did).val(rate + " Rate");
+    $("#interest" + did).val(rate);
+  }
+  
+});
+
+$("#trm").click(function() {
+  var did = this.id;
+  var interest = parseInt($("#interest" + did).val());
+  var terms = parseInt($("#n" + did).val());
+  var presentval = parseInt($("#pv" + did).val());
+  var futureval = parseInt($("#fv" + did).val());
+  var payment = parseInt($("#pmt" + did).val());
+  
+  var terms = TERM(presentval , interest , futureval);
+  if(isNaN(terms)) {
+      $("#display" + did).val("ERROR");
+  } else {
+      $("#display" + did).val(terms + " Terms");
+      $("#n" + did).val(terms);
+  }
+  
+});
+
+$("#wac").click(function() {
+  var did = this.id;
+  var we = parseInt($("#we" + did).val());
+  var re = parseInt($("#re" + did).val());
+  var wd = parseInt($("#wd" + did).val());
+  var rd = parseInt($("#rd" + did).val());
+  var wp = parseInt($("#wp" + did).val());
+  var rp = parseInt($("#rp" + did).val());
+  var tax = parseInt($("#tax" + did).val());
+  
+  var wacc = WACC(we , re , wd , rd , wp , rp , tax);
+  if(isNaN(wacc)) {
+      $("#display" + did).val("ERROR");
+  } else {
+      $("#display" + did).val(wacc + "% WACC"); 
+  }
+});
+
+$("#npvone").click(function() {
+  var did = this.id;
+  var interest = parseInt($("#interest" + did).val());
+  var init = parseInt($("#init" + did).val());
+  var cashflow = $("#cf" + did).val();
+  
+  var arr = cashflow.split(",");
+  
+  var npv = NPV(interest , init , arr);
+  if(isNaN(npv)) {
+    $("#display" + did).val("ERROR");
+  } else {
+    $("#display" + did).val(npv + " NPV");
+  }
+});
+
+$("#ytm").click(function() {
+  var did = this.id;
+  var interest = parseInt($("#interest" + did).val());
+  var terms = parseInt($("#n" + did).val());
+  var presentval = parseInt($("#pv" + did).val());
+  var futureval = parseInt($("#fv" + did).val());
+  var payment = parseInt($("#pmt" + did).val());
+  
+  var terms = YTM(payment , futureval , presentval , terms);
+  if(isNaN(terms)) {
+      $("#display" + did).val("ERROR");
+  } else {
+      $("#display" + did).val(terms + "% YTM");
+      $("#interest" + did).val(terms);
+  }
+  
+});
+
+
+
+</script>
+
+</body>
