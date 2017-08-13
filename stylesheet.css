@@ -323,6 +323,11 @@ text-align: right;
 .carousel a:hover {
  color: #000;
 }
+#webdev iframe {
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}
 
 #back {
  right: 0px;
