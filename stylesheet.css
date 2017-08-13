@@ -329,7 +329,7 @@ text-align: right;
   display: block;
 }
 iframe {
-  frameborder: 0;
+  border: none;
 }
 
 #back {
