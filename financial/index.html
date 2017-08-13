@@ -104,74 +104,70 @@ a:hover {
       <button id="interestrate" class="options" onClick="click">I/Y</button>
       <button id="terms" class="options" onClick="click">N</button>
       </div>
-      <div id="calc">
+      <div id="calc">      
         <div id="default">
           <h1>Pick a Calculator<h1>
         </div>
         <div id="oppresentvalue" style="display:none;">
           <h2>Present value</h2><br>
-          <input id="interestprv"><br>I/Y<br>
-          <input id="nprv"><br>N<br>
+          <input id="interestprv" value="5"><br>I/Y<br>
+          <input id="nprv" value="10"><br>N<br>
           <input id="pvprv" disabled="disabled" value="---------------------"><br>Present Value<br>
-          <input id="fvprv"><br>Future Value<br>
-          
+          <input id="fvprv" value="1000"><br>Future Value<br>          
           <button id="prv" onClick="click">Calculate</button><br>
           <input id="displayprv" disabled="disabled">
         </div>
         <div id="opfuturevalue" style="display:none;">
           <h2>Future Value</h2><br>
-          <input id="interestfrv"><br>I/Y<br>
-          <input id="nfrv"><br>N<br>
-          <input id="pvfrv"><br>Present Value<br>
-          <input id="fvfrv" disabled="disabled" value="-------------------"><br>Future Value<br>
-          
+          <input id="interestfrv" value+"5"><br>I/Y<br>
+          <input id="nfrv" value="10"><br>N<br>
+          <input id="pvfrv" value="500"><br>Present Value<br>
+          <input id="fvfrv" disabled="disabled" value="-------------------"><br>Future Value<br>     
           <button id="frv" onClick="click">Calculate</button><br>
           <input id="displayfrv" disabled="disabled">
         </div>
         <div id="opinterestrate" style="display:none;">
           <h2>Rate</h2><br>
           <input id="interestrte" disabled="disabled" value="-----------------"><br>I/Y<br>
-          <input id="nrte"><br>N<br>
-          <input id="pvrte"><br>Present Value<br>
-          <input id="fvrte"><br>Future Value<br>
-          
+          <input id="nrte" value="10"><br>N<br>
+          <input id="pvrte" value="500"><br>Present Value<br>
+          <input id="fvrte" value="1000"><br>Future Value<br>       
           <button id="rte" onClick="click">Calculate</button><br>
           <input id="displayrte" disabled="disabled"><br>
         </div>
         <div id="opterms" style="display:none;">
           <h2>Number of Terms</h2><br>
-          <input id="interesttrm"><br>I/Y<br>
+          <input id="interesttrm" value="5"><br>I/Y<br>
           <input id="ntrm" disabled="disabled" value="-------------------"><br>N<br>
-          <input id="pvtrm"><br>Present Value<br>
-          <input id="fvtrm"><br>Future Value<br>
-          
+          <input id="pvtrm" value="500"><br>Present Value<br>
+          <input id="fvtrm" value="1000"><br>Future Value<br>       
           <button id="trm" onClick="click">Calculate</button><br>
             <input id="displaytrm" disabled="disabled"></input><br>
         </div>
-          <div id="opnpv" style="display:none;">
+        <div id="opnpv" style="display:none;">
             <h2>NPV</h2><br>
-          <input id="interestnpvone"><br>I/Y<br>
-          <input id="initnpvone"><br>Initial Cash<br>
-            <textarea id="cfnpvone"></textarea><br>Cash Flows (comma separated)<br>                   
-          <button id="npvone" onClick="click">Calculate</button><br>
+            <input id="interestnpvone" value="15"><br>I/Y<br>
+            <input id="initnpvone" value="9000"><br>Initial Cash<br>
+            <textarea id="cfnpvone">7000,7000,7000,7000</textarea><br>Cash Flows (comma separated)<br>                   
+            <button id="npvone" onClick="click">Calculate</button><br>
             <input id="displaynpvone" disabled="disabled"></input><br>
         </div>
         <div id="opwacc" style="display:none;">
           <h2>WACC - Enter Whole Numbers</h2><br>
           <div class="row">
-            <div class="col-sm-6"><input id="wewac"><br>We - Weight of Equity<br></div>
-            <div class="col-sm-6"><input id="rewac"><br>Re - Cost of Equity<br></div>
+            <div class="col-sm-6"><input id="wewac" value="4000"><br>We - Weight of Equity<br></div>
+            <div class="col-sm-6"><input id="rewac" value="11"><br>Re - Cost of Equity<br></div>
           </div>
           <div class="row">
-            <div class="col-sm-6"><input id="wdwac"><br>Wd - Weight of Debt<br></div>
-            <div class="col-sm-6"><input id="rdwac"><br>Rd - Cost of Debt<br></div>
+            <div class="col-sm-6"><input id="wdwac" value="3000"><br>Wd - Weight of Debt<br></div>
+            <div class="col-sm-6"><input id="rdwac" value="9"><br>Rd - Cost of Debt<br></div>
           </div>
           <div class="row">
-            <div class="col-sm-6"><input id="wpwac"><br>Wp - Weight of Preffered Stock<br></div>
-            <div class="col-sm-6"><input id="rpwac"><br>Rp - Cost of Preffered Stock<br></div>
+            <div class="col-sm-6"><input id="wpwac" value="5000"><br>Wp - Weight of Preffered Stock<br></div>
+            <div class="col-sm-6"><input id="rpwac" value="10"><br>Rp - Cost of Preffered Stock<br></div>
             </div>
           <div class="row">
-            <div class="col-sm-6"><input id="taxwac"><br>Tax - Tax Rate<br></div>
+            <div class="col-sm-6"><input id="taxwac" value="34"><br>Tax - Tax Rate<br></div>
               </div>
           <div class="row">
             <div class="col-sm-6"><button id="wac" onClick="click">Calculate</button><br></div>
@@ -181,10 +177,10 @@ a:hover {
         <div id="opbondytm" style="display:none;">
           <h2>Bond YTM Approx.</h2><br>
           <input id="interestytm" disabled="disabled" value="-----------------"><br>I/Y<br>
-          <input id="nytm"><br>N<br>
-          <input id="pvytm"><br>Present Value<br>
-          <input id="fvytm"><br>Future Value<br>
-          <input id="pmtytm"><br>Payment<br>
+          <input id="nytm" value="10"><br>N<br>
+          <input id="pvytm" value="950"><br>Present Value<br>
+          <input id="fvytm" value="1000"><br>Future Value<br>
+          <input id="pmtytm" value="75"><br>Payment<br>
           <div class="row">
             <div class="col-sm-6"><button id="ytm" onClick="click">Calculate</button><br></div>
             <div class="col-sm-6"><input id="displayytm" disabled="disabled"></div>
