@@ -193,6 +193,13 @@ a:hover {
 </body>
 
 <script>
+	
+function formatDollar(num) {
+    var p = num.toFixed(2).split(".");
+    return "$" + p[0].split("").reverse().reduce(function(acc, num, i, orig) {
+        return  num=="-" ? acc : num + (i && !(i % 3) ? "," : "") + acc;
+    }, "") + "." + p[1];
+}	
 
 function PV(future , n , int) {
   int = int / 100;
@@ -292,7 +299,8 @@ $("#prv").click(function() {
   if(isNaN(pv)) {
     $("#display" + did).val("ERROR");
   } else {
-    $("#display" + did).val(pv + " Present Value");
+    //pv = formatDollar(pv);	  
+    $("#display" + did).val(formatDollar(pv) + " Present Value");
     $("#pv" + did).val(pv);
   }
   
@@ -310,7 +318,8 @@ $("#frv").click(function() {
   if(isNaN(fv)) {
     $("#display" + did).val("ERROR");
   } else {
-    $("#display" + did).val(fv + " Future Value");
+    //fv = formatDollar(fv);	  
+    $("#display" + did).val(formatDollar(fv) + " Future Value");
     $("#fv" + did).val(fv);
   }
   
@@ -382,7 +391,7 @@ $("#npvone").click(function() {
   if(isNaN(npv)) {
     $("#display" + did).val("ERROR");
   } else {
-    $("#display" + did).val(npv + " NPV");
+    $("#display" + did).val(formatDollar(npv) + " NPV");
   }
 });
 
