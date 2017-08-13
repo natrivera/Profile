@@ -260,8 +260,10 @@ function YTM(pmt , future , present , terms) {
 }
 
 $(".options").click(function() {
+  //get the current id
   var chosen = this.id;
   chosen = "#op" + chosen;
+  //remove any calculator showing and display the chosen one
   $("#presentvalue").css("background-color" , "#0003");
   $("#futurevalue").css("background-color" , "#0003");
   $("#interestrate").css("background-color" , "#0003");
@@ -281,7 +283,7 @@ $(".options").click(function() {
   $(chosen).css("display" , "block");
 });
 
-
+//run the present value calc
 $("#prv").click(function() {
   var did = this.id;
   var interest = parseInt($("#interest" + did).val());
