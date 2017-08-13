@@ -26,22 +26,31 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/profile.js"></script>
 <style>
-body {
+        body {
   background-color: #d3d3d3;
   color: #000;
   font: 2em;
 }
-#default {
-  height: 50vw;
+#top {
+  margin: 2% 0% 2% 0%;
+}
+#calc {
+  border: 10px solid #333;
+  padding: 2% 5% 5% 5%;
+  min-height: 75vh;
+}
+#calc h2 {
   text-align: center;
-  margin: 20%;
+}
+#default {
+  text-align: center;
 }
 
 input , textarea {
   background-color: #0003;
   border: none;
   border-bottom: 3px solid #fff;
-  margin: 2% 0% 1% -2%;
+  max-width: 100%;
   color: #000;
   font-size: 1.5em;
 }
@@ -50,10 +59,22 @@ button {
   color: #000;
   border: none;
   font-size: 1.5em;
-  margin: 2% 0% 2% 0%;
+
 }
 #calc button {
-  margin-left: -2%;
+ margin: 2% 0% 4% 0%;
+}
+#footer {
+  bottom: 0;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  text-decoration: none;
+  color: #fff;
 }
 	#footer a {
 	color: #FFF;
@@ -67,9 +88,13 @@ button {
 </head>
 
 <body>
-	<div id="footer">Created by <a target="_blank" href="http://natrivera.com/">Nat Rivera</a></div>
+	<head>
+</head>
+
+<body>
   <div class="container">
     <div id="options">
+      <div id="top">
       <button id="bondytm" class="options" onClick="click">BOND YTM</button>
       <button id="wacc" class="options" onClick="click">WACC</button>
       <button id="npv" class="options" onClick="click">NPV</button>
@@ -77,12 +102,13 @@ button {
       <button id="futurevalue" class="options" onClick="click">FV</button>
       <button id="interestrate" class="options" onClick="click">I/Y</button>
       <button id="terms" class="options" onClick="click">N</button>
+      </div>
       <div id="calc">
         <div id="default">
           <h1>Pick a Calculator<h1>
         </div>
         <div id="oppresentvalue" style="display:none;">
-          Present value<br>
+          <h2>Present value</h2><br>
           <input id="interestprv"><br>I/Y<br>
           <input id="nprv"><br>N<br>
           <input id="pvprv" disabled="disabled" value="---------------------"><br>Present Value<br>
@@ -92,7 +118,7 @@ button {
           <input id="displayprv" disabled="disabled">
         </div>
         <div id="opfuturevalue" style="display:none;">
-          Future Value<br>
+          <h2>Future Value</h2><br>
           <input id="interestfrv"><br>I/Y<br>
           <input id="nfrv"><br>N<br>
           <input id="pvfrv"><br>Present Value<br>
@@ -102,7 +128,7 @@ button {
           <input id="displayfrv" disabled="disabled">
         </div>
         <div id="opinterestrate" style="display:none;">
-          Rate<br>
+          <h2>Rate</h2><br>
           <input id="interestrte" disabled="disabled" value="-----------------"><br>I/Y<br>
           <input id="nrte"><br>N<br>
           <input id="pvrte"><br>Present Value<br>
@@ -112,7 +138,7 @@ button {
           <input id="displayrte" disabled="disabled"><br>
         </div>
         <div id="opterms" style="display:none;">
-          Number of Terms<br>
+          <h2>Number of Terms</h2><br>
           <input id="interesttrm"><br>I/Y<br>
           <input id="ntrm" disabled="disabled" value="-------------------"><br>N<br>
           <input id="pvtrm"><br>Present Value<br>
@@ -122,7 +148,7 @@ button {
             <input id="displaytrm" disabled="disabled"></input><br>
         </div>
           <div id="opnpv" style="display:none;">
-            NPV<br>
+            <h2>NPV</h2><br>
           <input id="interestnpvone"><br>I/Y<br>
           <input id="initnpvone"><br>Initial Cash<br>
             <textarea id="cfnpvone"></textarea><br>Cash Flows (comma separated)<br>                   
@@ -130,7 +156,7 @@ button {
             <input id="displaynpvone" disabled="disabled"></input><br>
         </div>
         <div id="opwacc" style="display:none;">
-          WACC - Enter Whole Numbers<br>
+          <h2>WACC - Enter Whole Numbers</h2><br>
           <div class="row">
             <div class="col-sm-6"><input id="wewac"><br>We - Weight of Equity<br></div>
             <div class="col-sm-6"><input id="rewac"><br>Re - Cost of Equity<br></div>
@@ -152,7 +178,7 @@ button {
           </div>
         </div>
         <div id="opbondytm" style="display:none;">
-          Bond YTM Approx.<br>
+          <h2>Bond YTM Approx.</h2><br>
           <input id="interestytm" disabled="disabled" value="-----------------"><br>I/Y<br>
           <input id="nytm"><br>N<br>
           <input id="pvytm"><br>Present Value<br>
@@ -166,6 +192,8 @@ button {
       </div>
     </div>
   </div>
+<div id="footer">Created by <a target="_blank" href="http://natrivera.com/">Nat Rivera</a></div>
+</body>
 
 <script>
 
