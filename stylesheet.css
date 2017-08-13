@@ -328,6 +328,9 @@ text-align: right;
   margin: 0 auto;
   display: block;
 }
+iframe {
+  frameborder: 0;
+}
 
 #back {
  right: 0px;
