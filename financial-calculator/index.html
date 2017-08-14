@@ -346,13 +346,13 @@ $("#trm").click(function() {
 });
 $("#wac").click(function() {
   var did = this.id;
-  var we = parseInt($("#we" + did).val());
-  var re = parseInt($("#re" + did).val());
-  var wd = parseInt($("#wd" + did).val());
-  var rd = parseInt($("#rd" + did).val());
-  var wp = parseInt($("#wp" + did).val());
-  var rp = parseInt($("#rp" + did).val());
-  var tax = parseInt($("#tax" + did).val());
+  var we = parseFloat($("#we" + did).val());
+  var re = parseFloat($("#re" + did).val());
+  var wd = parseFloat($("#wd" + did).val());
+  var rd = parseFloat($("#rd" + did).val());
+  var wp = parseFloat($("#wp" + did).val());
+  var rp = parseFloat($("#rp" + did).val());
+  var tax = parseFloat($("#tax" + did).val());
   
   var wacc = WACC(we , re , wd , rd , wp , rp , tax);
   if(isNaN(wacc)) {
