@@ -19,7 +19,7 @@ var soundarray = [sound0, sound1, sound2, sound3, sound4];
 function setDelay() {
   $("#" + arr[x]).css("opacity", ".1");
   $("#" + arr[x]).css("opacity", ".1");
-  audio = new Audio(soundarray[x]);
+  audio = new Audio(soundarray[arr[x]]);
   audio.play();
 
   setTimeout(function() {
