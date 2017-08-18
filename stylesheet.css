@@ -362,6 +362,15 @@ iframe {
  border: rgba(0,0,0,.5) solid 5px;
  box-shadow: 0px 0px 0px 10px #333 inset;
 }
+.projectbox {
+  border-radius: 10px;
+  border: #000 solid 5px;
+  box-shadow: 0px 0px 0px 10px #000 inset;
+  margin: 10% auto 0% auto;
+  text-align: center;
+  padding: 5%;
+  max-width: 700px;
+}
 
 .blackbox h2 {
  margin-top: 0%;
