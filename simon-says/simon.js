@@ -17,8 +17,9 @@ var soundarray = [sound0, sound1, sound2, sound3, sound4];
 
 //flash and unflash the cell
 function setDelay() {
-  $("#" + arr[x]).css("opacity", ".1");
-  $("#" + arr[x]).css("opacity", ".1");
+  var aydeee = arr[x];
+  $("#" + aydeee).css("opacity", ".1");
+  $("#" + aydeee).css("opacity", ".1");
   audio = new Audio(soundarray[arr[x]]);
   audio.play();
 
@@ -31,9 +32,12 @@ function setDelay() {
 } //end of setDelay
 
 function move(num) {
+  pause = false;
   x++;
   wait = setInterval(function() {
-    if (!pause) {
+    if (pause === false) {
+     // pause = true;
+      //console.log(" "  + pause + x);
       var y = x - 2;
       if (x < num) {
         temp = $("#counter").html();
@@ -65,19 +69,25 @@ function move(num) {
         winner = winner.substring(1, numb);
         if (checker !== winner) {
           pause = true;
+       
           arr1 = [];
           x = 1;
           $("#counter").html("|| ||");
+          //console.log(pause + "before" + x);
           var reUp = setTimeout(function() {
             $("#counter").html("0");
             pause = false;
-          }, 800);
+            //console.log(pause + "after" + x);
+          }, 600);
           playable = false; 
         }
       }
     }
+    
+     // pause = false;
+   
   }, 600);
-}
+}//end of move
 
 function game() {
   move(2);
@@ -93,7 +103,7 @@ function check(h) {
     bool = true;
   }
   return bool;
-}
+}//end of check
 
 function stop() {
   if (started) {
@@ -114,11 +124,11 @@ function stop() {
   started = false;
   checker = "";
   arr1 = [];
-}
+}//end of stop
 
 //start the game
 $("#start").click(function() {
-  
+  stop();
   //add 20 numbers to an array
   for (var i = 0; i < 20; i++) {
     random = Math.floor(Math.random() * 4) + 1;
@@ -148,7 +158,7 @@ $(".piece").click(function() {
     audio.play();
 
     //delay the return to opacity
-    var piecewait = setInterval(function() {
+    var piecewait = setTimeout(function() {
       $("#" + aydee).css("opacity", ".9");
       pause = false;
     }, 400); //
