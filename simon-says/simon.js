@@ -28,7 +28,7 @@ function setDelay() {
     $(".two").css("opacity", ".9");
     $(".three").css("opacity", ".9");
     $(".four").css("opacity", ".9");
-  }, 400);
+  }, 300);
 } //end of setDelay
 
 function move(num) {
@@ -78,7 +78,7 @@ function move(num) {
             $("#counter").html("0");
             pause = false;
             //console.log(pause + "after" + x);
-          }, 600);
+          }, 800);
           playable = false; 
         }
       }
@@ -86,7 +86,7 @@ function move(num) {
     
      // pause = false;
    
-  }, 600);
+  }, 500);
 }//end of move
 
 function game() {
@@ -161,6 +161,6 @@ $(".piece").click(function() {
     var piecewait = setTimeout(function() {
       $("#" + aydee).css("opacity", ".9");
       pause = false;
-    }, 400); //
+    }, 300); //
   }
 });
