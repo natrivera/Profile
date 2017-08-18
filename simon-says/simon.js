@@ -78,7 +78,7 @@ function move(num) {
             $("#counter").html("0");
             pause = false;
             //console.log(pause + "after" + x);
-          }, 800);
+          }, 1200);
           playable = false; 
         }
       }
