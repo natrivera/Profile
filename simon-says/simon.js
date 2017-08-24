@@ -7,6 +7,7 @@ var random, wait, m, y, sound, audio, winner, checker, temp;
 var started = false;
 var playable = false;
 var pause = false;
+var strict = false;
 var sound1 = "https://s3.amazonaws.com/freecodecamp/simonSound1.mp3";
 var sound2 = "https://s3.amazonaws.com/freecodecamp/simonSound2.mp3";
 var sound3 = "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3";
@@ -68,19 +69,25 @@ function move(num) {
         winner = arr.join("");
         winner = winner.substring(1, numb);
         if (checker !== winner) {
-          pause = true;
-       
-          arr1 = [];
-          x = 1;
-          $("#counter").html("|| ||");
-          //console.log(pause + "before" + x);
-          var reUp = setTimeout(function() {
-            $("#counter").html("0");
-            pause = false;
-            //console.log(pause + "after" + x);
-          }, 1200);
-          playable = false; 
-        }
+          if(!strict) {          
+            pause = true;
+            arr1 = [];
+            x = 1;
+            $("#counter").html("|| ||");
+            //console.log(pause + "before" + x);
+            var reUp = setTimeout(function() {
+              $("#counter").html("0");
+              pause = false;
+              //console.log(pause + "after" + x);
+            }, 800);
+            playable = false; 
+          } else {
+            $("#counter").html("|| ||");
+            var fail = setTimeout(function() {
+               stop(); 
+            }, 800);
+          }
+        }//end of WRONG
       }
     }
     
@@ -163,4 +170,16 @@ $(".piece").click(function() {
       pause = false;
     }, 300); //
   }
+});
+
+//toggle strict on and off
+$("#strict").click(function() {
+  if(strict) {
+    strict = false;
+    $("#strict").html("Strict: OFF");
+  } else {
+    strict = true;
+    $("#strict").html("Strict: ON");
+  }
+  //
 });
