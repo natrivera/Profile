@@ -152,18 +152,23 @@ margin-top: 20px;
 </head>
 
 <body>
+ <head>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
   <div class="container-fluid">
     <div id="tittle">
       <h1 class="selector">Simon Game</h1></div>
     <div id="wrapper">
       <div class="inner">
         <div class="row">
-          <span class="piece one" onClick="click" id="1"></span>
-          <span class="piece two" onClick="click" id="2"></span>
+          <div class="piece one" onClick="click" id="1"></div>
+          <div class="piece two" onClick="click" id="2"></div>
         </div>
         <div class="row">
-          <span class="piece three" onClick="click" id="3"></span>
-          <span class="piece four" onClick="click" id="4"></span>
+          <div class="piece three" onClick="click" id="3"></div>
+          <div class="piece four" onClick="click" id="4"></div>
         </div>
       </div>
     </div>
@@ -171,11 +176,10 @@ margin-top: 20px;
       
       <button id="start" onClick="click">Start</button>
       <span id="counter">0</span>
-      <button id="stop" onClick="click">Reset</button>
-      <div id="self">Created by <a target="_blank" href="http://natrivera.com/">Nat Rivera</a></div>
+      <button id="strict" onClick="click">Strict: OFF</button>
+      
     </div>
   </div>
-
-	<script src="/simon-says/simon.js"></script>
+</body>
 </body>
 </html>
