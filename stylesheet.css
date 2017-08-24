@@ -370,6 +370,7 @@ iframe {
   text-align: center;
   padding: 1% 5% 5% 5%;
   max-width: 700px;
+  background-color: #D3D3D3; 
 }
 
 .blackbox h2 {
