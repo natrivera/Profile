@@ -19,7 +19,8 @@ function hideOut(num) {
 $(document).ready(function() {
 	
 	$("head").append("<script src='//cdn.rawgit.com/web-animations/web-animations-js/2.2.2/web-animations.min.js'></script><script src='//cdn.rawgit.com/gibbok/animatelo/1.0.1/dist/animatelo.min.js'></script>)");
-	
+	$("head").append("<script src='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js'></script>");
+	$("head").append("<link href='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css' rel='stylesheet'>");
 
 	//run animations	 
 	    AOS.init({
