@@ -369,12 +369,12 @@ iframe {
   box-shadow: 0px 0px 0px 10px #000 inset;
   margin: 10% auto 0% auto;
   text-align: center;
-  padding: 5% 5% 1% 5%;
+  padding: 5% 5% 3% 5%;
   max-width: 700px;
   background-color: #D3D3D3; 
 }
 .projectbox img {
-  border: 3px solid #000;
+  border: 5px solid #000;
  border-radius: 10px;
 }
 
