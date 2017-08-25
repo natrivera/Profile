@@ -389,7 +389,8 @@ iframe {
  border-radius: 10px;
 }
 .projectbox img:hover {
-  box-shadow: 0px 0px 0px 10px #FFF inset;
+  box-shadow: 0px 0px 5px 0px;
+  color: #FFFFFF;
 }
 
 .blackbox h2 {
