@@ -408,6 +408,9 @@ iframe {
 .display {
  z-index: -1;
 }
+.display img{
+border-radius: 5px;
+}
 
 body {
   position: relative;
