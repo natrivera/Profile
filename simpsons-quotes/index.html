@@ -91,9 +91,10 @@ text-decoration: none
 color: #000000;
 }
 
-#simpsons {
-min-height: 500px;	
+#sim {
+min-height: 1vh;	
 }
+	
 	
 #instruct {
 color: yellow;	
@@ -231,6 +232,8 @@ function run() {
 	   i = 25;
 	}
     }
+	  //this ignores the logic above
+	  num = 0;
 	    
     search = gif.data[num].images.fixed_height.url;
     embed = gif.data[num].embed_url;
@@ -247,7 +250,6 @@ function run() {
    $("iframe").css("border","none"); 
    $("iframe").css("margin","0"); 
    $("iframe").css("adding","0"); 
-   $("#sim").css("min-height" , "1vh");
 	  
   }); //end of getJSON function
 	//console.log(numbers);
