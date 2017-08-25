@@ -110,11 +110,16 @@ bottom: 0;
 width: 100%;
 text-align: center;	
 }
+#screen {
+max-width: 500px;
+margin: auto;	
+}	
 </style>
 </head>
 	
 <body>
 <div class="container">
+<div id="screen">	
   <div id="tittle">Trivia Game</div>
   <div id="welcome">
     <h3>Select a category and number of questions.</h3>
@@ -148,6 +153,7 @@ text-align: center;
     <div class="piece ans" id="ans4" onClick="click">Answer 4</div>
   </div>
 	<div id="bot">Created by <a target="_blank" href="http://natrivera.com/">Nat Rivera</a></div>
+	</div>
 </div>
 <script>
 var questions = [];
