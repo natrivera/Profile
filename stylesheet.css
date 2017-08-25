@@ -246,6 +246,9 @@ box-shadow: 0px 4px 4px 4px #FFF;
   border: solid #FFFFFF 3px;
 
 }
+i:hover {
+color: #000;
+}
 
 #chaffey a {
   text-decoration: none;
