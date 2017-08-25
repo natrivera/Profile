@@ -406,7 +406,7 @@ iframe {
 }
 
 .display {
- margin-top: 5%;
+ margin: 5% 0% 0% 0%;
  background:
   linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
   linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
@@ -419,6 +419,7 @@ iframe {
 }
 .display img{
 border-radius: 5px;
+ z-index: 99;
 }
 
 body {
