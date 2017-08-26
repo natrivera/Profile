@@ -397,7 +397,7 @@ iframe {
 }
 
 .display {
- margin: 2% -2% 0% -2%;
+ margin: 2% 0% 0% 0%;
  background:
   linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
   linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
