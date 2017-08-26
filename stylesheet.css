@@ -398,6 +398,7 @@ iframe {
 
 .display {
  margin-top: 2%;
+ min-width: 100vw;
  background:
   linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
   linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
@@ -410,10 +411,6 @@ iframe {
   border-top: 20px solid #000;
   border-bottom: 20px solid #000;
  
-}
-.display row {
-margin: 0%;
-}
 .display img{
 border-radius: 5px;
  margin-top: 2%;
