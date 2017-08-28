@@ -362,7 +362,7 @@ iframe {
  margin: 8% 8% 0% 8%;
  padding: 7%;
  border: rgba(0,0,0,.5) solid 5px;
- box-shadow: 0px 0px 0px 10px transparent inset;
+ box-shadow: 0px 0px 0px 10px #282828 inset;
 }
 .projectbox {
   color: #e7e7e7;
