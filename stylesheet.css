@@ -426,6 +426,8 @@ body {
  height: 100%;
   font-family: 'Ubuntu', sans-serif;
   color: #e7e7e7;
+  background-image: linear-gradient(-45deg, #282828 25%, transparent 25%, transparent 50%, #282828 50%, #282828 75%, transparent 75%, transparent);
+  background-size: 60px 60px;
 }
 
 html{
