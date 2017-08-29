@@ -29,23 +29,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/profile.js"></script>
-
-
 <style>
 body {
-  background: transparent;
   background-image: linear-gradient(45deg, #000066 25%, #00004C 25%, #00004C 50%, #000066 50%, #000066 75%, #00004C 75%, #00004C);
  color: #FFF;
  background-size: 200px 200px;
 }
 .piece {
-  width: 60px;
+  width: 50px;
   height: 30px;
   border: 3px #FFF solid;
   display: in-line;
   background-color: transparent;
   border-radius: 10px;
-  
+  margin: 1%;
 }
 #filler {
   margin:  auto;
@@ -83,33 +80,48 @@ button {
 }
 em {
   color: yellow;
-}
+}	
 </style>
 </head>
-
-
 <body>
 <div class="container-fluid">
   <div id="game">
     <div id="Tittle"></div>
     <div id="filler">Hangman</div>
-    <div id="gue"><input id="guess"><button id="submit">Submit</button></div>
     <div id="message">Press New Game to Start</div>
     <button id="play">New Game</button>
     <div id="hanger">
       <div class="row">
-        <div class="col-md-1 piece" id="1"></div>
-        <div class="col-md-1 piece" id="2"></div>
-        <div class="col-md-1 piece" id="3"></div>
-        <div class="col-md-1 piece" id="4"></div>
-        <div class="col-md-1 piece" id="5"></div>
-        <div class="col-md-1 piece" id="6"></div>
-        <div class="col-md-1 piece" id="7"></div>
-        <div class="col-md-1 piece" id="8"></div>
+        <div class="col-md-1 piece" id="A">A</div>
+        <div class="col-md-1 piece" id="B">B</div>
+        <div class="col-md-1 piece" id="C">C</div>
+        <div class="col-md-1 piece" id="D">D</div>
+        <div class="col-md-1 piece" id="E">E</div>
+        <div class="col-md-1 piece" id="F">F</div>
+        <div class="col-md-1 piece" id="G">G</div>
+        <div class="col-md-1 piece" id="H">H</div>
+        <div class="col-md-1 piece" id="I">I</div>
+        <div class="col-md-1 piece" id="J">J</div>
+        <div class="col-md-1 piece" id="K">K</div>
+        <div class="col-md-1 piece" id="L">L</div>
+        <div class="col-md-1 piece" id="M">M</div>
+        <div class="col-md-1 piece" id="N">N</div>
+        <div class="col-md-1 piece" id="O">O</div>
+        <div class="col-md-1 piece" id="P">P</div>
+        <div class="col-md-1 piece" id="Q">Q</div>
+        <div class="col-md-1 piece" id="R">R</div>
+        <div class="col-md-1 piece" id="S">S</div>
+        <div class="col-md-1 piece" id="T">T</div>
+        <div class="col-md-1 piece" id="U">U</div>
+        <div class="col-md-1 piece" id="V">V</div>
+        <div class="col-md-1 piece" id="W">W</div>
+        <div class="col-md-1 piece" id="X">X</div>
+        <div class="col-md-1 piece" id="Y">Y</div>
+        <div class="col-md-1 piece" id="Z">Z</div>
       </div>
     </div>
   </div>
-</div>
+</div>		
 <script>
 var worder = "";
 var array = [];
@@ -132,39 +144,43 @@ function clear() {
   arr2 = [];
   $("#guess").val("");
   $("#word").html("");
-  $("#1").css("background-color", "transparent");
-  $("#2").css("background-color", "transparent");
-  $("#3").css("background-color", "transparent");
-  $("#4").css("background-color", "transparent");
-  $("#5").css("background-color", "transparent");
-  $("#6").css("background-color", "transparent");
-  $("#7").css("background-color", "transparent");
-  $("#8").css("background-color", "transparent");
-  $("#1").html("");
-  $("#2").html("");
-  $("#3").html("");
-  $("#4").html("");
-  $("#5").html("");
-  $("#6").html("");
-  $("#7").html("");
-  $("#8").html("");
+  $("#A").css("background-color", "transparent");
+  $("#B").css("background-color", "transparent");
+  $("#C").css("background-color", "transparent");
+  $("#D").css("background-color", "transparent");
+  $("#E").css("background-color", "transparent");
+  $("#F").css("background-color", "transparent");
+  $("#G").css("background-color", "transparent");
+  $("#H").css("background-color", "transparent"); 
+  $("#I").css("background-color", "transparent");
+  $("#J").css("background-color", "transparent");
+  $("#K").css("background-color", "transparent");
+  $("#L").css("background-color", "transparent");
+  $("#M").css("background-color", "transparent");
+  $("#N").css("background-color", "transparent");
+  $("#O").css("background-color", "transparent");
+  $("#P").css("background-color", "transparent");
+  $("#Q").css("background-color", "transparent");
+  $("#R").css("background-color", "transparent");
+  $("#S").css("background-color", "transparent");
+  $("#T").css("background-color", "transparent");
+  $("#U").css("background-color", "transparent");
+  $("#V").css("background-color", "transparent");
+  $("#W").css("background-color", "transparent");
+  $("#X").css("background-color", "transparent");
+  $("#Y").css("background-color", "transparent");
+  $("#Z").css("background-color", "transparent");
 }
 
-$("#submit").click(function() {
-  submit();
+$(".piece").click(function() {
+  var pid = $(this).attr("id").toUpperCase();
+  submit(pid);
 }); //end of submit
 
-//add click function to search input
-$("input").keyup(function(e) {
-  if (e.keyCode == 13) {
-    submit();
-  }
-});
 
-function submit() {
-  var guess = $("#guess").val().toUpperCase();
+function submit(p) {
   if (count < 8) {
-    check(guess);
+    check(p);
   }
 }
 
@@ -195,8 +211,7 @@ function check(d) {
     } else {
       count++;
       $("#guess").val("");
-      $("#" + count).css("background-color", "red");
-      $("#" + count).html(d);
+      $("#" + d).css("background-color", "red");
       if (count === 8) {
         $("#message").html("Out of Guesses<br>Word: <em>" + worder + "</em>");
       }
