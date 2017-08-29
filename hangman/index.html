@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hangman game | by Nat Rivera</title>
+    <meta name="description" content=".">
+    <meta name="keywords" content="Nat Rivera">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+	
+    <meta name="og:image" content="http://natrivera.com/pics/"/>
+    <meta property="og:image" content="http://natrivera.com/pics/"/>
+	<meta property="og:url" content="http://natrivera.com/hangman/" >
+	<meta property="og:title" content="Hangman Game | by Nat Rivera">
+	<meta property="og:description" content=".">
+    <meta name="google-site-verification" content="mVsi7ibE7rpMT5Z-T8BhRG5GZ1MP8Sx4ZXV6js2W8qk" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@itsnatrivera" />
+    <meta name="twitter:title" content="Hangman Game." />
+    <meta name="twitter:description" content="." />
+    <meta name="twitter:image" content="http://natrivera.com/pics/" /> 	
+	
+   <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/profile.js"></script>
+
+
+<style>
+body {
+  background: transparent;
+  background-image: linear-gradient(45deg, #000066 25%, #00004C 25%, #00004C 50%, #000066 50%, #000066 75%, #00004C 75%, #00004C);
+ color: #FFF;
+ background-size: 200px 200px;
+}
+.piece {
+  width: 60px;
+  height: 30px;
+  border: 3px #FFF solid;
+  display: in-line;
+  background-color: transparent;
+  border-radius: 10px;
+  
+}
+#filler {
+  margin:  auto;
+  padding: auto;
+  letter-spacing: 5px; 
+  font-size: 3em;
+}
+input {
+  color: #FFF;
+  border: none;
+  border-bottom: 3px solid #FFF;
+  max-width: 75px;
+  text-align: center;
+  background-color: transparent;
+  font-size: 3em;
+}
+#game {
+  margin: 2% auto;
+  max-width: 500px;
+  text-align: center;
+}
+#hanger {
+  margin: 15%;
+}
+#message {
+  margin: 10%;
+  font-size: 1.2em;
+}
+button {
+  color: #FFF;
+  background-color: #004fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3em;
+}
+em {
+  color: yellow;
+}
+</style>
+</head>
+
+
+<body>
+<div class="container-fluid">
+  <div id="game">
+    <div id="Tittle"></div>
+    <div id="filler">Hangman</div>
+    <div id="gue"><input id="guess"><button id="submit">Submit</button></div>
+    <div id="message">Press New Game to Start</div>
+    <button id="play">New Game</button>
+    <div id="hanger">
+      <div class="row">
+        <div class="col-md-1 piece" id="1"></div>
+        <div class="col-md-1 piece" id="2"></div>
+        <div class="col-md-1 piece" id="3"></div>
+        <div class="col-md-1 piece" id="4"></div>
+        <div class="col-md-1 piece" id="5"></div>
+        <div class="col-md-1 piece" id="6"></div>
+        <div class="col-md-1 piece" id="7"></div>
+        <div class="col-md-1 piece" id="8"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+var worder = "";
+var array = [];
+var arr2 = [];
+var count = 0;
+
+$("#play").click(function() {
+  clear();
+  RandomWord();
+  var waiting = setTimeout(function() {
+    fill(worder);
+  }, 200);
+  $("#message").html("Guess a Letter");
+}); //end of play
+
+
+function clear() {
+  count = 0;
+  array = [];
+  arr2 = [];
+  $("#guess").val("");
+  $("#word").html("");
+  $("#1").css("background-color", "transparent");
+  $("#2").css("background-color", "transparent");
+  $("#3").css("background-color", "transparent");
+  $("#4").css("background-color", "transparent");
+  $("#5").css("background-color", "transparent");
+  $("#6").css("background-color", "transparent");
+  $("#7").css("background-color", "transparent");
+  $("#8").css("background-color", "transparent");
+  $("#1").html("");
+  $("#2").html("");
+  $("#3").html("");
+  $("#4").html("");
+  $("#5").html("");
+  $("#6").html("");
+  $("#7").html("");
+  $("#8").html("");
+}
+
+$("#submit").click(function() {
+  submit();
+}); //end of submit
+
+//add click function to search input
+$("input").keyup(function(e) {
+  if (e.keyCode == 13) {
+    submit();
+  }
+});
+
+function submit() {
+  var guess = $("#guess").val().toUpperCase();
+  if (count < 8) {
+    check(guess);
+  }
+}
+
+function check(d) {
+  if (d.length > 1) {
+    $("#guess").val("");
+  } else if (/^[a-zA-Z]/.test(d)) {
+    if (worder.indexOf(d) !== -1) {
+      $("#guess").val("");
+      array.push(d);
+      $("#filler").html("");
+      for (var g = 0; g < array.length; g++) {
+        for (var j = 0; j < worder.length; j++) {
+          var c = worder.substring(j, j + 1);
+          if (c === array[g]) {
+            if (/[A-Z]/.test(arr2[j]) === false) {
+              arr2[j] = d;
+            }
+          } else {
+            if (/[A-Z]/.test(arr2[j]) === false) {
+              arr2[j] = "_";
+            }
+          }
+        }
+      }
+      var str = arr2.join("");
+      $("#filler").html(str);
+    } else {
+      count++;
+      $("#guess").val("");
+      $("#" + count).css("background-color", "red");
+      $("#" + count).html(d);
+      if (count === 8) {
+        $("#message").html("Out of Guesses<br>Word: <em>" + worder + "</em>");
+      }
+    }
+  } else {
+    $("#guess").val("");
+  }
+  var temp = $("#filler").html();
+  if(worder === temp) {
+      $("#message").html("Congrats you got the word!!!");
+      count = 9;
+     }
+} //end of check
+
+function fill(v) {
+  var length = v.length;
+  $("#filler").html("");
+  for (var i = 0; i < length; i++) {
+    $("#filler").append("_");
+    
+  }
+} //end of fill
+
+function RandomWord() {
+  var wordapi = "http://natrivera.com/hangman/words.json";
+  $.getJSON(wordapi, function(word) {
+    var num = word.words.length;
+    var random = Math.floor(Math.random() * num);
+    worder = word.words[random].toUpperCase();
+    console.log(worder);
+  }); //end of getJSON
+} //end of random word
+
+</script>
+</body>
+</html>
