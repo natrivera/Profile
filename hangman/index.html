@@ -166,11 +166,32 @@ $("#play").click(function() {
   RandomWord();
   var waiting = setTimeout(function() {
     fill(worder);
-	//hint api goes here 
-    $("#message").html("Take a Guess<br>Hint: ");	  
+    var hinter = hint(worder);
+    $("#message").html("Take a Guess<br>Hint: <em>" + hinter + "</em>");	  
   }, 200);
   
 }); //end of play
+	
+function hint(w) {
+  w = w.toLowerCase();
+  var hintapi = "http://www.dictionaryapi.com/api/v1/references/collegiate/xml/" + w + "?key=0e386e0b-f102-40c1-af19-68de8ef9e63c";
+  var request = new XMLHttpRequest();
+  request.open("GET", hintapi , false);
+  request.send();
+  var xml = request.responseXML;
+  var entry = xml.getElementsByTagName("entry");
+  var fl = [];
+  for(var i = 0; i < entry.length; i++ ) {
+    var temp = entry[i];
+    temp = temp.getElementsByTagName("fl")[0];
+    var t = temp.childNodes[0].nodeValue;
+    //console.log(w);
+    //console.log(temp);
+    fl.push(t);
+  }
+  return fl[0];
+   
+}//end of hint	
 
 
 function clear() {
