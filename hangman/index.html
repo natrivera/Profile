@@ -38,7 +38,7 @@ body {
 .piece {
   width: 50px;
   height: 30px;
-  border: 3px #FFF solid;
+  border: 3px #004fff solid;
   display: in-line;
   background-color: transparent;
   border-radius: 10px;
@@ -208,6 +208,7 @@ function check(d) {
           var c = worder.substring(j, j + 1);
           if (c === array[g]) {
             if (/[A-Z]/.test(arr2[j]) === false) {
+	      $("#' + d).css("background-color" , "#004fff");	    
               arr2[j] = d;
             }
           } else {
