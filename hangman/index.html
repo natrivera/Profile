@@ -65,7 +65,7 @@ input {
   font-size: 3em;
 }
 #game {
-  background-color: rgba(255,255,255,.2);	
+  background-color: rgba(255,255,255,.1);	
   margin: 2% auto 0% auto;
   text-align: center;
   max-width: 500px;
@@ -203,6 +203,7 @@ function clear() {
   $("#X").css("background-color", "transparent");
   $("#Y").css("background-color", "transparent");
   $("#Z").css("background-color", "transparent");
+  $("#pics").html("<img class='img-responsive' src='/hangman/img/0.png'></img>");
 }
 
 $(".piece").click(function() {
