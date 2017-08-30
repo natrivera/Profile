@@ -208,7 +208,7 @@ $(".piece").click(function() {
 
 
 function submit(p) {
-  if (count < 7) {
+  if (count < 6) {
     check(p);
   }
 }
@@ -243,10 +243,9 @@ function check(d) {
       count++;
       $("#guess").val("");
       $("#" + d).css("background-color", "red");
-      if (count === 8) {
-        $("#message").html("Out of Guesses<br>Word: <em>" + worder + "</em>");
-	$("#pics").html("");
-	$("#pics").html("<img class='img-responsive' src='/hangman/img/" + count + ".png'></img>");      
+      $("#pics").html("<img class='img-responsive' src='/hangman/img/" + count + ".png'></img>"); 
+      if (count === 7) {
+        $("#message").html("Out of Guesses<br>Word: <em>" + worder + "</em>");     
       }
     }
   } else {
