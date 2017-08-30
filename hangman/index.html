@@ -166,8 +166,10 @@ $("#play").click(function() {
   RandomWord();
   var waiting = setTimeout(function() {
     fill(worder);
+	//hint api goes here 
+    $("#message").html("Take a Guess<br>Hint: ");	  
   }, 200);
-  $("#message").html("Hint: <br>Guess a Letter");
+  
 }); //end of play
 
 
