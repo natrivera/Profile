@@ -95,6 +95,7 @@ display: inline;
 }
 #pics{
 height: 200px;	
+margin: auto;	
 }
 #closer {
 text-align: center;	
@@ -114,7 +115,7 @@ color: #004FFF;
  <div id="tittle">Hangman</div>
   <div id="game">
     <div id="filler">Ready!</div>
-    <div id="pics"><img class="img-responsive" src="/hangman/pics/0.png"></img></div>
+    <div id="pics"><img class="img-responsive" src="/hangman/img/0.png"></img></div>
     <div id="message">Press New Game to Start</div>
     <button id="play">New Game</button>
     <div id="hanger">
@@ -244,7 +245,7 @@ function check(d) {
       $("#" + d).css("background-color", "red");
       if (count === 8) {
         $("#message").html("Out of Guesses<br>Word: <em>" + worder + "</em>");
-	$("#pics").html("<img class='img-responsive' src='/hangman/pics/" + count + ".png'></img>");      
+	$("#pics").html("<img class='img-responsive' src='/hangman/img/" + count + ".png'></img>");      
       }
     }
   } else {
