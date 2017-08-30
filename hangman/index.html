@@ -244,7 +244,7 @@ function check(d) {
       $("#guess").val("");
       $("#" + d).css("background-color", "red");
       $("#pics").html("<img class='img-responsive' src='/hangman/img/" + count + ".png'></img>"); 
-      if (count === 7) {
+      if (count === 6) {
         $("#message").html("Out of Guesses<br>Word: <em>" + worder + "</em>");     
       }
     }
