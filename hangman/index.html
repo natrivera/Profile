@@ -166,8 +166,8 @@ $("#play").click(function() {
   RandomWord();
   var waiting = setTimeout(function() {
     fill(worder);
-    var hinter = hint(worder);
     $("#message").html("Take a Guess<br>");
+    var hinter = hint(worder);
     $("#message").append("Hint: <em>" + hinter + "</em>");	  
   }, 200);
   
