@@ -167,7 +167,8 @@ $("#play").click(function() {
   var waiting = setTimeout(function() {
     fill(worder);
     var hinter = hint(worder);
-    $("#message").html("Take a Guess<br>Hint: <em>" + hinter + "</em>");	  
+    $("#message").html("Take a Guess<br>");
+    $("#message").append("Hint: <em>" + hinter + "</em>");	  
   }, 200);
   
 }); //end of play
