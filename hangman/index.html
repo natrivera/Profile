@@ -68,7 +68,7 @@ input {
   margin: 2% auto 0% auto;
   text-align: center;
   max-width: 500px;
-  min-height: 100vh;	
+  min-height: 90vh;	
   border: 3px solid yellow;	
   border-radius: 10px;	
   padding: 0%;
@@ -122,8 +122,10 @@ color: #004FFF;
   <div id="game">
     <div id="filler">Ready!</div>
     <div id="pics"><img class="img-responsive" src="/hangman/img/00.png"></img></div>
-    <div id="message">Press New Game<br>To Start</div>
-    <button id="play">New Game</button>
+     <div class="row">
+	     <div class="col-md-6 col-xs-6"><div id="message">Press New Game<br>To Start</div></div>
+	     <div class="col-md-6 col-xs-6"><button id="play">New Game</button></div>
+     </div>
     <div id="hanger">
       <div class="row">
         <div class="col-xs-1 piece" id="A">A</div>
