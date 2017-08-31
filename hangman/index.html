@@ -197,6 +197,17 @@ function hint(w) {
   return fl[0];   
 }//end of hint	
 
+$("document").ready(function() {
+	$("#pics").html("<img class='img-responsive' src='/hangman/img/" + 0 + ".png'></img>");
+      $("#pics").html("<img class='img-responsive' src='/hangman/img/" + 1 + ".png'></img>"); 
+      $("#pics").html("<img class='img-responsive' src='/hangman/img/" + 2 + ".png'></img>"); 
+      $("#pics").html("<img class='img-responsive' src='/hangman/img/" + 3 + ".png'></img>"); 
+      $("#pics").html("<img class='img-responsive' src='/hangman/img/" + 4 + ".png'></img>"); 
+      $("#pics").html("<img class='img-responsive' src='/hangman/img/" + 5 + ".png'></img>"); 
+      $("#pics").html("<img class='img-responsive' src='/hangman/img/" + 6 + ".png'></img>"); 
+      $("#pics").html("<img class='img-responsive' src='/hangman/img/" + 00 + ".png'></img>"); 
+});	
+
 
 function clear() {
   count = 0;
@@ -273,7 +284,6 @@ function check(d) {
       $("#filler").html(str);
     } else {
       count++;
-      $("#guess").val("");
       $("#" + d).css("background-color", "red");
       $("#pics").html("<img class='img-responsive' src='/hangman/img/" + (count -1) + ".png'></img>"); 
       if (count === 7) {
