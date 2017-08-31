@@ -125,8 +125,8 @@ color: #004FFF;
 	  <div id="filler">Ready!</div>
     <div id="pics"><img class="img-responsive" src="/hangman/img/6.png"></img></div>
      <div class="row">
-	     <div class="col-md-6 col-xs-8"><div id="message">New Game<br>To Start</div></div>
-	     <div class="col-md-6 col-xs-4"><button id="play">New Game</button></div>
+	     <div class="col-md-6 col-xs-8"><div id="message">Press <em>Play!</em><br>To Start</div></div>
+	     <div class="col-md-6 col-xs-4"><button id="play">Play!</button></div>
      </div>
     <div id="hanger">
       <div class="row">
@@ -242,6 +242,7 @@ function clear() {
   $("#Z").css("background-color", "transparent");
   $("#filler").css("background-color" , "transparent");	
   $("#pics").html("<img class='img-responsive' src='/hangman/img/00.png'></img>");
+  $("#play").html("New Word");	
 }
 
 $(".piece").click(function() {
