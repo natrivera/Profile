@@ -290,6 +290,10 @@ function check(d) {
       $("#filler").html(str);
     } else {
       if (wrong.indexOf(d) !== -1) {
+	$("#" + d).css("background-color" , "transparent");
+        setTimeout(function() {
+          $("#" + d).css("background" , "red");
+        }, 400)      
       } else {
         wrong.push(d);
         count++;
