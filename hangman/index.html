@@ -169,7 +169,11 @@ var arr2 = [];
 var count = 0;
 
 $("#play").click(function() {
-  clear();
+  newGame();
+}); //end of play
+	
+function newGame() {
+clear();
   RandomWord();
   var waiting = setTimeout(function() {
     fill(worder);
@@ -177,8 +181,7 @@ $("#play").click(function() {
     var hinter = hint(worder);
     $("#message").append("Hint: <em>" + hinter + "</em>");	  
   }, 200);
-  
-}); //end of play
+}	
 	
 function hint(w) {
   w = w.toLowerCase();
@@ -320,6 +323,15 @@ function RandomWord() {
     console.log(worder);
   }); //end of getJSON
 } //end of random word
+	
+document.addEventListener('keydown', function(event) {
+  var x = event.which || event.keyCode;
+  var letter = String.fromCharCode(x);
+  submit(letter);
+  if(x == 13) {
+    newGame();
+  }
+}, true);	
 
 </script>
 </body>
