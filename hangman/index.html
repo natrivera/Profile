@@ -164,6 +164,7 @@ color: #004FFF;
 </div>		
 <script>
 var worder = "java";
+var wrong = [];	
 var array = [];
 var arr2 = [];
 var count = 0;
@@ -214,6 +215,7 @@ $("document").ready(function() {
 
 function clear() {
   count = 0;
+  wrong = [];	
   array = [];
   arr2 = [];
   $("#guess").val("");
@@ -287,11 +289,19 @@ function check(d) {
       var str = arr2.join("");
       $("#filler").html(str);
     } else {
-      count++;
-      $("#" + d).css("background-color", "red");
-      $("#pics").html("<img class='img-responsive' src='/hangman/img/" + (count -1) + ".png'></img>"); 
-      if (count === 7) {
-        $("#message").html("Out of Guesses<br>Word: <em>" + worder + "</em>");     
+      if (wrong.indexOf(d) !== -1) {
+      } else {
+        wrong.push(d);
+        count++;
+        $("#" + d).css("background-color", "red");
+        $("#pics").html(
+          "<img class='img-responsive' src='http://natrivera.com/hangman/img/" +
+            (count - 1) +
+            ".png'></img>"
+        );
+        if (count === 7) {
+          $("#message").html("Out of Guesses<br>Word: <em>" + worder + "</em>");
+        }
       }
     }
   } else {
