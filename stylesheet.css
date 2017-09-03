@@ -376,7 +376,7 @@ iframe {
 .projectbox img:hover {
   box-shadow: 0px 0px 5px 0px;
   color: #FFFFFF;
-  max-width: 150%; 
+  max-width: 115%; 
 }
 
 .blackbox h2 {
