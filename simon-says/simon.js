@@ -176,10 +176,10 @@ $(".piece").click(function() {
 $("#strict").click(function() {
   if(strict) {
     strict = false;
-    $("#strict").html("Strict: OFF");
+    $(".fa").css("color" , "red");
   } else {
     strict = true;
-    $("#strict").html("Strict: ON");
+    $(".fa").css("color" , "yellow");
   }
   //
 });
