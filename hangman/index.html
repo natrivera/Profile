@@ -31,7 +31,7 @@
 <script src="/profile.js"></script>
 <style>
 body {
-  background-image: linear-gradient(45deg, #000066 25%, #00004C 25%, #00004C 50%, #000066 50%, #000066 75%, #00004C 75%, #00004C);
+ background-color: #1E90FF;	
  color: #FFF;
  background-size: 200px 200px;
 }
@@ -49,6 +49,18 @@ text-align: center;
   border-radius: 10px;
   margin: 1% 2% 1% 2%;
 }
+#first {
+  margin-left: 0px;
+}
+#second {
+  margin-top: 2%;
+  margin-left: 8px
+}
+#third {
+  margin-top: 2%;
+  margin-left: 16px;
+}	
+	
 #filler {
   color: yellow;	
   text-align: center; 
@@ -65,14 +77,10 @@ input {
   background-color: transparent;
   font-size: 3em;
 }
-#game {
-  background-color: rgba(255,255,255,.1);	
+#game {	
   margin: 2% auto 0% auto;
   text-align: center;
-  max-width: 500px;
-  	
-  border: 3px solid yellow;	
-  border-radius: 10px;	
+  max-width: 330px;	
   padding: 0%;
 }
 #hanger {
@@ -130,34 +138,38 @@ color: #004FFF;
 	     <div class="col-md-6 col-xs-8"><div id="message">Press <em>Play!</em><br>To Start</div></div>
 	     <div class="col-md-6 col-xs-4"><button id="play">Play!</button></div>
      </div>
-    <div id="hanger">
-      <div class="row">
-        <div class="col-xs-1 piece" id="A">A</div>
-        <div class="col-xs-1 piece" id="B">B</div>
-        <div class="col-xs-1 piece" id="C">C</div>
-        <div class="col-xs-1 piece" id="D">D</div>
+     <div id="hanger">
+      <div class="row" id="first">
+        <div class="col-xs-1 piece" id="Q">Q</div>
+        <div class="col-xs-1 piece" id="W">W</div>
         <div class="col-xs-1 piece" id="E">E</div>
+        <div class="col-xs-1 piece" id="R">R</div>
+        <div class="col-xs-1 piece" id="T">T</div>
+        <div class="col-xs-1 piece" id="Y">Y</div>
+        <div class="col-xs-1 piece" id="U">U</div>
+        <div class="col-xs-1 piece" id="I">I</div>
+        <div class="col-xs-1 piece" id="O">O</div>
+        <div class="col-xs-1 piece" id="P">P</div>
+       </div> 
+       <div class="row" id="second"> 
+        <div class="col-xs-1 piece" id="A">A</div>
+        <div class="col-xs-1 piece" id="S">S</div>
+        <div class="col-xs-1 piece" id="D">D</div>
         <div class="col-xs-1 piece" id="F">F</div>
         <div class="col-xs-1 piece" id="G">G</div>
         <div class="col-xs-1 piece" id="H">H</div>
-        <div class="col-xs-1 piece" id="I">I</div>
         <div class="col-xs-1 piece" id="J">J</div>
         <div class="col-xs-1 piece" id="K">K</div>
         <div class="col-xs-1 piece" id="L">L</div>
-        <div class="col-xs-1 piece" id="M">M</div>
-        <div class="col-xs-1 piece" id="N">N</div>
-        <div class="col-xs-1 piece" id="O">O</div>
-        <div class="col-xs-1 piece" id="P">P</div>
-        <div class="col-xs-1 piece" id="Q">Q</div>
-        <div class="col-xs-1 piece" id="R">R</div>
-        <div class="col-xs-1 piece" id="S">S</div>
-        <div class="col-xs-1 piece" id="T">T</div>
-        <div class="col-xs-1 piece" id="U">U</div>
-        <div class="col-xs-1 piece" id="V">V</div>
-        <div class="col-xs-1 piece" id="W">W</div>
-        <div class="col-xs-1 piece" id="X">X</div>
-        <div class="col-xs-1 piece" id="Y">Y</div>
+      </div>  
+      <div class="row" id="third">   
         <div class="col-xs-1 piece" id="Z">Z</div>
+        <div class="col-xs-1 piece" id="X">X</div>
+        <div class="col-xs-1 piece" id="C">C</div>
+        <div class="col-xs-1 piece" id="V">V</div>
+        <div class="col-xs-1 piece" id="B">B</div>
+        <div class="col-xs-1 piece" id="N">N</div>
+        <div class="col-xs-1 piece" id="M">M</div>
       </div>
     </div>
   </div>
