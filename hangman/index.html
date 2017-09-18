@@ -48,7 +48,7 @@ text-align: center;
   padding: 0px;	
   border: 3px #004fff solid;
   display: in-line;
-  background-color: transparent;
+  background-color: #004fff;
   border-radius: 4px;
   margin: 1%;
 }
@@ -177,6 +177,7 @@ color: #004FFF;
 	<div id="closer">Created by <a target="_blank" href="http://natrivera.com/">Nat Rivera</a></div>
 </div>		
 <script>
+var wordapi = "http://natrivera.com/hangman/words.json";	
 var worder = "java";
 var wrong = [];	
 var array = [];
@@ -234,32 +235,32 @@ function clear() {
   arr2 = [];
   $("#guess").val("");
   $("#word").html("");
-  $("#A").css("background-color", "transparent");
-  $("#B").css("background-color", "transparent");
-  $("#C").css("background-color", "transparent");
-  $("#D").css("background-color", "transparent");
-  $("#E").css("background-color", "transparent");
-  $("#F").css("background-color", "transparent");
-  $("#G").css("background-color", "transparent");
-  $("#H").css("background-color", "transparent"); 
-  $("#I").css("background-color", "transparent");
-  $("#J").css("background-color", "transparent");
-  $("#K").css("background-color", "transparent");
-  $("#L").css("background-color", "transparent");
-  $("#M").css("background-color", "transparent");
-  $("#N").css("background-color", "transparent");
-  $("#O").css("background-color", "transparent");
-  $("#P").css("background-color", "transparent");
-  $("#Q").css("background-color", "transparent");
-  $("#R").css("background-color", "transparent");
-  $("#S").css("background-color", "transparent");
-  $("#T").css("background-color", "transparent");
-  $("#U").css("background-color", "transparent");
-  $("#V").css("background-color", "transparent");
-  $("#W").css("background-color", "transparent");
-  $("#X").css("background-color", "transparent");
-  $("#Y").css("background-color", "transparent");
-  $("#Z").css("background-color", "transparent");
+  $("#A").css("background-color", "#004fff");
+  $("#B").css("background-color", "#004fff");
+  $("#C").css("background-color", "#004fff");
+  $("#D").css("background-color", "#004fff");
+  $("#E").css("background-color", "#004fff");
+  $("#F").css("background-color", "#004fff");
+  $("#G").css("background-color", "#004fff");
+  $("#H").css("background-color", "#004fff"); 
+  $("#I").css("background-color", "#004fff");
+  $("#J").css("background-color", "#004fff");
+  $("#K").css("background-color", "#004fff");
+  $("#L").css("background-color", "#004fff");
+  $("#M").css("background-color", "#004fff");
+  $("#N").css("background-color", "#004fff");
+  $("#O").css("background-color", "#004fff");
+  $("#P").css("background-color", "#004fff");
+  $("#Q").css("background-color", "#004fff");
+  $("#R").css("background-color", "#004fff");
+  $("#S").css("background-color", "#004fff");
+  $("#T").css("background-color", "#004fff");
+  $("#U").css("background-color", "#004fff");
+  $("#V").css("background-color", "#004fff");
+  $("#W").css("background-color", "#004fff");
+  $("#X").css("background-color", "#004fff");
+  $("#Y").css("background-color", "#004fff");
+  $("#Z").css("background-color", "#004fff");
   $("#filler").css("background-color" , "transparent");	
   $("#pics").html("<img class='img-responsive' src='/hangman/img/00.png'></img>");
   $("#play").html("New Word");	
@@ -290,7 +291,7 @@ function check(d) {
           var c = worder.substring(j, j + 1);
           if (c === array[g]) {
             if (/[A-Z]/.test(arr2[j]) === false) { 
-	      $("#" + d).css("background-color" , "#004fff");	    
+	      $("#" + d).css("background-color" , "transparent");	    
               arr2[j] = d;
             }
           } else {
@@ -343,7 +344,7 @@ function fill(v) {
 } //end of fill
 
 function RandomWord() {
-  var wordapi = "http://natrivera.com/hangman/words.json";
+  
   $.getJSON(wordapi, function(word) {
     var num = word.words.length;
     var random = Math.floor(Math.random() * num);
