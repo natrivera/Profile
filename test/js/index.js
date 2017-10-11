@@ -184,12 +184,11 @@ function display(n) {
   //uncheck all the radio buttons and check the radio that was answered by user
   var tempc = outresult[position][1];
   for (var i = 1; i < 5; i++) {
-    $("input[name=answer]:checked", "#ansform").prop("checked", false);
+    document.getElementById(i).checked = false;
     var ter = $("#" + i).val();
     if (tempc == ter) {
-      $("#" + i).attr("checked", true);
-      $("#" + i).checked = true;
+      document.getElementById(i).checked = true;
     }
-    //console.log($("#" + i).attr("checked") + " " + $("#" + i).val());
+   
   }
 }
