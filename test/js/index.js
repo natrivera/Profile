@@ -156,10 +156,10 @@ function display(n) {
   $("#welcome").css("display", "none");
   $("#result").css("display", "none");
   $("#board").css("display", "block");
-  $("#ans1").html("------");
-  $("#ans2").html("------");
-  $("#ans3").html("------");
-  $("#ans4").html("------");
+  $("#ans1").html("");
+  $("#ans2").html("");
+  $("#ans3").html("");
+  $("#ans4").html("");
 
   question = questions[n][0];
   answer = questions[n][1];
