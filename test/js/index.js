@@ -194,6 +194,5 @@ function display(n) {
     if (tempc == ter) {
       document.getElementById(i).checked = true;
     }
-   
-  }
+  }//end of for to check radio boxes
 }
