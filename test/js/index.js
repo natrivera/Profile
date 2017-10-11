@@ -20,7 +20,7 @@ $(document).ready(function() {
     );
   }
   $("#categories").append("</select>");
-});
+}); //end of document.ready function
 
 $("#nextbutton").click(function() {
   checkcurr();
@@ -58,7 +58,7 @@ function displayer(n) {
     //results page
     finalout();
   }
-}
+}// end of displayer function
 
 function finalout() {
   //check how many were answered correct
@@ -98,7 +98,7 @@ function finalout() {
       "\nResult: " +
       outresult[i][2] +
       "\n\n\n";
-  }
+  }// end of finalout function
 
   $("#finalmessage").html(finaloutmess);
   $("#resultmessage").html(messaging);
@@ -116,7 +116,7 @@ function checkcurr() {
   } else {
     outresult[position][2] = "Incorrect";
   }
-}
+}//end of checkcurr
 
 $("#start").click(function() {
   number = $("#amount").val();
@@ -150,7 +150,7 @@ function load() {
   var time = setTimeout(function() {
     display(position);
   }, 1000);
-}
+}// end of load function
 //////
 function display(n) {
   $("#welcome").css("display", "none");
@@ -195,4 +195,4 @@ function display(n) {
       document.getElementById(i).checked = true;
     }
   }//end of for to check radio boxes
-}
+}// end of dsplay function
