@@ -24,6 +24,10 @@ function output() {
   //get user selected confidence
   var conf = document.getElementById("confidence").value;
   
+  //get text of confidence
+  var confidence = document.getElementById("confidence");
+  var confText= confidence.options[confidence.selectedIndex].text;
+  
   //create an array from the data in the textarea
   var tempArray = document.getElementById("data1").value.split(",");
   
@@ -33,7 +37,7 @@ function output() {
   }
   
   //do the stat work
-  var resultArray = doStat(tempArray , numClasses , conf);
+  var resultArray = doStat(tempArray , numClasses , conf , confText);
   
   //console.log(resultArray);
   
@@ -41,7 +45,7 @@ function output() {
   display(resultArray);
 }//end of output
 
-function doStat(numbers , classes , conf) {
+function doStat(numbers , classes , conf , confText) {
   //intialize the variables
   var array = [];
   var secondArray = [];
@@ -139,7 +143,7 @@ function doStat(numbers , classes , conf) {
   }
   
   
-  array = [min , max , mean , median, quart1, quart2, quart3 , sum , variance , sigma, secondArray , lower , upper , conf , numbers.length];
+  array = [min , max , mean , median, quart1, quart2, quart3 , sum , variance , sigma, secondArray , lower , upper , conf , numbers.length , confText];
   return array;
 }//end of doStat
 
@@ -284,7 +288,7 @@ function display(array) {
   //adding lower bound to table
   tableRow = document.createElement("tr");
   tableD = document.createElement("td"); 
-  messageString = "Lower Bound";
+  messageString = "Lower Bound " + array[15];
   messageNode = document.createTextNode(messageString);
   tableD.appendChild(messageNode);
   tableRow.appendChild(tableD);
@@ -298,7 +302,7 @@ function display(array) {
   //adding uppper Bound to table
   tableRow = document.createElement("tr");
   tableD = document.createElement("td"); 
-  messageString = "Upper Bound";
+  messageString = "Upper Bound " + array[15];
   messageNode = document.createTextNode(messageString);
   tableD.appendChild(messageNode);
   tableRow.appendChild(tableD);
