@@ -1,0 +1,40 @@
+body {
+  background-color: #A3AEBA;
+}
+h1 {
+  color: #FFF;
+}
+input {
+  background-color: #23282D;
+  border: none;
+  color: #DDD;
+  border-radius: 5px;
+}
+select {
+  background-color: #23282D;
+  color: #DDD;
+  border: none;
+  border-radius: 5px;
+}
+button {
+  float: right;
+}
+table {
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 4px #2A2A2A;
+}
+textarea {
+  background-color: #23282D;
+  box-shadow: 0px 4px 4px 4px #2A2A2A;
+  color: #DDD;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  width: 100%;
+  min-height: 150px;
+  max-height: 100%;
+}
+.top {
+  font-size: 1.05em;
+  
+}
