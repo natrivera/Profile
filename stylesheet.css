@@ -359,6 +359,7 @@ iframe {
   text-align: center;
   padding: 5% 5% 2% 5%;
   max-width: 900px; 
+  height: 400px;
   background:
   linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
   linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
