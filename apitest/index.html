@@ -66,8 +66,9 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     console.log("Welcome!  Fetching your information.... ");
-    FB.api("/me", function(response) {
+    FB.api("/me?fields=id,gender,email,name,picture", function(response) {
       console.log("Successful login for: " + response.name);
+      console.log(response.picture);
     });
     var body = 'Testing out the graphAPI.';
     FB.api('/me/feed', 'post', { message: body }, function(response) {
