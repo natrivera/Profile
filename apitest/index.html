@@ -72,9 +72,11 @@
     var body = 'Testing out the graphAPI.';
     FB.api('/me/feed', 'post', { message: body }, function(response) {
     if (!response || response.error) {
+      console.log(response);
       console.log('Error occured');
     } else {
       console.log('Post ID: ' + response.id);
+      console.log(response);
     }
     });
   }
