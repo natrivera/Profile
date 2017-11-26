@@ -75,7 +75,7 @@ textarea {
 .piece {
   display: inline-block;
   text-align: center;
-  background-color: #eee;
+  background-color: rgba(0, 143, 213);
   border: 4px solid #A3AEBA;
   width: 100%;
   position: relative;
