@@ -121,7 +121,13 @@ function doStat(numbers, classes, conf, confText) {
     secondArray[i][0] = min + i * width;
     secondArray[i][1] = min + (i + 1) * width - 1;
     secondArray[i][2] = secondArray[i][0] - 0.5;
+    if(secondArray[i][2] < 10) {
+      secondArray[i][2] = secondArray[i][2].toFixed(2);
+    }
     secondArray[i][3] = secondArray[i][1] + 0.5;
+    if(secondArray[i][3] < 10) {
+      secondArray[i][3] = secondArray[i][3].toFixed(2);
+    }
     secondArray[i][4] = (secondArray[i][0] + secondArray[i][1]) / 2;
     for (var j = 0; j < numbers.length; j++) {
       if (numbers[j] > secondArray[i][2] && numbers[j] < secondArray[i][3]) {
