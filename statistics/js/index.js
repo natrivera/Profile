@@ -572,11 +572,12 @@ function display(array) {
   dynamicDiv.classList.add("output");
   
   //create css node and insert it
-  var css = document.createElement("style");
-  css.type = "text/css";
+  //var css = document.createElement("style");
+  //css.type = "text/css";
+  var css = document.getElementById("targetcss");
   css.innerHTML = ".outpiece { width: " + width + " }";
   css.innerHTML += ".xspan { margin-right: " + spanwidth +  "}";
-  document.body.appendChild(css);
+  //document.body.appendChild(css);
 
   //get output element and write div to output
   var element = document.getElementById("output");
