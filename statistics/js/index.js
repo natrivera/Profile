@@ -1,3 +1,8 @@
+function runall() {
+  generate();
+  output();
+}
+
 //function to generate the data
 function generate() {
 
@@ -526,6 +531,29 @@ function display(array) {
   //add histogram to main display div
   histogram.appendChild(inHist);
   dynamicDiv.appendChild(histogram);
+  
+  
+  //create a bbutton that will generate and run stats
+  var newdiv = document.createElement("div");
+  var newMessage = "To randomize a new data set and run statistics click the button bellow."
+  var newMessageNode = document.createTextNode(newMessage);
+  newdiv.appendChild(newMessageNode);
+  var space = document.createElement("br");
+  newdiv.appendChild(space);
+  space = document.createElement("br");
+  newdiv.appendChild(space);
+  var button = document.createElement("button");
+  var buttonstring = "Click Here!";
+  var buttonNode = document.createTextNode(buttonstring);
+  button.appendChild(buttonNode);
+  button.setAttribute("onClick" , "runall();");
+  button.setAttribute("style" , "float: left;");
+  button.classList.add("btn_block");
+  button.classList.add("btn-default");
+  newdiv.appendChild(button);
+  newdiv.classList.add("messagediv");
+  dynamicDiv.appendChild(newdiv);
+  
 
   //add classes to the divs
   //rowDiv.classList.add("row");
