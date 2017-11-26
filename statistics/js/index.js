@@ -575,7 +575,7 @@ function display(array) {
   //var css = document.createElement("style");
   //css.type = "text/css";
   var css = document.getElementById("targetcss");
-  css.innerHTML = ".outpiece { width: " + width + " }<br>";
+  css.innerHTML = ".outpiece { width: " + width + " }";
   css.innerHTML += ".xspan { margin-right: " + spanwidth +  "}";
   //document.body.appendChild(css);
 
