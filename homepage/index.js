@@ -56,7 +56,6 @@ var pictures = { "pics" : [
 "Bridge - 2880x1800.jpg",
 "Cities (11).jpg",
 "Cities (3).jpg",
-"Cities (7).jpg",
 "New York New York 1920x1080.png",
 "Night Life 1920x1080.png",
 "Stand & Listen.jpg",
@@ -73,7 +72,6 @@ var pictures = { "pics" : [
 "mbuntu-5.jpg",
 "mbuntu-6.jpg",
 "mbuntu-7.jpg",
-"mbuntu-8.jpp",
 "mbuntu-9.jpg",
 "sunset_river_by_jazbay1-d5w2hpw.jpg",
 "wy6SjxK.jpg"]};
