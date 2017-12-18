@@ -79,6 +79,7 @@ var pictures = { "pics" : [
 "wy6SjxK.jpg"]};
 
 var ampm = "PM";
+var retrievedColor;
 
 
 
@@ -126,11 +127,16 @@ function welcome() {
     
     
     var retrievedObject = JSON.parse(localStorage.getItem("namekey"));
+    retrievedColor = JSON.parse(localStorage.getItem("colorkey"));
 
     if (retrievedObject == null) {
         var name = prompt("Please enter your name: ");
         localStorage.setItem("namekey", JSON.stringify(name));
         retrievedObject = JSON.parse(localStorage.getItem("namekey"));
+        
+        localStorage.setItem("colorkey", JSON.stringify("white"));
+        retrievedColor = JSON.parse(localStorage.getItem("colorkey"));
+        
     } else {
         name = retrievedObject;
     }
@@ -141,6 +147,7 @@ function welcome() {
         message = "Good Morning, " + name + ".";
     }
     
+    change(retrievedColor);
     elem.innerHTML = message;
     
 }//end of welcome
@@ -238,6 +245,29 @@ function search() {
     document.getElementById("click").click();
      
 }//end of search 
+
+function optionUp() {
+    var check = document.getElementById("colors");
+    var checking = check.style.display;
+    if(checking == "none") {
+        check.style.display = "block";
+        document.getElementById("options").innerHTML = "&#8897";
+    } else {
+        check.style.display = "none";
+        document.getElementById("options").innerHTML = "&#8896";
+    }
+}//end of optionUp
+
+function change(color) {
+    var text = "5px solid " +  color;
+    document.body.style.color = color;
+    document.getElementById("searchinput").style.color = color;
+    document.getElementById("searchbutton").style.color = color;
+    document.getElementById("options").style.color = color;
+    $("#searchinput").css("border-bottom", text);
+    localStorage.setItem("colorkey", JSON.stringify(color));
+}//end of change
+
 
 function keyUp(event) {
     

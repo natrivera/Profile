@@ -6,7 +6,7 @@ body {
     overflow: hidden;
     background-size: cover;
     font-family: Verdana, Geneva, sans-serif;
-     color: #FFF;
+    color: #FFF;
 }
 
 
@@ -29,7 +29,7 @@ body {
     margin: auto;
 }
 
-.search input {
+input {
     color: #FFF;
     width: 100%;
     font-size: 1em;
@@ -44,6 +44,51 @@ body {
     font-size: 2em;
     background-color: transparent;
     border: none;
+   
+}
+
+.editor {
+    position: absolute;
+    bottom: 0;
+}
+
+.editor button {
+    font-weight: bolder;
+    color: #FFF;
+    background-color: transparent;
+    border: none;
+    
+}
+
+.colors {
+    display: none;
+    width: 45px;
+    height: 160px;
+    background-color:  rgba(0, 0, 0, 0.6);;
+}
+
+.choice {
+    margin: 10px auto;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+}
+
+.white {
+    background-color: #FFF;
+}
+
+.black {
+    background-color: #000;
+}
+
+.blue {
+  background-color: darkblue;  
+}
+
+.yellow {
+    background-color: chartreuse;
 }
 
 .hide {
