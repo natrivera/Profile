@@ -88,6 +88,7 @@ window.onload = function( ) {
     loadimg();
     
     //begin the time every 500 milliseconds
+    ontime();
     setInterval(function() {     
         ontime();
     }, 1000 );
@@ -221,11 +222,6 @@ function weather() {
                   var time = new Date().getTime();
                   time = time / 1000;
                   var daynight = "day";
-                 
-                 
-                 console.log(time);
-                 console.log(sunrise);
-                 console.log(sunset);
                  
                   if(time < sunset && time > sunrise) {
                       
