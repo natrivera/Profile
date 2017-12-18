@@ -93,6 +93,12 @@ window.onload = function( ) {
         ontime();
     }, 1000 );
     
+    setTimeout(function() {
+        //load the weather
+        weather();
+    }, 100);
+    
+    
     //load the welcome message
     welcome();
         
@@ -171,6 +177,56 @@ function ontime() {
     elem.innerHTML = date + "<br>" + hours + ":" + minutes + ":" + seconds + " " + ampm;
 }//end of ontime
 
+
+function weather() {
+    
+    $("#weather").html("Hello World!!!");
+    var lat, long, zip;
+    var localApi = "http://ip-api.com/json?callback=?";
+   
+    
+        $.getJSON(localApi, function(pos) {
+            lat = pos.lat;
+            long = pos.lon;
+            zip = pos.zip;
+    
+        //lat = 34.00;
+        //long = -117.00;
+        //zip = 91763;
+            
+            var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+            
+        setTimeout(function() {
+            
+             $.getJSON(wapi, function(num) {  
+
+                  //parse out all the needed info
+                  var city = num.name;
+
+                  var weatherType = num.weather[0].description;
+                  var icon = num.weather[0].icon;
+                  var label = num.weather[0].id;
+                  var ktemp = num.main.temp;
+                  var speed = num.wind.speed;
+                  var direction = num.wind.deg;
+                  var ftemp = Math.round((ktemp * (9 / 5)) - 459.67);
+                  var ctemp = Math.round(ktemp - 273);
+
+                  //get and load the icon url
+                  var iconP = "<img src='http://openweathermap.org/img/w/" + icon + ".png'>";
+                  
+                 var elem = document.getElementById("weather");
+                 elem.innerHTML = ftemp + "&#176; " + iconP + "<br>" + zip;
+                   
+                });
+            
+        },100);
+            
+            
+            
+      }); //end of getJSON
+}
+
 function search() {
     
     var input = document.getElementById("searchinput").value;
@@ -182,5 +238,13 @@ function search() {
     document.getElementById("click").click();
      
 }//end of search 
+
+function keyUp(event) {
+    
+    var x = event.keyCode;
+    if(x == 13) {
+        search();
+    }
+}
 
 

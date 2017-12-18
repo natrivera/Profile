@@ -3,18 +3,20 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href='index.css' rel='stylesheet' type='text/css'>
         <script src="index.js"></script>
     </head>
     <body>
         <div id="time" class="time"></div>
+        <div id="weather" class="weather"></div>
         <div id="main"> 
             <div id="welcome" class="welcome">           
                 <div id="message"></div>
             </div>
             <br><br>
             <div id="search" class="search">
-                <input id="searchinput" autofocus><button onclick="search();">&#8981;</button>
+                <input id="searchinput" onKeyUp="keyUp(event);" autofocus><button onclick="search();">&#8981;</button>
             </div>
         </div>
         <div class="hide" id="hide"></div>

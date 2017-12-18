@@ -6,15 +6,19 @@ body {
     overflow: hidden;
     background-size: cover;
     font-family: Verdana, Geneva, sans-serif;
+     color: #FFF;
 }
 
+
 .time {
-    color: #FFF;
+   
+}
+
+.weather img {
+    margin: -20px 0px -20px 0px;
 }
 
 .welcome {
-     
-    color: #FFF;
     margin: auto;
     max-width: 400px;
     font-size: 3em;
@@ -26,8 +30,8 @@ body {
 }
 
 .search input {
-    width: 100%;
     color: #FFF;
+    width: 100%;
     font-size: 1em;
     background-color: transparent;
     border: none;
