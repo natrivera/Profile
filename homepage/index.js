@@ -153,7 +153,6 @@ function welcome() {
 function ontime() {
     
     var now = new Date();
-     
     //calculate mins and seconds
     ampm = "PM";
     var date = now.toDateString();
@@ -209,6 +208,7 @@ function weather() {
                   var city = num.name;
 
                   var weatherType = num.weather[0].description;
+                  var main = num.weather[0].main;
                   var icon = num.weather[0].icon;
                   var label = num.weather[0].id;
                   var ktemp = num.main.temp;
@@ -216,9 +216,25 @@ function weather() {
                   var direction = num.wind.deg;
                   var ftemp = Math.round((ktemp * (9 / 5)) - 459.67);
                   var ctemp = Math.round(ktemp - 273);
+                  var sunrise = num.sys.sunrise;
+                  var sunset = num.sys.sunset;
+                  var time = new Date().getTime();
+                  time = time / 1000;
+                  var daynight = "day";
+                 
+                 
+                 console.log(time);
+                 console.log(sunrise);
+                 console.log(sunset);
+                 
+                  if(time < sunset && time > sunrise) {
+                      
+                  } else {
+                      daynight = "night";
+                  }
 
                   //get and load the icon url
-                  var iconP = "<img src='http://openweathermap.org/img/w/" + icon + ".png'>";
+                  var iconP = "<i class='wi wi-owm-" + daynight + "-" + label + "'></i>";
                   
                  var elem = document.getElementById("weather");
                  elem.innerHTML = ftemp + "&#176; " + iconP + "<br>" + zip;
