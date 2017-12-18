@@ -68,7 +68,7 @@ var pictures = { "pics" : [
 "Tim Gouw mod.jpg",
 "apple_mac_os_x_el_capitan-wide.jpg",
 "mbuntu-11.jpg",
-"mbuntu-3.jpp	",
+"mbuntu-3.jpg",
 "mbuntu-5.jpg",
 "mbuntu-6.jpg",
 "mbuntu-7.jpg",
