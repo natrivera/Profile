@@ -40,6 +40,10 @@ a:hover {
     padding: 10px;
 }
 
+.moreweather i {
+    margin: 15px;
+}
+
 
 .center {
     max-width: 400px;
@@ -83,6 +87,7 @@ a:hover {
     background-color:  rgba(0, 0, 0, 0.6);
     border-radius: 5%;
     padding: 10px;
+    bottom: 0;
 }
 
 .links div {

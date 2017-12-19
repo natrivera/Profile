@@ -33,6 +33,7 @@
                 <div id="unit"></div>
             </div>
         </div>
+        
         <div id="main"> 
             <div class="center">
                 <div id="welcome" class="welcome">           
@@ -43,19 +44,20 @@
                     <i onclick="search();" id="searchbutton" class="hoverable">&#8981;</i>
                     <input id="searchinput" onKeyUp="keyUp(event);" autofocus>
                 </div>
-                <p id="linkbutt" class="hoverable" onclick="togglelink();">Links</p>
-                <div id="links" class="links" style="display: none;">
-                    <div id="linkplace"></div>
-                    <div>
-                        <div onclick='addlink();' class="hoverable">Add Link</div>
-                        <div id="addlink" class="addlink" style="diisplay: none;">
-                            <input type="text" id="linkname" placeholder="Name">
-                            <input type="text" id="linkurl" placeholder="Link">
-                            <button onclick="updatelinks();">Submit</button>
+                <div id"linkland" >
+                    <p id="linkbutt" class="hoverable" onclick="togglelink();">Links</p>
+                    <div id="links" class="links" style="display: none;">
+                        <div id="linkplace"></div>
+                        <div>
+                            <div onclick='addlink();' class="hoverable" style="color:  #d0d3d4;">Add Link</div>
+                            <div id="addlink" class="addlink" style="display: none;">
+                                <input type="text" id="linkname" placeholder="Name">
+                                <input type="text" id="linkurl" placeholder="Link">
+                                <button onclick="updatelinks();">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
             </div>
             <div id="editor" class="editor">
                 <div id="colors" class="colors" style="display: none;">

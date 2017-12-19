@@ -86,6 +86,7 @@ var bool = true;
 var iconP;
 var city;
 var links = [];
+var opened = false;
 
 
 
@@ -239,13 +240,16 @@ function updatelinks() {
 }
 
 function addlink() {
-    var elem = document.getElementById("addlink");
-    var checking = elem.style.display;
-    if(checking == "none") {
-        elem.style.display = "block";
-    } else {
-        elem.style.display = "none";
+    if(opened) {
+        var elem = document.getElementById("addlink");
+        var checking = elem.style.display;
+        if(checking == "none") {
+            elem.style.display = "block";
+        } else {
+            elem.style.display = "none";
+        }
     }
+    
 }
 
 function clearaddons() {
@@ -273,8 +277,16 @@ function togglelink() {
     
     if(checking == "none") {
         check.style.display = "block";
+        setTimeout(function() {
+            opened = true;    
+        },300);
+        
     } else {
         check.style.display = "none";
+        setTimeout(function() {
+            opened = false;    
+        },300);
+        
     }
     
 }
