@@ -175,7 +175,7 @@ function loadlinks(arr) {
     
     var elem = document.getElementById("links");
     arr.forEach(function(e) {
-        elem.innerHTML += "<div>" + "<a href='" + 
+        elem.innerHTML += "<div>" + "<a href='http://" + 
                         e[1] + "' target='_blank'>" + 
                         e[0] + "</a>" +  
                         "<span onClick='loselink();'  style='float: right;'>&#10060</span></div>";
