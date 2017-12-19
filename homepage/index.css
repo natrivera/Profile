@@ -88,6 +88,7 @@ a:hover {
     border-radius: 5%;
     padding: 10px;
     bottom: 0;
+    position: absolute;
 }
 
 .links div {
