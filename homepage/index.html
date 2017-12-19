@@ -23,17 +23,30 @@
         <link href='index.css' rel='stylesheet' type='text/css'>
         <script src="index.js"></script>
     </head>
-    <body>
-        <div id="time" class="time"></div>
-        <div id="weather" class="weather"></div>
-        <div id="main"> 
-            <div id="welcome" class="welcome">           
-                <div id="message"></div>
+    <body onclick="clearaddons();">
+        <div id="info" class="info">
+            <div id="time" class="time"></div>
+            <div id="weather" class="weather"></div>
+            <div id="moreweather" class="moreweather" style="display: none;">
+                <div id="description"></div>
+                <div id="wind"></div>
+                <div id="unit"></div>
             </div>
-            <br><br>
-            <div id="search" class="search">
-                <input id="searchinput" onKeyUp="keyUp(event);" autofocus><button onclick="search();" id="searchbutton">&#8981;</button>
-            </div>            
+        </div>
+        <div id="main"> 
+            <div class="center">
+                <div id="welcome" class="welcome">           
+                    <div id="message"></div>
+                </div>
+                <br><br>
+                <div id="search" class="search">
+                    <i onclick="search();" id="searchbutton" class="hoverable">&#8981;</i>
+                    <input id="searchinput" onKeyUp="keyUp(event);" autofocus>
+                </div>
+                <p id="linkbutt" class="hoverable" onclick="togglelink();">Links</p>
+                <div id="links" class="links" style="display: none;">
+                </div>
+            </div>
             <div id="editor" class="editor">
                 <div id="colors" class="colors" style="display: none;">
                     <div id="white" class="choice white" onclick="change('white');"></div>
@@ -41,7 +54,7 @@
                     <div id="blue" class="choice blue" onclick="change('darkblue');"></div>
                     <div id="yellow" class="choice yellow" onclick="change('chartreuse');"></div>
                 </div>
-                <button id="options" class="options" onclick="optionUp();">&#8896</button>
+                <button id="options" class="options hoverable" onclick="optionUp();">&#8896</button>
             </div>
         </div>
         <div class="hide" id="hide"></div>

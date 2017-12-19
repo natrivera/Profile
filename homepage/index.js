@@ -77,7 +77,15 @@ var pictures = { "pics" : [
 "wy6SjxK.jpg"]};
 
 var ampm = "PM";
-var retrievedColor;
+var retrievedColor, retrievedtemp;
+var ftemp = 0;
+var ctemp = 0;
+var dtemp = 0;
+var zip;
+var displaystring = "";
+var bool = true;
+var iconP;
+var city;
 
 
 
@@ -119,37 +127,102 @@ function loadimg() {
 
 function welcome() {
     
+    var name = "";
+    var links = [['Google' , 'www.google.com'] , ['Youtube' , 'www.youtube.com'] , ['Facebook' , 'www.facebook.com']];
+    
     var message = "Welcome: ";
     
     var elem = document.getElementById("message");
     
     
-    
+    var retrivedlinks = JSON.parse(localStorage.getItem("links"));
     var retrievedObject = JSON.parse(localStorage.getItem("namekey"));
+    retrievedtemp = localStorage.getItem("temp");
     retrievedColor = JSON.parse(localStorage.getItem("colorkey"));
 
     if (retrievedObject == null) {
-        var name = prompt("Please enter your name: ");
+        name = prompt("Please enter your name: ");
         localStorage.setItem("namekey", JSON.stringify(name));
         retrievedObject = JSON.parse(localStorage.getItem("namekey"));
         
         localStorage.setItem("colorkey", JSON.stringify("white"));
         retrievedColor = JSON.parse(localStorage.getItem("colorkey"));
         
+        localStorage.setItem("temp" , "f");
+        
+        localStorage.setItem("links" , JSON.stringify(JSON.stringify(links)));
+        
     } else {
         name = retrievedObject;
+        links = JSON.parse(retrivedlinks);
     }
+    
     
     if(ampm == "PM") {
         message = "Good Afternoon, " + name + ".";
     } else {
         message = "Good Morning, " + name + ".";
-    }
+    }    
     
     change(retrievedColor);
     elem.innerHTML = message;
     
+    loadlinks(links);
+    
 }//end of welcome
+
+function loadlinks(arr) {
+    
+    var elem = document.getElementById("links");
+    arr.forEach(function(e) {
+        elem.innerHTML += "<div>" + "<a href='" + 
+                        e[1] + "' target='_blank'>" + 
+                        e[0] + "</a>" +  
+                        "<span onClick='loselink();'  style='float: right;'>&#10060</span></div>";
+    });
+    elem.innerHTML += "<div onclick='addlink();'>Add Link</div>";
+    
+}
+
+function loselink() {
+    
+   
+}
+
+function addlink() {
+    
+}
+
+function clearaddons() {
+    setTimeout(function() {
+        if(bool) {
+            document.getElementById("moreweather").style.display = "none";
+            document.getElementById("colors").style.display = "none";
+            document.getElementById("links").style.display = "none";
+        }
+    },200);    
+}
+
+function addondelay() {
+    bool = false;
+    setTimeout(function() {
+        bool = true;
+    },300);
+}
+
+function togglelink() {
+    
+    addondelay();
+    var check = document.getElementById("links");
+    var checking = check.style.display;
+    
+    if(checking == "none") {
+        check.style.display = "block";
+    } else {
+        check.style.display = "none";
+    }
+    
+}
 
 function ontime() {
     
@@ -185,8 +258,7 @@ function ontime() {
 
 function weather() {
     
-    $("#weather").html("Hello World!!!");
-    var lat, long, zip;
+    var lat, long;
     var localApi = "http://ip-api.com/json?callback=?";
    
     
@@ -206,7 +278,7 @@ function weather() {
              $.getJSON(wapi, function(num) {  
 
                   //parse out all the needed info
-                  var city = num.name;
+                  city = num.name;
 
                   var weatherType = num.weather[0].description;
                   var main = num.weather[0].main;
@@ -215,8 +287,11 @@ function weather() {
                   var ktemp = num.main.temp;
                   var speed = num.wind.speed;
                   var direction = num.wind.deg;
-                  var ftemp = Math.round((ktemp * (9 / 5)) - 459.67);
-                  var ctemp = Math.round(ktemp - 273);
+                
+                  direction = getCardinal(direction);
+                 
+                  ftemp = Math.round((ktemp * (9 / 5)) - 459.67);
+                  ctemp = Math.round(ktemp - 273);
                   var sunrise = num.sys.sunrise;
                   var sunset = num.sys.sunset;
                   var time = new Date().getTime();
@@ -230,18 +305,72 @@ function weather() {
                   }
 
                   //get and load the icon url
-                  var iconP = "<i class='wi wi-owm-" + daynight + "-" + label + "'></i>";
-                  
-                 var elem = document.getElementById("weather");
-                 elem.innerHTML = ftemp + "&#176; " + iconP + "<br>" + zip;
+                  iconP = "<i onclick='showmore();' class=' hoverable wi wi-owm-" + daynight + "-" + label + "'></i>";
+                 
+                 retrievedtemp = localStorage.getItem("temp");
+                 setTimeout(function() {
+                     if(retrievedtemp == "f") {
+                        displaystring = ftemp + "&#176; F   " + iconP + "<br>" + city; 
+                        forf(); 
+                     } else {
+                         displaystring = ctemp + "&#176; C  " + iconP + "<br>" + city;
+                         forc();
+                    }
+                    temperature(displaystring);
+                     
+                 },100);
+                 
+                 var element = document.getElementById("description");
+                 element.innerHTML = weatherType;
+                 
+                 element = document.getElementById("wind");
+                 element.innerHTML = "Winds: " + speed + "mph " + direction;
+                 
+                 element = document.getElementById("unit");
+                 element.innerHTML =  "Units: <i class='hoverable chosen' id='farenheight' onclick='forf();'>F&#176;</i>    <i class='hoverable' id='celcius' onclick='forc();'>C&#176;</i>";
                    
                 });
             
-        },100);
-            
-            
+        },200);          
             
       }); //end of getJSON
+}
+
+function temperature(str) {
+    var elem = document.getElementById("weather");
+    elem.innerHTML = str;
+}
+
+function showmore() {
+    addondelay();
+    var check = document.getElementById("moreweather");
+    var checking = check.style.display;
+    
+    if(checking == "none") {
+        check.style.display = "block";
+    } else {
+        check.style.display = "none";
+    }
+}
+
+function forc() {
+    document.getElementById("farenheight").classList.remove("chosen");
+    document.getElementById("celcius").classList.add("chosen");
+    displaystring = ctemp + "&#176; C   " + iconP + "<br>" + city;
+    localStorage.setItem("temp" , "c");
+    
+    temperature(displaystring);
+    retrievedtemp = localStorage.getItem("temp");
+}
+
+function forf() {
+    document.getElementById("celcius").classList.remove("chosen");
+    document.getElementById("farenheight").classList.add("chosen");
+    displaystring = ftemp + "&#176; F   " + iconP + "<br>" + city;
+    localStorage.setItem("temp" , "f");
+    
+    temperature(displaystring);
+    retrievedtemp = localStorage.getItem("temp");
 }
 
 function search() {
@@ -257,6 +386,7 @@ function search() {
 }//end of search 
 
 function optionUp() {
+    addondelay();
     var check = document.getElementById("colors");
     var checking = check.style.display;
     if(checking == "none") {
@@ -274,8 +404,9 @@ function change(color) {
     document.getElementById("searchinput").style.color = color;
     document.getElementById("searchbutton").style.color = color;
     document.getElementById("options").style.color = color;
-    $("#searchinput").css("border-bottom", text);
+    $(".search").css("border-bottom", text);
     localStorage.setItem("colorkey", JSON.stringify(color));
+    $("a").css("color" , color);
 }//end of change
 
 
@@ -286,5 +417,35 @@ function keyUp(event) {
         search();
     }
 }
+
+
+ //function to show wind direction
+ function getCardinal(angle) {
+        //easy to customize by changing the number of directions you have 
+       // thank you basarat from github     
+        var directions = 8;
+        
+        var degree = 360 / directions;
+        angle = angle + degree/2;
+        
+        if (angle >= 0 * degree && angle < 1 * degree)
+            return "N";
+        if (angle >= 1 * degree && angle < 2 * degree)
+            return "NE";
+        if (angle >= 2 * degree && angle < 3 * degree)
+            return "E";
+        if (angle >= 3 * degree && angle < 4 * degree)
+            return "SE";
+        if (angle >= 4 * degree && angle < 5 * degree)
+            return "S";
+        if (angle >= 5 * degree && angle < 6 * degree)
+            return "SW";
+        if (angle >= 6 * degree && angle < 7 * degree)
+            return "W";
+        if (angle >= 7 * degree && angle < 8 * degree)
+            return "NW";
+        //Should never happen: 
+        return "N";
+    }
 
 
