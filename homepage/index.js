@@ -55,7 +55,6 @@ var pictures = { "pics" : [
 "50 - O3abuTO.jpg",
 "Bridge - 2880x1800.jpg",
 "Cities (11).jpg",
-"Cities (3).jpg",
 "New York New York 1920x1080.png",
 "Night Life 1920x1080.png",
 "Stand & Listen.jpg",
@@ -86,6 +85,7 @@ var displaystring = "";
 var bool = true;
 var iconP;
 var city;
+var links = [];
 
 
 
@@ -128,7 +128,7 @@ function loadimg() {
 function welcome() {
     
     var name = "";
-    var links = [['Google' , 'www.google.com'] , ['Youtube' , 'www.youtube.com'] , ['Facebook' , 'www.facebook.com']];
+    links = [['Google' , 'www.google.com'] , ['Youtube' , 'www.youtube.com'] , ['Facebook' , 'www.facebook.com']];
     
     var message = "Welcome: ";
     
@@ -143,18 +143,24 @@ function welcome() {
     if (retrievedObject == null) {
         name = prompt("Please enter your name: ");
         localStorage.setItem("namekey", JSON.stringify(name));
-        retrievedObject = JSON.parse(localStorage.getItem("namekey"));
-        
-        localStorage.setItem("colorkey", JSON.stringify("white"));
-        retrievedColor = JSON.parse(localStorage.getItem("colorkey"));
-        
-        localStorage.setItem("temp" , "f");
-        
-        localStorage.setItem("links" , JSON.stringify(JSON.stringify(links)));
-        
+        retrievedObject = JSON.parse(localStorage.getItem("namekey"));    
     } else {
         name = retrievedObject;
+    }
+    
+    if(retrievedColor == null) {
+        localStorage.setItem("colorkey", JSON.stringify("white"));
+        retrievedColor = JSON.parse(localStorage.getItem("colorkey"));
+    } 
+    
+    if(retrivedlinks == null) {
+        localStorage.setItem("links" , JSON.stringify(JSON.stringify(links)));
+    } else {
         links = JSON.parse(retrivedlinks);
+    }
+    
+    if(retrievedtemp == null) {
+        localStorage.setItem("temp" , "f");
     }
     
     
@@ -173,29 +179,78 @@ function welcome() {
 
 function loadlinks(arr) {
     
-    var elem = document.getElementById("links");
+    var elem = document.getElementById("linkplace");
+    elem.innerHTML = "";
     arr.forEach(function(e) {
-        elem.innerHTML += "<div>" + "<a href='http://" + 
-                        e[1] + "' target='_blank'>" + 
-                        e[0] + "</a>" +  
-                        "<span onClick='loselink();'  style='float: right;'>&#10060</span></div>";
+        
+        var newdiv = document.createElement("div");
+        var newaelem = document.createElement("a");
+        var newselem = document.createElement("span");
+                
+        var templink = "http://" + e[1];
+        newaelem.setAttribute("href" , templink);
+        newaelem.setAttribute("target" , "_blank");
+        newaelem.innerHTML = e[0];
+        
+        var funtxt = "loselink(\"" + e[0] + "\")";
+        newselem.setAttribute("onclick" , funtxt);
+        newselem.innerHTML = "&#10060";
+        newselem.style.float = "right";
+        newdiv.appendChild(newaelem);
+        newdiv.appendChild(newselem);
+        
+        
+        elem.appendChild(newdiv);
+        
     });
-    elem.innerHTML += "<div onclick='addlink();'>Add Link</div>";
-    
 }
 
-function loselink() {
+function loselink(txt) {
+    var text = txt.toString();
+    for(var i = 0; i < links.length; i++) {
+        if(links[i][0] == text) {
+            links.splice(i , 1);
+        }
+          
+    }
+   
+    
+    loadlinks(links);
+    localStorage.setItem("links" , JSON.stringify(JSON.stringify(links)));
     
    
 }
 
-function addlink() {
+function updatelinks() {
+    var linkname = document.getElementById("linkname").value;
+    var linkurl = document.getElementById("linkurl").value;
+    var temparr = [linkname , linkurl];
     
+    if(linkname == "" || linkurl == "") {
+        
+    } else {
+        links.push(temparr);
+        loadlinks(links);
+        document.getElementById("linkname").value = "";
+        document.getElementById("linkurl").value = "";
+        localStorage.setItem("links" , JSON.stringify(JSON.stringify(links)));
+    }
+   
+}
+
+function addlink() {
+    var elem = document.getElementById("addlink");
+    var checking = elem.style.display;
+    if(checking == "none") {
+        elem.style.display = "block";
+    } else {
+        elem.style.display = "none";
+    }
 }
 
 function clearaddons() {
     setTimeout(function() {
-        if(bool) {
+        if(false) {
             document.getElementById("moreweather").style.display = "none";
             document.getElementById("colors").style.display = "none";
             document.getElementById("links").style.display = "none";

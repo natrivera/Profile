@@ -45,7 +45,17 @@
                 </div>
                 <p id="linkbutt" class="hoverable" onclick="togglelink();">Links</p>
                 <div id="links" class="links" style="display: none;">
+                    <div id="linkplace"></div>
+                    <div>
+                        <div onclick='addlink();' class="hoverable">Add Link</div>
+                        <div id="addlink" class="addlink" style="diisplay: none;">
+                            <input type="text" id="linkname" placeholder="Name">
+                            <input type="text" id="linkurl" placeholder="Link">
+                            <button onclick="updatelinks();">Submit</button>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
             <div id="editor" class="editor">
                 <div id="colors" class="colors" style="display: none;">

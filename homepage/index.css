@@ -86,12 +86,25 @@ a:hover {
 }
 
 .links div {
-    margin: 10px 20px;
+    margin: 5px;
     border: none;
 }
 
 .links div span:hover {
     color: yellow;
+}
+
+.addlink input {
+    background-color: transparent;
+    border: none; 
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.addlink button {
+    background-color: transparent;
+    border: none;
+    color: white;
 }
 
 .editor {
