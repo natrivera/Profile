@@ -376,7 +376,7 @@ function weather() {
                   var daynight = "day";
                  
                   if(time < sunset && time > sunrise) {
-                      if(ampm >= "AM") {
+                      if(ampm == "AM") {
                           welcome(1);
                       } else {
                           welcome(2);
@@ -384,7 +384,7 @@ function weather() {
                       
                   } else {
                       daynight = "night";
-                      if(ampm <= "PM") {
+                      if(ampm == "PM") {
                           welcome(3);
                       } else {
                           welcome(1);
