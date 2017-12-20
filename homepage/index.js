@@ -487,15 +487,32 @@ function optionUp() {
 }//end of optionUp
 
 function change(color) {
+    
+    localStorage.setItem("colorkey", JSON.stringify(color));
+    var shadow;
     var text = "5px solid " +  color;
     document.body.style.color = color;
     document.getElementById("searchinput").style.color = color;
     document.getElementById("searchbutton").style.color = color;
     document.getElementById("options").style.color = color;
     document.getElementById("settingbutton").style.color = color;
-    $(".search").css("border-bottom", text);
-    localStorage.setItem("colorkey", JSON.stringify(color));
-    $("a").css("color" , color);
+    //$(".search").css("border-bottom", text); 
+    document.getElementById("searchinput").style.borderBottom = text;
+    
+    if(color == "white" || color == "chartreuse") {
+        shadow = "1px 1px 2px black, 0 0 25px black, 0 0 5px #333";
+        document.body.style.fontWeight = "normal";
+    } else {
+        shadow = "3px 3px 3px black";
+        shadow = "2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3)";
+        document.body.style.fontWeight = "bold";
+    }
+    
+    document.body.style.textShadow = shadow;
+    document.getElementById("searchbutton").style.textShadow = shadow;
+    document.getElementById("options").style.textShadow = shadow;
+    document.getElementById("settingbutton").style.textShadow = shadow;
+    document.getElementById("searchinput").style.textShadow = shadow;
 }//end of change
 
 
