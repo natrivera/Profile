@@ -485,6 +485,27 @@ function keyUp(event) {
     }
 }
 
+function opensettings() {
+    addondelay();
+    var check = document.getElementById("resetdiv");
+    var checking = check.style.display;
+    
+    if(checking == "none") {
+        check.style.display = "block";
+    } else {
+        check.style.display = "none";
+    }
+}
+
+function reset() {
+    localStorage.setItem("namekey", JSON.stringify(null));
+    localStorage.setItem("links", JSON.stringify(null));
+    localStorage.setItem("colorkey", JSON.stringify(null));
+    localStorage.setItem("temp", JSON.stringify(null));
+    window.location.reload(true);
+    
+}
+
 
  //function to show wind direction
  function getCardinal(angle) {

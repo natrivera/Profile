@@ -95,7 +95,7 @@ a:hover {
 }
 
 .links {
-    margin-top: 25px;
+    margin: 25px 20px 20px 20px;
     width: 200px;
     background-color:  rgba(0, 0, 0, 0.6);
     border-radius: 5%;
@@ -135,7 +135,7 @@ a:hover {
     color: #FFF;
     background-color: transparent;
     border: none;
-    
+    font-size: 2em;
 }
 
 
@@ -172,4 +172,36 @@ a:hover {
 
 .hide {
     display: none;
+}
+
+.settings {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.settings button {
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px #333;
+    background-color: transparent;
+    color: white;
+    font-weight: bolder;
+    border: none;
+    float: right;
+    font-size: 2em;
+}
+
+.resetdiv {
+    border-radius: 5%;
+    padding: 10px;
+    width: 200px;
+    background-color:  rgba(0, 0, 0, 0.6);
+    margin: 20px;
+}
+
+.resetdiv i {
+    margin: 20px;
+}
+
+.resetdiv i:hover {
+    border-bottom: 1px solid white;
 }
