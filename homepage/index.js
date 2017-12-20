@@ -471,6 +471,7 @@ function change(color) {
     document.getElementById("searchinput").style.color = color;
     document.getElementById("searchbutton").style.color = color;
     document.getElementById("options").style.color = color;
+    document.getElementById("settingbutton").style.color = color;
     $(".search").css("border-bottom", text);
     localStorage.setItem("colorkey", JSON.stringify(color));
     $("a").css("color" , color);
