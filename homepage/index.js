@@ -75,8 +75,9 @@ var pictures = { "pics" : [
 "sunset_river_by_jazbay1-d5w2hpw.jpg",
 "wy6SjxK.jpg"]};
 
+var name;
 var ampm = "PM";
-var retrievedColor, retrievedtemp;
+var retrievedColor, retrievedtemp, retrievedObject, retrivedlinks;
 var ftemp = 0;
 var ctemp = 0;
 var dtemp = 0;
@@ -108,8 +109,9 @@ window.onload = function( ) {
     }, 100);
     
     
+    load();
     //load the welcome message
-    welcome();
+    //welcome(1);
         
 }//end of onload
 
@@ -126,18 +128,13 @@ function loadimg() {
     
 }//end of loading
 
-function welcome() {
+function load() {
     
-    var name = "";
+    name = "";
     links = [['Google' , 'www.google.com'] , ['Youtube' , 'www.youtube.com'] , ['Facebook' , 'www.facebook.com']];
     
-    var message = "Welcome: ";
-    
-    var elem = document.getElementById("message");
-    
-    
-    var retrivedlinks = JSON.parse(localStorage.getItem("links"));
-    var retrievedObject = JSON.parse(localStorage.getItem("namekey"));
+    retrivedlinks = JSON.parse(localStorage.getItem("links"));
+    retrievedObject = JSON.parse(localStorage.getItem("namekey"));
     retrievedtemp = localStorage.getItem("temp");
     retrievedColor = JSON.parse(localStorage.getItem("colorkey"));
 
@@ -164,19 +161,27 @@ function welcome() {
         localStorage.setItem("temp" , "f");
     }
     
-    
-    if(ampm == "PM") {
-        message = "Good Afternoon, " + name + ".";
-    } else {
-        message = "Good Morning, " + name + ".";
-    }    
-    
     change(retrievedColor);
-    elem.innerHTML = message;
+    
     
     loadlinks(links);
     
-}//end of welcome
+}//end of load
+
+function welcome(num) {
+    
+    var message = "Welcome: ";
+    if(num == 1) {
+        message = "Good Morning, " + name + ".";
+    } else if(num == 2) {
+      message = "Good Afterrnoon " + name + ".";  
+    } else {
+        message = "Good Evening, " + name + ".";
+    } 
+    var elem = document.getElementById("message");
+    elem.innerHTML = message;
+    
+}
 
 function loadlinks(arr) {
     
@@ -366,22 +371,33 @@ function weather() {
                   var daynight = "day";
                  
                   if(time < sunset && time > sunrise) {
+                      if(ampm >= "AM") {
+                          welcome(1);
+                      } else {
+                          welcome(2);
+                      }
                       
                   } else {
                       daynight = "night";
+                      if(ampm <= "PM") {
+                          welcome(3);
+                      } else {
+                          welcome(1);
+                      }
                   }
 
                   //get and load the icon url
                   iconP = "<i onclick='showmore();' class=' hoverable wi wi-owm-" + daynight + "-" + label + "'></i>";
                  
                  retrievedtemp = localStorage.getItem("temp");
+                 
                  setTimeout(function() {
-                     if(retrievedtemp == "f") {
-                        displaystring = ftemp + "&#176; F   " + iconP + "<br>" + city; 
-                        forf(); 
+                     if(retrievedtemp == "c") {
+                        displaystring = ctemp + "&#176; F   " + iconP + "<br>" + city; 
+                        forc(); 
                      } else {
-                         displaystring = ctemp + "&#176; C  " + iconP + "<br>" + city;
-                         forc();
+                         displaystring = ftemp + "&#176; F  " + iconP + "<br>" + city;
+                         forf();
                     }
                     temperature(displaystring);
                      
