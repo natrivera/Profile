@@ -95,7 +95,7 @@ window.onload = function( ) {
     
 
     //load the background image
-    loadimg();
+    loadimg(-1);
     
     //begin the time every 500 milliseconds
     ontime();
@@ -115,15 +115,18 @@ window.onload = function( ) {
         
 }//end of onload
 
-function loadimg() {
+function loadimg(num) {
     
-    var randomer = Math.floor((Math.random() * pictures.pics.length) + 1);
+    var random, image;
+    
+    if(num == -1) {
+        random = Math.floor((Math.random() * pictures.pics.length) + 1);
 
-
-    var image = pictures.pics[randomer];
-
-    var main = document.getElementById("main");
-
+        image = pictures.pics[random];
+    } else {
+        image = pictures.pics[num];    
+    }
+    
     document.body.style.backgroundImage = "url('http://natrivera.com/wallpapers/" + image + "')";
     
 }//end of loading
@@ -162,8 +165,7 @@ function load() {
     }
     
     change(retrievedColor);
-    
-    
+     
     loadlinks(links);
     
 }//end of load
@@ -319,6 +321,9 @@ function ontime() {
                
                } else {
                    ampm = "AM";
+                   if(hours == 0) {
+                       hours = 12;
+                   }
                }     
         }    
     
@@ -515,10 +520,10 @@ function opensettings() {
 }
 
 function reset() {
-    localStorage.setItem("namekey", JSON.stringify(null));
-    localStorage.setItem("links", JSON.stringify(null));
-    localStorage.setItem("colorkey", JSON.stringify(null));
-    localStorage.setItem("temp", JSON.stringify(null));
+    localStorage.setItem("namekey", null);
+    localStorage.setItem("links", null);
+    localStorage.setItem("colorkey", null);
+    localStorage.setItem("temp", null);
     window.location.reload(true);
     
 }
