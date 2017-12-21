@@ -78,14 +78,17 @@ var pictures = { "pics" : [
 var name;
 var ampm = "PM";
 var retrievedColor, retrievedtemp, retrievedObject, retrivedlinks;
+
+
 var ftemp = 0;
 var ctemp = 0;
-var dtemp = 0;
-var zip;
-var displaystring = "";
+var fmax = 0, fmin = 0;
+var cmax = 0, cmin = 0;
+
+var zip, iconP;
+var displaystring = "", secondstr = "";
 var bool = true;
-var iconP;
-var city;
+var city = "City LongName";
 var links = [];
 var opened = false;
 
@@ -362,6 +365,8 @@ function weather() {
                   var icon = num.weather[0].icon;
                   var label = num.weather[0].id;
                   var ktemp = num.main.temp;
+                  var kmax = num.main.temp_max;
+                  var kmin = num.main.temp_min;
                   var speed = num.wind.speed;
                   var direction = num.wind.deg;
                 
@@ -369,6 +374,13 @@ function weather() {
                  
                   ftemp = Math.round((ktemp * (9 / 5)) - 459.67);
                   ctemp = Math.round(ktemp - 273);
+                 
+                  fmin = Math.round((kmin * (9 / 5)) - 459.67);
+                  cmin = Math.round(kmin - 273);
+                 
+                  fmax = Math.round((kmax * (9 / 5)) - 459.67);
+                  cmax = Math.round(kmax - 273);
+                 
                   var sunrise = num.sys.sunrise;
                   var sunset = num.sys.sunset;
                   var time = new Date().getTime();
@@ -392,31 +404,32 @@ function weather() {
                   }
 
                   //get and load the icon url
-                  iconP = "<i onclick='showmore();' class=' hoverable wi wi-owm-" + daynight + "-" + label + "'></i>";
+                  iconP = "<i onclick='showmore();' class=' hoverable wi wi-fw wi-owm-" + daynight + "-" + label + "'></i>";
                  
                  retrievedtemp = localStorage.getItem("temp");
                  
                  setTimeout(function() {
                      if(retrievedtemp == "c") {
-                        displaystring = ctemp + "&#176; F   " + iconP + "<br>" + city; 
                         forc(); 
                      } else {
-                         displaystring = ftemp + "&#176; F  " + iconP + "<br>" + city;
                          forf();
                     }
-                    temperature(displaystring);
                      
                  },100);
                  
-                 var element = document.getElementById("description");
+                 var element = document.getElementById("morecity");
+                 element.innerHTML = city;
+                                    
+                 element = document.getElementById("description");
                  element.innerHTML = weatherType;
                  
                  element = document.getElementById("wind");
-                 element.innerHTML = "Winds: " + speed + "mph " + direction;
+                 element.innerHTML = "Wind: " + speed + "mph " + direction + "<br><br>";   
                  
-                 element = document.getElementById("unit");
-                 element.innerHTML =  "Units: <i class='hoverable chosen' id='farenheight' onclick='forf();'>F&#176;</i>    <i class='hoverable' id='celcius' onclick='forc();'>C&#176;</i>";
-                   
+                 element = document.getElementById("moreicon");
+                 var iconclass = "wi-owm-" + daynight + "-" + label;
+                 element.classList.add(iconclass);
+                 
                 });
             
         },200);          
@@ -424,9 +437,16 @@ function weather() {
       }); //end of getJSON
 }
 
-function temperature(str) {
+function temperature(str , str2) {
     var elem = document.getElementById("weather");
     elem.innerHTML = str;
+    
+    elem = document.getElementById("moretemp");
+    str = str.substring(0 , str.indexOf("<"));
+    elem.innerHTML = str ;
+    
+    elem = document.getElementById("minmax");
+    elem.innerHTML = str2;
 }
 
 function showmore() {
@@ -435,8 +455,10 @@ function showmore() {
     var checking = check.style.display;
     
     if(checking == "none") {
+        document.getElementById("weather").style.display = "none";
         check.style.display = "block";
     } else {
+        document.getElementById("weather").style.display = "block";
         check.style.display = "none";
     }
 }
@@ -444,20 +466,26 @@ function showmore() {
 function forc() {
     document.getElementById("farenheight").classList.remove("chosen");
     document.getElementById("celcius").classList.add("chosen");
-    displaystring = ctemp + "&#176; C   " + iconP + "<br>" + city;
+    
+    displaystring = ctemp + "&#176; C   " + iconP + "<br>" + city;  
+    secondstr =  cmax + "&#176; / " + cmin + "&#176;";
+    
     localStorage.setItem("temp" , "c");
     
-    temperature(displaystring);
+    temperature(displaystring , secondstr);
     retrievedtemp = localStorage.getItem("temp");
 }
 
 function forf() {
     document.getElementById("celcius").classList.remove("chosen");
     document.getElementById("farenheight").classList.add("chosen");
+    
     displaystring = ftemp + "&#176; F   " + iconP + "<br>" + city;
+    secondstr = fmax + "&#176; / " + fmin + "&#176;";
+    
     localStorage.setItem("temp" , "f");
     
-    temperature(displaystring);
+    temperature(displaystring , secondstr);
     retrievedtemp = localStorage.getItem("temp");
 }
 

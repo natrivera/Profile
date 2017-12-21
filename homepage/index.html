@@ -16,23 +16,56 @@
         <meta name="twitter:description" content="Refresh to get new image... Page created to serve as home page and includes search bar." />
         <meta name="twitter:image" content="screen.JPG" /> 
         
-        <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-        <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+        
         
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css' rel='stylesheet' type='text/css'>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href='index.css' rel='stylesheet' type='text/css'>
         <script src="index.js"></script>
         <script src="http://natrivera.com/profile.js"></script>
     </head>
-    <body onclick="clearaddons();">
+    <body >
+        <div id="total" class="container-fluid">
         <div id="info" class="info">
             <div id="time" class="time"></div>
             <div id="weather" class="weather"></div>
-            <div id="moreweather" class="moreweather" style="display: none;">
-                <div id="description"></div>
-                <div id="wind"></div>
-                <div id="unit"></div>
+            
+            <div class="container-fluid">
+                <div id="moreweather" class="moreweather" style="display: none;">
+                    
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div id="moreicon" class="moreicon hoverable wi" onclick='showmore();'></div>
+                            </div>
+                            <div class="col-xs-5 border-right border-left">
+                                <div id="morecity" class="morecity"></div>
+                                <div id="description" class="description"></div>
+                                <div id="wind" class="winds"></div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div id="moretemp" class="moretemp"></div>
+                                <div id="minmax" class="minmax"></div>
+                                <div id="unit" class="units">
+                                    <i class='hoverable chosen' id='farenheight' onclick='forf();'>F&#176;</i>
+                                    <i class='hoverable' id='celcius' onclick='forc();'>C&#176;</i>
+                                </div>
+                            </div>
+
+
+        <!--
+
+                            <div id="unit">
+                                <i class='hoverable chosen' id='farenheight' onclick='forf();'>F&#176;</i>    
+                                <i class='hoverable' id='celcius' style="float: right" onclick='forc();'>C&#176;</i>
+                            </div>
+        -->
+
+                        </div>
+                    </div>
+                </div>
+            
             </div>
             <div id"linkland" class="linkland">
                     <p id="linkbutt" class="hoverable" onclick="togglelink();">Links</p>
@@ -48,38 +81,39 @@
                         </div>
                     </div>
                 </div>
-        </div>
+    
         
-        <div id="main"> 
-            <div class="center">
-                <div id="welcome" class="welcome">           
-                    <div id="message"></div>
+            <div id="main"> 
+                <div class="center">
+                    <div id="welcome" class="welcome">           
+                        <div id="message"></div>
+                    </div>
+                    <br><br>
+                    <div id="search" class="search">
+                        <i onclick="search();" id="searchbutton" class="hoverable">&#8981;</i>
+                        <input id="searchinput" onKeyUp="keyUp(event);" autofocus>
+                    </div>
+
                 </div>
-                <br><br>
-                <div id="search" class="search">
-                    <i onclick="search();" id="searchbutton" class="hoverable">&#8981;</i>
-                    <input id="searchinput" onKeyUp="keyUp(event);" autofocus>
+                <div id="editor" class="editor">
+                    <div id="colors" class="colors" style="display: none;">
+                        <div id="white" class="choice white" onclick="change('white');"></div>
+                        <div id="black" class="choice black" onclick="change('black');"></div>
+                        <div id="blue" class="choice blue" onclick="change('darkblue');"></div>
+                        <div id="yellow" class="choice yellow" onclick="change('chartreuse');"></div>
+                    </div>
+                    <button id="options" class="options hoverable" onclick="optionUp();">&#8896</button>
                 </div>
-                
+                <div id="settings" class="settings">
+                    <div id="resetdiv" class="resetdiv" style="display: none;">
+                        <div>Reset prefrences?</div><br>
+                        <i class="hoverable" onclick="reset();">Yes</i>
+                        <i class="hoverable" onclick="opensettings();">No</i>
+                    </div>
+                    <button id="settingbutton" class="hoverable" onclick="opensettings();">&#9881;</button>
+                </div>
             </div>
-            <div id="editor" class="editor">
-                <div id="colors" class="colors" style="display: none;">
-                    <div id="white" class="choice white" onclick="change('white');"></div>
-                    <div id="black" class="choice black" onclick="change('black');"></div>
-                    <div id="blue" class="choice blue" onclick="change('darkblue');"></div>
-                    <div id="yellow" class="choice yellow" onclick="change('chartreuse');"></div>
-                </div>
-                <button id="options" class="options hoverable" onclick="optionUp();">&#8896</button>
-            </div>
-            <div id="settings" class="settings">
-                <div id="resetdiv" class="resetdiv" style="display: none;">
-                    <div>Reset prefrences?</div><br>
-                    <i class="hoverable" onclick="reset();">Yes</i>
-                    <i class="hoverable" onclick="opensettings();">No</i>
-                </div>
-                <button id="settingbutton" class="hoverable" onclick="opensettings();">&#9881;</button>
-            </div>
+            <div class="hide" id="hide"></div>
         </div>
-        <div class="hide" id="hide"></div>
     </body>
 </html>

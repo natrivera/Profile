@@ -29,23 +29,55 @@ a:hover {
 }
 
 .info {
-    min-height: 200px;
+    min-height: 210px;
 }
 
 .moreweather {
     color: white;
     text-shadow: none;
     margin-top: 10px;
-    width: 200px;
+    width: 350px;
     background-color:  rgba(0, 0, 0, 0.6);
     border-radius: 5%;
     padding: 10px;
 }
 
-.moreweather i {
-    margin: 15px;
+.units {
+    font-size: .8em;
 }
 
+.border-right {
+    border-right: 1px solid white;
+}
+
+.border-left {
+    border-left: 1px solid white;
+}
+
+.moreweather .wi {
+    font-size: 4em;
+}
+
+.moretemp {
+    font-size: 1.75em;
+}
+
+.morecity {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.minmax {
+    font-size: .8em;
+}
+
+.description {
+    font-size: .8em
+}
+
+.winds {
+    font-size: .8em;
+}
 
 .center {
     max-width: 400px;
