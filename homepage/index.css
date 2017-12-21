@@ -35,7 +35,7 @@ a:hover {
 .moreweather {
     color: white;
     text-shadow: none;
-    margin: 10px 0px -10px 0px;
+    margin: 5px 0px -20px 0px;
     width: 350px;
     background-color:  rgba(0, 0, 0, 0.6);
     border-radius: 5%;
