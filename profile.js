@@ -18,18 +18,14 @@ function hideOut(num) {
 
 $(document).ready(function() {
 	
-	$("head").append("<script src='//cdn.rawgit.com/web-animations/web-animations-js/2.2.2/web-animations.min.js'></script><script src='//cdn.rawgit.com/gibbok/animatelo/1.0.1/dist/animatelo.min.js'></script>)");
-	$("head").append("<script src='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js'></script>");
-	$("head").append("<link href='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css' rel='stylesheet'>");
+//	$("head").append("<script src='//cdn.rawgit.com/web-animations/web-animations-js/2.2.2/web-animations.min.js'></script><script src='//cdn.rawgit.com/gibbok/animatelo/1.0.1/dist/animatelo.min.js'></script>)");
+//	$("head").append("<script src='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js'></script>");
+//	$("head").append("<link href='https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css' rel='stylesheet'>");
 
 	//run animations	 
 	    AOS.init({
 	    once: true,
-	    });
-	
-//	$('form').attr('data-aos', 'flip-down');
-//	$('form').attr('data-aos-duration', '400');
-//	$('form').attr('data-aos-delay', '600');     
+	    }); 
 	
   		//add uplink
   		$("body").append("<div class='clickup' onClick=''><a data-aos='fade-up' href='#'<p class='fa fa-arrow-circle-o-up' style='position: fixed; right: 0; bottom: 0;'></p></a></div>");
