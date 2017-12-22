@@ -29,7 +29,7 @@ a:hover {
 }
 
 .info {
-    min-height: 210px;
+    min-height: 190px;
 }
 
 .moreweather {
@@ -87,7 +87,7 @@ a:hover {
 .center {
     font-size: 1.25em;
     max-width: 500px;
-    margin: 0px auto 0px;
+    margin: 0px auto 50px;
 }
 
 .welcome {
