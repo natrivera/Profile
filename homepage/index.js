@@ -179,7 +179,7 @@ function welcome(num) {
     if(num == 1) {
         message = "Good Morning, " + name + ".";
     } else if(num == 2) {
-      message = "Good Afterrnoon " + name + ".";  
+      message = "Good Afternoon " + name + ".";  
     } else {
         message = "Good Evening, " + name + ".";
     } 
