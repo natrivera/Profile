@@ -364,6 +364,7 @@ function weather() {
                   var main = num.weather[0].main;
                   var icon = num.weather[0].icon;
                   var label = num.weather[0].id;
+                 //label = 802;
                   var ktemp = num.main.temp;
                   var kmax = num.main.temp_max;
                   var kmin = num.main.temp_min;
