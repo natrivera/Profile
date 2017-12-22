@@ -133,6 +133,7 @@ a:hover {
 
 .linkland p {
     margin-top: 0px;
+    margin-right: 10px;
     float: right;
 }
 
@@ -230,6 +231,7 @@ a:hover {
     border: none;
     float: right;
     font-size: 2em;
+    margin-right: 10px;
 }
 
 .resetdiv {
