@@ -1,271 +1,295 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Local Weather</title>
-<meta name="description" content="A page to display the local weather created by Nat Rivera">
-<meta name="keywords" content="Nat Rivera">
-<link rel="shortcut icon" href="favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link href='https://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
-  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <head>
+        <title>Local Weather</title>
+        <meta name="description" content="A page to display the local weather created by Nat Rivera">
+        <meta name="keywords" content="Nat Rivera">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link href='https://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
-  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-  <script src="/profile.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<style>
-body {
-  background: url("/pics/lapic.jpg"); 
-  
-  font-family: 'Oleo Script', sans-serif;
-  background-repeat: no-repeat;
-  background-size: 1600px 768px;
-  background-position: center 0;
-  color: #FFFFFF;
-  text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
-  text-align: center;
-  font-size: 1.5em;
-}
-#spacer {
-  height: 50px;
-}
-.title {
-  margin: 2%;
-  font-size: 2em;
-}
-.row {
-  margin: 0%;
-}
-img {
-  width: 200%;
-}
-.display {
-  background-color: rgba(0,0,0,.5);
-  margin: auto;
-  border-radius: 15px;
-  border: solid 4px #000;
-  max-width: 500px;
-  font-size: 2em;
-}
- .city {
-   font-size: 6em;   
-    }
-.temperature li {
-  list-style: none;
-  display: inline-block;
-}
-#kfc:hover {
-  color: #0000ff;  
-}
-button {
-  background-color: transparent;
-  color: #FFFFFF;
-  border-color: transparent;
-}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+        <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+        <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+        <script src="/profile.js"></script>
+
+        <style>
+            body {
+                background: url("/pics/lapic.jpg"); 
+                font-family: 'Oleo Script', sans-serif;
+                background-repeat: no-repeat;
+                background-size: 1600px 768px;
+                background-position: center 0;
+                color: #FFFFFF;
+                text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+                text-align: center;
+                font-size: 1.5em;
+            }
+            #spacer {
+                height: 50px;
+            }
+            .title {
+                margin: 2%;
+                font-size: 2em;
+            }
+            .row {
+                margin: 0%;
+            }
+            img {
+                width: 200%;
+            }
+            .display {
+                background-color: rgba(0,0,0,.5);
+                margin: auto;
+                border-radius: 15px;
+                border: solid 4px #000;
+                max-width: 500px;
+                font-size: 2em;
+            }
+            .city {
+                font-size: 6em;   
+            }
+            .temperature li {
+                list-style: none;
+                display: inline-block;
+            }
+            #kfc:hover {
+                color: #0000ff;  
+            }
+            button {
+                background-color: transparent;
+                color: #FFFFFF;
+                border-color: transparent;
+            }
+            #cityadd {
+                display: none;
+                margin-top: 50px;
+                background-color: rgba(0,0,0,.5);
+                margin: auto;
+                border-radius: 15px;
+                border: solid 4px #000;
+                max-width: 500px;
+                font-size: 2em;
+            }
 
 
-</style>
-</head>
+        </style>
+    </head>
 
-<body>
-  
-  <div class="container">
-    <div id="spacer"></div>
-    <div class="display">
-      <div class="title">
-        <h1 id="city">Your City</h1>
-      </div>
-      <div class="row">
-        <div class="col-lg=6 col-md-6">
-          <div>
-            <p id="time"></p>
-            <p id="wind"></p>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6">
-          <div class="temperature">
-            <ul>
-              <li>
-                <p id="temp">???</p></li>
-              <li>
-                <p id="kfc">&degF</p></li>
-              <li>
-                <div id="iconId">
-                  <img src="http://openweathermap.org/img/w/01d.png">
+    <body>
+
+        <div class="container">
+            <div id="spacer"></div>
+            <div class="display">
+                <div class="title">
+                    <h1 id="city">Your City</h1>
                 </div>
-              </li>
-            </ul>
-            <p id="weatherType">Condition</p>
-          </div>
+                <div class="row">
+                    <div class="col-lg=6 col-md-6">
+                        <div>
+                            <p id="time"></p>
+                            <p id="wind"></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="temperature">
+                            <ul>
+                                <li>
+                                    <p id="temp">???</p></li>
+                                <li>
+                                    <p id="kfc">&degF</p></li>
+                                <li>
+                                    <div id="iconId">
+                                        <img src="http://openweathermap.org/img/w/01d.png">
+                                    </div>
+                                </li>
+                            </ul>
+                            <p id="weatherType">Condition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <div id="cityadd">
+            Enter Zip: <input id="newcity" placeholder="91763"><button onclic"changecity();">Enter</button>
+        </div>
+        <script>
 
-<script>
-  
-$(document).ready(function() {
-  var data = document.getElementById("data");
-  var lat = 34.07;
-  var long = -119.68;
-  var region = "CA";
-  var now = new Date(), hours = now.getHours();
-  var locApi = "http://ip-api.com/json";
-   
-  //show the time and date
-  setInterval(function() {
-  now = new Date();
-     
-  //calculate mins and seconds
-  var ampm = "AM";
-  var date = now.toDateString();
-  hours = now.getHours();
-  var minutes = now.getMinutes();
-  var seconds = now.getSeconds();
-    if(seconds < 10) {
-      seconds = "0" + seconds.toString();
-    }
-    if (minutes < 10) {
-      minutes = "0" + minutes.toString();
-    }
-    if(hours > 12) {
-      hours -= 12;
-      ampm = "PM";
-    } else {
-      ampm = "AM";
-    }
-    
-  $("#time").html(date);
-  $("#time").append("<p>" + hours + ":" + minutes + ":" + seconds + " " + ampm + "</p>");
-     
-  }, 1000);
-  
-  //get the location
-    console.log(navigator.geolocation);
-  if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getLatLong);
-    
-        function getLatLong(position) {
-          lat =   position.coords.latitude; 
-          long =  position.coords.longitude;
-          run(lat , long , region);
-        }   
-  } else {
-  
-    $.getJSON(locApi, function(pos) {
-      lat = pos.lat;
-      long = pos.lon;
-      region = pos.region;
+            $(document).ready(function() {
+                var data = document.getElementById("data");
+                var lat = 34.07;
+                var long = -119.68;
+                var region = "CA";
+                var now = new Date();
+                var hours = now.getHours();
+                var locApi = "http://ip-api.com/json";
 
-      run(lat , long , region);
-      });
-  }
-    
-  //when the temp is switched between f or c
-  $("#kfc").click(function() {
-      far();
-  });
+                //show the time and date
+                setInterval(function() {
+                    now = new Date();
 
-});
+                    //calculate mins and seconds
+                    var ampm = "AM";
+                    var date = now.toDateString();
+                    var hours = now.getHours();
+                    var minutes = now.getMinutes();
+                    var seconds = now.getSeconds();
+                    if(seconds < 10) {
+                        seconds = "0" + seconds.toString();
+                    }
+                    if (minutes < 10) {
+                        minutes = "0" + minutes.toString();
+                    }
+                    if(hours > 12) {
+                        hours -= 12;
+                        ampm = "PM";
+                    } else {
+                        ampm = "AM";
+                    }
 
-function far() {
-  
-   if (dtemp === ftemp) {
-      $("#kfc").html("&degC");
-      $("#temp").html(ctemp);
-      dtemp = ctemp;
-    } else {
-      $("#kfc").html("&degF");
-      $("#temp").html(ftemp);
-      dtemp = ftemp;
-    }
-}
+                    $("#time").html(date);
+                    $("#time").append("<p>" + hours + ":" + minutes + ":" + seconds + " " + ampm + "</p>");
 
-function run(lat , long , region) {
-  
-    var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
-   
-    $.getJSON(wapi, function(num) {
-      
-      
-      //parse out all the needed info
-      var city = num.name;
-      
-      var weatherType = num.weather[0].description;
-      var icon = num.weather[0].icon;
-      var label = num.weather[0].id;
-      var ktemp = num.main.temp;
-      var speed = num.wind.speed;
-      var direction = num.wind.deg;
-      var ftemp = Math.round((ktemp * (9 / 5)) - 459.67);
-      var ctemp = Math.round(ktemp - 273);
-      var dtemp = ftemp;
-       
-      //load the info the site
-      $("#temp").html(ftemp);
-      
-      $("#weatherType").html(weatherType);
-      $("#speed").html(speed);
-      
-      $("#city").html(city + ", " + region);
-      $("#icon").html(icon);
-      $("#label").html(label);
-     
-      //get and load the icon url
-      var iconP = "<img src='http://openweathermap.org/img/w/" + icon + ".png'>";
-      $("#iconId").html(iconP);
-      
-      //use function to get and load wind direcction
-      direction = getCardinal(direction);
-      $("#wind").html("Winds: " + speed + " mph " + direction);  
-      
-      
-      var sunrise = new Date(num.sys.sunrise * 1000).getHours();
-      var sunset = new Date(num.sys.sunset * 1000).getHours();
-      
-      //change the background if time is after sunset
-      if(hours > sunset || hours < sunrise) {
-      $("body").css("background", "url('https://c1.staticflickr.com/8/7271/7475904040_24a05ca634_b.jpg')");
-      //$("body").css("background-color" , "#00009a");
-    } 
-    });
-   
-}
+                }, 1000);
+
+                //get the location
+                if (false) {
+                    navigator.geolocation.getCurrentPosition(getLatLong);
+
+                    function getLatLong(position) {
+                        lat =   position.coords.latitude; 
+                        long =  position.coords.longitude;
+                        run(lat , long , region);
+                        console.log("hello world");
+                    }   
+                } else {
+
+                    $.getJSON(locApi, function(pos) {
+                        lat = pos.lat;
+                        long = pos.lon;
+                        region = pos.region;
+
+                        run(lat , long , region);
+                    }).fail(function(pos) {
+                        run(34.0775 , -117.6898 , "CA");
+                    });
+                }
+
+                //when the temp is switched between f or c
+                $("#kfc").click(function() {
+                    far();
+                });
+
+            });
+
+            function far() {
+
+                if (dtemp === ftemp) {
+                    $("#kfc").html("&degC");
+                    $("#temp").html(ctemp);
+                    dtemp = ctemp;
+                } else {
+                    $("#kfc").html("&degF");
+                    $("#temp").html(ftemp);
+                    dtemp = ftemp;
+                }
+            }
+
+            function run(lat , long , region) {
+
+                var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+                
+                weatherjson(wapi , region);
+
+            }
+            
+            function weatherjson(wurl , region) {
+                $.getJSON(wurl, function(num) {
 
 
- //function to show wind direction
- function getCardinal(angle) {
-        //easy to customize by changing the number of directions you have 
-       // thank you basarat from github     
-        var directions = 8;
-        
-        var degree = 360 / directions;
-        angle = angle + degree/2;
-        
-        if (angle >= 0 * degree && angle < 1 * degree)
-            return "N";
-        if (angle >= 1 * degree && angle < 2 * degree)
-            return "NE";
-        if (angle >= 2 * degree && angle < 3 * degree)
-            return "E";
-        if (angle >= 3 * degree && angle < 4 * degree)
-            return "SE";
-        if (angle >= 4 * degree && angle < 5 * degree)
-            return "S";
-        if (angle >= 5 * degree && angle < 6 * degree)
-            return "SW";
-        if (angle >= 6 * degree && angle < 7 * degree)
-            return "W";
-        if (angle >= 7 * degree && angle < 8 * degree)
-            return "NW";
-        //Should never happen: 
-        return "N";
-    }
-</script>
-</body>
+                    //parse out all the needed info
+                    var city = num.name;
+
+                    var weatherType = num.weather[0].description;
+                    var icon = num.weather[0].icon;
+                    var label = num.weather[0].id;
+                    var ktemp = num.main.temp;
+                    var speed = num.wind.speed;
+                    var direction = num.wind.deg;
+                    var ftemp = Math.round((ktemp * (9 / 5)) - 459.67);
+                    var ctemp = Math.round(ktemp - 273);
+                    var dtemp = ftemp;
+                    var hours = new Date().getHours();
+
+                    //load the info the site
+                    $("#temp").html(ftemp);
+
+                    $("#weatherType").html(weatherType);
+                    $("#speed").html(speed);
+
+                    $("#city").html(city + ", " + region);
+                    $("#icon").html(icon);
+                    $("#label").html(label);
+
+                    //get and load the icon url
+                    var iconP = "<img src='http://openweathermap.org/img/w/" + icon + ".png'>";
+                    $("#iconId").html(iconP);
+
+                    //use function to get and load wind direcction
+                    direction = getCardinal(direction);
+                    $("#wind").html("Winds: " + speed + " mph " + direction);  
+
+
+                    var sunrise = new Date(num.sys.sunrise * 1000).getHours();
+                    var sunset = new Date(num.sys.sunset * 1000).getHours();
+
+                    //change the background if time is after sunset
+                    if(hours > sunset || hours < sunrise) {
+                        $("body").css("background", "url('https://c1.staticflickr.com/8/7271/7475904040_24a05ca634_b.jpg')");
+                        //$("body").css("background-color" , "#00009a");
+                    } 
+                });//end og getJSON
+            }
+
+
+            //function to show wind direction
+            function getCardinal(angle) {
+                //easy to customize by changing the number of directions you have 
+                // thank you basarat from github     
+                var directions = 8;
+
+                var degree = 360 / directions;
+                angle = angle + degree/2;
+
+                if (angle >= 0 * degree && angle < 1 * degree)
+                    return "N";
+                if (angle >= 1 * degree && angle < 2 * degree)
+                    return "NE";
+                if (angle >= 2 * degree && angle < 3 * degree)
+                    return "E";
+                if (angle >= 3 * degree && angle < 4 * degree)
+                    return "SE";
+                if (angle >= 4 * degree && angle < 5 * degree)
+                    return "S";
+                if (angle >= 5 * degree && angle < 6 * degree)
+                    return "SW";
+                if (angle >= 6 * degree && angle < 7 * degree)
+                    return "W";
+                if (angle >= 7 * degree && angle < 8 * degree)
+                    return "NW";
+                //Should never happen: 
+                return "N";
+            }
+            
+            function changecity() {
+                $("#cityadd").css("display" , "none");
+                var zipper = $("#newcity").val();
+            }
+        </script>
+    </body>
 </html>
