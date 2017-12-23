@@ -108,7 +108,15 @@ window.onload = function( ) {
 
     setTimeout(function() {
         //load the weather
-        weather();
+        zip = localStorage.getItem("zip");
+        console.log(zip);
+        if(zip == null) {
+            locationweather();
+        } else {
+            var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+            jsonweather(url);
+        }
+
     }, 100);
 
 
@@ -336,7 +344,7 @@ function ontime() {
 }//end of ontime
 
 
-function weather() {
+function locationweather() {
 
     var lat, long;
     var localApi = "http://ip-api.com/json?callback=?";
@@ -354,7 +362,6 @@ function weather() {
         var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
 
         jsonweather(wapi);
-
 
     }); //end of getJSON
 }
@@ -445,6 +452,8 @@ function jsonweather(url) {
                 element.classList.add("hoverable");
                 element.classList.add("wi");
                 element.classList.add(iconclass);
+
+                localStorage.setItem("zip" , zip);
             } else {
                 city = "City not found!";
             }
@@ -471,6 +480,7 @@ function temperature(str , str2) {
 
 function showmore() {
     addondelay();
+    document.getElementById("zipchange").style.display = "none";
     var check = document.getElementById("moreweather");
     var checking = check.style.display;
 
@@ -523,8 +533,8 @@ function updatecity() {
     document.getElementById("zipchange").style.display = "none";
     document.getElementById("city").style.display = "block";
 
-    var zipcode = document.getElementById("newzip").value;
-    var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zipcode + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+    zip = document.getElementById("newzip").value;
+    var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
 
     jsonweather(url);
 }
