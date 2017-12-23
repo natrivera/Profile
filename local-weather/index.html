@@ -146,6 +146,7 @@ $(document).ready(function() {
   }, 1000);
   
   //get the location
+    console.log(navigator.geolocation);
   if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getLatLong);
     
