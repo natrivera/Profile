@@ -110,9 +110,9 @@ window.onload = function( ) {
         //load the weather
         zip = localStorage.getItem("zip");
 
-        if(zip == null) {
+        if(zip == null || zip == "null") {
             locationweather();
-        } else {
+        }  else {
             var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
             jsonweather(url);
         }
@@ -385,7 +385,6 @@ function jsonweather(url) {
                 var main = num.weather[0].main;
                 var icon = num.weather[0].icon;
                 var label = num.weather[0].id;
-                //label = 802;
                 var ktemp = num.main.temp;
                 var kmax = num.main.temp_max;
                 var kmin = num.main.temp_min;
@@ -627,6 +626,7 @@ function reset() {
     localStorage.setItem("links", null);
     localStorage.setItem("colorkey", null);
     localStorage.setItem("temp", null);
+    localStorage.setItem("zip" , null);
     window.location.reload(true);
 
 }
