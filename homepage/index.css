@@ -24,12 +24,39 @@ a:hover {
     text-shadow: 1px 1px 2px white, 0 0 25px white, 0 0 5px blue !important;
 }
 
+.backer {
+    background-color:  rgba(0, 0, 0, 0.6);
+    border-radius: 5%;
+    padding: 10px;
+}
+
 .chosen {
     border-bottom: 1px solid white;
 }
 
 .info {
     min-height: 175px;
+}
+
+.citydiv {
+    width: 200px;
+}
+
+.zipchange {
+    display: none;
+}
+
+.zipchange input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 5px;
+}
+
+.zipchange button {
+    background-color: transparent;
+    border: none;
+    padding-left: 0px;
 }
 
 .moreweather {

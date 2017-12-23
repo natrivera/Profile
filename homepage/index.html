@@ -4,7 +4,7 @@
         <title>Home Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        
+
         <meta name="og:image" content="screen.JPG"/>
         <meta property="og:image" content="screen.JPG"/>
         <meta property="og:url" content="http://natrivera.com/homepage/" >
@@ -15,23 +15,32 @@
         <meta name="twitter:title" content="Home Page." />
         <meta name="twitter:description" content="Refresh to get new image... Page created to serve as home page and includes search bar." />
         <meta name="twitter:image" content="screen.JPG" /> 
-            
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css' rel='stylesheet' type='text/css'>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href='index.css' rel='stylesheet' type='text/css'>
         <script src="index.js"></script>
-        <script src="http://natrivera.com/profile.js"></script>
+<!--        <script src="http://natrivera.com/profile.js"></script>-->
     </head>
     <body>
         <div id="total" class="container-fluid">
-        <div id="info" class="info">
-            <div id="time" class="time"></div>
-            <div id="weather" class="weather"></div>
-            
-            <div class="container-fluid" style="padding-left: 0px;">
-                <div id="moreweather" class="moreweather" style="display: none;">
+            <div id="info" class="info">
+                <div id="time" class="time"></div>
+                <div id="weather" class="weather"></div>
+                <div id="citydiv" class="citydiv">
+                    <div id="city" class="city hoverable" onclick="displayzipup();"></div>
+                    <div id="zipchange" class="zipchange backer">
+                        <div>Zip Code:
+                            <input id="newzip" rows="10" placecolder="90001">
+                            <button onclick="updatecity();" class="hoverable">Update</button>
+                            <button onclick="cancelup();" class="hoverable">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding-left: 0px;">
+                    <div id="moreweather" class="moreweather" style="display: none;">
                         <div class="row">
                             <div class="col-xs-3">
                                 <div id="moreicon" class="moreicon hoverable wi" onclick='showmore();'></div>
@@ -54,24 +63,24 @@
                         </div>
                     </div>
                 </div>
-            
+
             </div>
             <div id"linkland" class="linkland">
-                    <p id="linkbutt" class="hoverable linkstr" onclick="togglelink();">Links</p>
-                    <div id="links" class="links" style="display: none;">
-                        <div id="linkplace"></div>
-                        <div>
-                            <div onclick='addlink();' class="hoverable" style="color:  #d0d3d4;">Add Link</div>
-                            <div id="addlink" class="addlink" style="display: none;">
-                                <input type="text" id="linkname" placeholder="Name">
-                                <input type="text" id="linkurl" placeholder="Link">
-                                <button onclick="updatelinks();">Submit</button>
-                            </div>
+                <p id="linkbutt" class="hoverable linkstr" onclick="togglelink();">Links</p>
+                <div id="links" class="links" style="display: none;">
+                    <div id="linkplace"></div>
+                    <div>
+                        <div onclick='addlink();' class="hoverable" style="color:  #d0d3d4;">Add Link</div>
+                        <div id="addlink" class="addlink" style="display: none;">
+                            <input type="text" id="linkname" placeholder="Name">
+                            <input type="text" id="linkurl" placeholder="Link">
+                            <button onclick="updatelinks();">Submit</button>
                         </div>
                     </div>
                 </div>
-    
-        
+            </div>
+
+
             <div id="main"> 
                 <div class="center">
                     <div id="welcome" class="welcome">           
