@@ -365,6 +365,7 @@ function locationweather() {
     }).fail(function() {
         
         console.log("location api was blocked!!!");
+        zip = "91763";
         var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=34.08&lon=-117.69&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
         jsonweather(wapi);
         
