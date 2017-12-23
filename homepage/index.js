@@ -109,7 +109,7 @@ window.onload = function( ) {
     setTimeout(function() {
         //load the weather
         zip = localStorage.getItem("zip");
-        console.log(zip);
+
         if(zip == null) {
             locationweather();
         } else {
@@ -118,8 +118,7 @@ window.onload = function( ) {
         }
 
     }, 100);
-
-
+    
     load();
     //load the welcome message
     //welcome(1);
@@ -363,17 +362,20 @@ function locationweather() {
 
         jsonweather(wapi);
 
+    }).fail(function() {
+        
+        console.log("location api was blocked!!!");
+        var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=34.08&lon=-117.69&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+        jsonweather(wapi);
+        
     }); //end of getJSON
 }
 
-function jsonweather(url) {
+function jsonweather(url) {  
 
     setTimeout(function() {
 
         $.getJSON(url, function(num) { 
-
-            if(num.cod == 200) {
-
 
                 //parse out all the needed info
                 city = num.name;
@@ -454,12 +456,12 @@ function jsonweather(url) {
                 element.classList.add(iconclass);
 
                 localStorage.setItem("zip" , zip);
-            } else {
-                city = "City not found!";
-            }
+         
 
+        }).fail(function(num) {
+            console.log("weather api could not load!!!");
         });//end of getJSON
-
+        
     },200);   
 }
 
