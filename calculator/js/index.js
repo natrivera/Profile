@@ -146,7 +146,7 @@ function cptpress() {
       document.getElementById('display').innerHTML = "NPV = " + npv;
 
     }
-    compute = false;
+    //compute = false;
     npvrun = false;
   } else if (irrrun) {
     if (npvbool) {
@@ -156,7 +156,7 @@ function cptpress() {
         document.getElementById('display').innerHTML = "IRR = " + irr;
       }
     }
-    compute = false;
+    //compute = false;
     irrrun = false;
   }
 }
@@ -335,9 +335,8 @@ function npvpress() {
 
 function irrpress() {
 
-  if (npvbool) {
-    irrrun = true;
-  }
+  irrrun = true;
+  npvbool = true;
   cashsetting = false;
   document.getElementById('display').innerHTML = "IRR = " + irr;
   togglepress("irr");
@@ -558,7 +557,7 @@ function NPV(int, initial, arr) {
 }
 
 function IRR(npv, arr) {
-  var irr = -1;
+  irr = -1;
   var sum = 10;
   while (sum != 0) {
     sum = 0;
@@ -570,13 +569,15 @@ function IRR(npv, arr) {
     }
     if (sum < (npv + 10) && sum > (npv - 10)) {
       sum = 0;
-    } else if (irr > 10) {
-
+    } else if (irr > 1) {
       irr = "error";
       sum = 0;
     }
 
   }
   irr = irr * 100;
-  return irr.toFixed(4);
+  if (isNaN(irr) == false) {
+    irr = irr.toFixed(4);
+  }
+  return irr;
 }
