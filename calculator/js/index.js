@@ -142,9 +142,13 @@ function cptpress() {
     if (text.indexOf("NPV") != -1) {
       var arr = cashflow;
       arr.splice(0, 1);
-      npv = NPV(npvrate, cashflow[0], arr); //int , initial , arr
-      document.getElementById('display').innerHTML = "NPV = " + npv;
 
+      console.log(cashflow);
+      console.log(arr);
+      npv = NPV(npvrate, initialcash, arr); //int , initial , arr
+      document.getElementById('display').innerHTML = "NPV = " + npv;
+      npvrun = false;
+      cashflow.unshift(initialcash);
     }
     //compute = false;
     npvrun = false;
@@ -343,6 +347,10 @@ function irrpress() {
 }
 
 function togglepress(id) {
+  if ("vibrate" in navigator) {
+    // vibration API supported
+    navigator.vibrate(200); // vibrate for 200ms
+  }
   var str = id;
   var elem = document.getElementById(str);
   elem.classList.add("highlight");
@@ -542,7 +550,8 @@ function TERM(pres, rate, fut, pay) {
 }
 
 function NPV(int, initial, arr) {
-  initial = (initial * -1);
+  //initial = (initial * -1);
+  initial = parseFloat(initial);
   var npv = 0;
   int = int / 100;
 
@@ -551,8 +560,12 @@ function NPV(int, initial, arr) {
     var t = i + 1;
     npv += number / (Math.pow((1 + int), t));
   }
-  npv = npv - initial;
+  console.log(npv);
+  npv = npv + initial;
   npv = Math.round(npv * 100) / 100;
+  console.log(initial);
+  console.log(arr);
+
   return npv;
 }
 
