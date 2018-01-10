@@ -143,8 +143,6 @@ function cptpress() {
       var arr = cashflow;
       arr.splice(0, 1);
 
-      console.log(cashflow);
-      console.log(arr);
       npv = NPV(npvrate, initialcash, arr); //int , initial , arr
       document.getElementById('display').innerHTML = "NPV = " + npv;
       npvrun = false;
@@ -560,11 +558,9 @@ function NPV(int, initial, arr) {
     var t = i + 1;
     npv += number / (Math.pow((1 + int), t));
   }
-  console.log(npv);
   npv = npv + initial;
   npv = Math.round(npv * 100) / 100;
-  console.log(initial);
-  console.log(arr);
+
 
   return npv;
 }
