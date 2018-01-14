@@ -429,7 +429,7 @@ function equals() {
   matharray = [];
   negative = false;
   compute = false;
-  togglepress("equals");
+  togglepress("equal");
 }
 
 function runmath(arr) {
