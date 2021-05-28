@@ -1,19 +1,3 @@
- 	 function hideOut(num) {
- 	   var information = "catalog" + num.toString();
- 	   var string = "#" + num.toString();
- 	   var x = document.getElementById(information);
-
- 	   if (x.style.display === 'none') {
- 	     x.style.display = 'block';
- 	     $(string).removeClass("fa-caret-down");
- 	     $(string).addClass("fa-caret-up");
- 	   } else {
- 	     x.style.display = 'none';
- 	     $(string).removeClass("fa-caret-up");
- 	     $(string).addClass("fa-caret-down");
- 	   }
- 	 }
-
 
  	 $(document).ready(function() {
 
@@ -38,20 +22,8 @@
  	   });
 
 
- 	   //move picture on top
- 	   $("#mask").click(function() {
- 	     if ($("#introduction").css("z-index") == "10") {
- 	       $("#introduction").css("z-index", "100");
- 	     } else {
- 	       $("#introduction").css("z-index", "10");
- 	     }
- 	   });
 
- 	   //hide the catalog info in academic work page
- 	   $(".catalog").click(function() {
- 	     var i = this.id;
- 	     hideOut(i);
- 	   });
+
 
 
  	   (function(i, s, o, g, r, a, m) {
