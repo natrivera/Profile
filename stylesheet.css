@@ -12,13 +12,6 @@
 .bottom {
   margin-top: 5%;
 }
-.profileimg {
-  float: left;
-  border: none;
-  max-height: 400px;
-  max-width: 400px;
-  margin: 0 auto;
-}
 img {
   display: block;
   margin: auto;
