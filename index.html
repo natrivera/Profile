@@ -14,121 +14,80 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="profile.js"></script>
-
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
 </head>
 
-
-<body data-spy="scroll" data-target="#nav">
-
-
-  <div id="header">
-
-    <nav id="nav" class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-
-          <a href="/"><img alt="Nat Rivera" src="/pics/name.png"></a>
-
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#headlinks">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-
-
-        </div>
-
-        <div class="nav navbar-nav navbar-collapse collapse" id="headlinks">
-          <ul class="nav navbar-nav">
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/blog">Blog</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+<body>
+  <div class="header">
+    <h1 class="content">Nat Rivera</h1>
   </div>
   <div class="container">
-    <div class="jumbotron intro">
-      A placeholder intro goes here.
-    </div>
-
-    <div id="bottom">
-      <div class="contact">
-        <div class="container-fluid__">
-
-          <h2 class="bottomName">Contact Me</h2>
-
-          <div class="row">
-
-            <div class="col-lg-6 col-md-12">
-              <div class="social">
-
-                <h3>Follow my different social media accounts for more information on projects I complete. Just click on any of the buttons.</h3>
-
-                <div class="buttons">
-                  <div class="row">
-                    <a target="_blank" class="col-xs-4" href="https://www.facebook.com/itsnatrivera">
-                      <p class="fa fa-facebook-square"></p>
-                    </a>
-                    <a target="_blank" class="col-xs-4" href="https://github.com/natrivera">
-                      <p class="fa fa-github-square"></p>
-                    </a>
-                    <a target="_blank" class="col-xs-4" href="https://twitter.com/Itsnatrivera">
-                      <p class="fa fa-twitter-square"></p>
-                    </a>
-                  </div>
-                </div>
-
-
-
-                <div class="buttons">
-                  <div class="row">
-                    <a target="_blank" class="col-xs-4" href="https://codepen.io/natrivera/">
-                      <p class="fa fa-codepen"></p>
-                    </a>
-                    <a target="_blank" class="col-xs-4" href="https://www.linkedin.com/in/natrivera">
-                      <p class="fa fa-linkedin-square"></p>
-                    </a>
-                    <a target="_blank" class="col-xs-4" href="/blog">
-                      <p class="fa fa-wordpress"></p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="conform col-lg-6 col-md-12">
-              <form action="https://formspree.io/nat@natrivera.com" method="POST" align="center" name="contactme">
-                <input type="hidden" name="_subject" value="Website Form!" />
-                <input type="hidden" name="_format" value="plain" />
-                <input class="form-control input-lg" name="name" type="text" value="" placeholder="Name: Nat Rivera" />
-                <br>
-                <input class="form-control input-lg" name="email" type="text" value="" placeholder="Email: Nat@NatRivera.com" />
-                <br>
-                <textarea class="form-control input-lg" name="message" rows="5" placeholder="Message: Hello World"></textarea>
-                <br>
-                <input class="form-control input-lg" type="submit" name="submit" id="submit" value="Submit" />
-              </form>
-            </div>
-
+    <div class="content">
+      <div id="welcome" class="section">
+        <div class="row">
+          <div class="col-md-8 col-sm-12">
+            <p>Business Intelligence Professional who enjoys wrangling data from varying sources and transforming it to insightful, impactful, and actionable dashboards. I work to identify the pulse of business operations and bring to attention any instances that are anomalous. After meeting with stakeholders, I develop tools that meet their reporting and analytical needs. Examples include, KPI dashboards with both executive level and detail user views.</p>
           </div>
-
-
+          <div class="col-md-4 col-sm-12">
+            <img class="img img-responsive profileimg" src="http://natrivera.com/IMG_9893.jpg">
+          </div>
+        </div>
+      </div>
+      <div id="portfolio" class="section">
+        <h2>Portfolio</h2>
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <img class="img img-responsive" src="http://natrivera.com/tutorial/cppimg1.jpg">
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <img class="img img-responsive" src="http://natrivera.com/tutorial/cppimg2.jpg">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <img class="img img-responsive" src="http://natrivera.com/tutorial/cppimg3.jpg">
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <img class="img img-responsive" src="http://natrivera.com/tutorial/cppimg4.jpg">
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div id="bottomtittle">
+          <h2>Contact Me</h2>
+          <p>Here are a few links where you can see more examples of my work.</p>
+        </div>
+        <div id="social">
+          <div class="row">
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://www.facebook.com" target="_blank">
+                <button>Facebook</button>
+              </a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://www.linkedin.com" target="_blank">
+                <button>Linkedin</button>
+              </a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://www.facebook.com" target="_blank">
+                <button>Facebook</button>
+              </a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <a href="http://www.linkedin.com" target="_blank">
+                <button>Linkedin</button>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-
-  <div id="footer" class="footer container">
-    <p>page by Nat Rivera </p>
+  <div class="footer">
+    <p>Created by Poly Student</p>
   </div>
-
-
 </body>
 
 </html>
