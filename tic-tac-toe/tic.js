@@ -84,7 +84,7 @@ $(".board").click(function() {
   if ($(this).html() === "") {
 
     $(this).toggleClass("current");
-    game();
+    game(1);
     $(this).toggleClass("current");
     computer();
   }
@@ -139,26 +139,29 @@ function computer() {
       //cumputer play after 1 sec
       setTimeout(function() {
         $(randomize).toggleClass("current");
-        game();
+        game(0);
         $(randomize).toggleClass("current");
       }, 800);
     }
  
 }
 
-function game() {
-  play();
+function game(b) {
+  play(b);
   check();
  //console.log(arr);
 }
 
-function play() {
+function play(b) {
   
-  if (player) {
-    player_x_o = 'x'
-  } else {
-    player_x_o = 'o'
+  if(b != 0) {
+    if (player) {
+      player_x_o = 'x';
+    } else {
+      player_x_o = 'o';
+    }
   }
+  
 
   count++;
 
@@ -411,13 +414,14 @@ function check() {
   }
   
   if (won1 !== "") {
-    if(message == 'X Wins!' && player_x_o == 'x') {
-      outmessage = 'You Win!'
-    } else if(message == "O WINS!" && player_x_o == 'o') {
-      outmessage = 'You Win!'
+    if(message == 'X WINS!' && player_x_o == 'x' ) {
+      outmessage = 'You Win!';
+    } else if(message == "O WINS!" && player_x_o == 'o' ) {
+      outmessage = 'You Win!';
     } else {
-      outmessage = 'Computer Wins!'
+      outmessage = 'Computer Wins!';
     }
+    
     
     $("#message").html(outmessage);
     //$("#message").html("Player " +  message);
