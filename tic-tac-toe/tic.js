@@ -1,11 +1,13 @@
 var started = false;
 var message = "Select a symbol (X or O)";
-var x, number1, number2;
+var x, number1, number2, blink;
+var happy = 1000, mod;
 var first = 0;
 var count = 0;
 var won1 = "";
 var won2, won3, currId;
 var arr = [];
+var player_x_o = 'x'
    
 //player = true means player = X
 var player;
@@ -25,6 +27,17 @@ $(document).ready(function() {
     }
 
   }, 100);
+  
+  blink = setInterval(function() {
+    mod = happy % 2;
+    if(mod === 1) {
+      $("#choose").css("color" , "#fff");
+    } else {
+      $("#choose").css("color" , "yellow");
+    }
+    
+    happy--;
+  }, 1000);
 
 });
 
@@ -51,6 +64,8 @@ $("#o").click(function() {
 
 function choose() {
   if (first === 0) {
+    clearInterval(blink);
+    $("#choose").css("color" , "#FFF");
     clear();
     first = 1;
   }
@@ -83,7 +98,7 @@ function computer() {
   
   //if computer symbol is X, number looking for is 5
   //if computer symbol is O, number looking for is 7
-  if (player == true)
+  if (player)
     {
       fiveseven = 7;
     }
@@ -102,7 +117,7 @@ function computer() {
     }
   }
   var audio = new Audio('http://natrivera.com/tic-tac-toe/button-09.mp3');
-  audio.play()
+  audio.play();
   
   if(random.length > 0)
     {
@@ -138,6 +153,12 @@ function game() {
 }
 
 function play() {
+  
+  if (player) {
+    player_x_o = 'x'
+  } else {
+    player_x_o = 'o'
+  }
 
   count++;
 
@@ -244,8 +265,8 @@ function subarr(number) {
   var complic = [["00", "10", "20", "00", "01", "02", "00", "02" ],
                  ["01", "11", "21", "10", "11", "12", "11", "11"],
                  ["02", "12", "22", "20", "21", "22", "22", "20"]];
-   
-   if(arr[1][1] === 5)
+  
+  if(arr[1][1] === 5)
     {
       answer = "11";
     }
@@ -388,8 +409,18 @@ function check() {
     won2 = "11";
     won3 = "20";
   }
+  
   if (won1 !== "") {
-    $("#message").html("Player " +  message);
+    if(message == 'X Wins!' && player_x_o == 'x') {
+      outmessage = 'You Win!'
+    } else if(message == "O WINS!" && player_x_o == 'o') {
+      outmessage = 'You Win!'
+    } else {
+      outmessage = 'Computer Wins!'
+    }
+    
+    $("#message").html(outmessage);
+    //$("#message").html("Player " +  message);
     $(".again").html("Play Again");
     $(".again").css("background-color", "rgba(255, 255, 255, 0.5)");
     toggleWon(1);
@@ -398,7 +429,7 @@ function check() {
 
   if (count === 9) {
     if (won1 === "") {
-      $("#message").html("Tie Game!");
+      $("#message").html("Draw!");
       $(".again").html("Play Again");
       $(".again").css("background-color", "rgba(255, 255, 255, 0.5)");
       var audio = new Audio('http://natrivera.com/tic-tac-toe/Error.mp3');
