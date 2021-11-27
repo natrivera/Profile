@@ -2,6 +2,9 @@
   color: white;
   background-color: black;
 }
+.header h4 {
+  color: #00BFFF;
+}
 .content {
   margin: auto 4%;
 }
