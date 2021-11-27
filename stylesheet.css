@@ -1,7 +1,6 @@
 .header {
   color: white;
   background-color: black;
-  padding: 1%;
 }
 .content {
   margin: auto 4%;
@@ -12,11 +11,12 @@
 .bottom {
   margin-top: 5%;
 }
-img {
-  display: block;
-  margin: auto;
-  border-radius: 10px;
-  border: 10px solid white;
+#portfolio img {
+  box-shadow: 0px 0px 2px blue;
+  border-radius: 2px;
+}
+#portfolio img:hover {
+  box-shadow: 0px 0px 8px blue;
 }
 .footer {
   background-color: black;
