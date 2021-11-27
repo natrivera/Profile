@@ -11,11 +11,30 @@
 .bottom {
   margin-top: 5%;
 }
+img {
+  margin: auto auto 4% auto;
+}
 #portfolio img {
   box-shadow: 0px 0px 2px blue;
   border-radius: 2px;
 }
 #portfolio img:hover {
+  box-shadow: 0px 0px 8px blue;
+}
+div a {
+  margin: auto;
+}
+input {
+  padding: 4px;
+  margin: auto auto 4% auto;
+  min-width: 100%;
+  background-color: #00BFFF;
+  color: white;
+  border: none;
+  box-shadow: 0px 0px 2px blue;
+  border-radius: 2px;
+}
+input:hover {
   box-shadow: 0px 0px 8px blue;
 }
 .footer {
