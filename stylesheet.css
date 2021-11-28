@@ -15,15 +15,38 @@
   margin-top: 5%;
 }
 img {
+  border-radius: 20px;
   margin: auto auto 4% auto;
 }
 #portfolio img {
-  box-shadow: 0px 0px 2px blue;
   border-radius: 2px;
+  border: 2px solid #00BFFF;;
 }
-#portfolio img:hover {
-  box-shadow: 0px 0px 8px blue;
+#portfolio a  div {
+  margin: auto;
 }
+.hidehov {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 90%;
+  height: 90%;
+  opacity: 0;
+  transition: 1s ease;
+  background-color: #000000;
+  border-radius: 6px;
+  color: #ffffff;
+}
+#portfolio img:hover + .hidehov {
+  opacity: 0.8;
+}
+#portfolio .hidehov:hover {
+  opacity: 1;
+}
+
 div a {
   margin: auto;
 }
