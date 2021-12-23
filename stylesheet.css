@@ -18,12 +18,12 @@ img {
   border-radius: 20px;
   margin: auto auto 4% auto;
 }
-#portfolio img {
+#portfolio img, #blog img {
   border-radius: 2px;
   border: 2px solid #00BFFF;
     margin: 2% auto 2% auto;
 }
-#portfolio a  div {
+#portfolio a  div, #blog a  div  {
   margin: auto;
 }
 .hidehov {
@@ -41,10 +41,10 @@ img {
   border-radius: 6px;
   color: #ffffff;
 }
-#portfolio img:hover + .hidehov {
+#portfolio img:hover + .hidehov, #blog img:hover + .hidehov  {
   opacity: 0.75;
 }
-#portfolio .hidehov:hover {
+#portfolio .hidehov:hover, #blog .hidehov:hover {
   opacity: 0.75;
 }
 .center {
