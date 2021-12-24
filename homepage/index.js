@@ -102,7 +102,7 @@ window.onload = function( ) {
 
     //begin the time every 500 milliseconds
     ontime();
-    setInterval(function() {     
+    setInterval(function() {
         ontime();
     }, 1000 );
 
@@ -118,7 +118,7 @@ window.onload = function( ) {
         }
 
     }, 100);
-    
+
     load();
     //load the welcome message
     //welcome(1);
@@ -134,7 +134,7 @@ function loadimg(num) {
 
         image = pictures.pics[random];
     } else {
-        image = pictures.pics[num];    
+        image = pictures.pics[num];
     }
 
     document.body.style.backgroundImage = "url('http://natrivera.com/wallpapers/" + image + "')";
@@ -154,7 +154,7 @@ function load() {
     if (retrievedObject == null) {
         name = prompt("Please enter your name: ");
         localStorage.setItem("namekey", JSON.stringify(name));
-        retrievedObject = JSON.parse(localStorage.getItem("namekey"));    
+        retrievedObject = JSON.parse(localStorage.getItem("namekey"));
     } else {
         name = retrievedObject;
     }
@@ -162,7 +162,7 @@ function load() {
     if(retrievedColor == null) {
         localStorage.setItem("colorkey", JSON.stringify("white"));
         retrievedColor = JSON.parse(localStorage.getItem("colorkey"));
-    } 
+    }
 
     if(retrivedlinks == null) {
         localStorage.setItem("links" , JSON.stringify(JSON.stringify(links)));
@@ -186,10 +186,10 @@ function welcome(num) {
     if(num == 1) {
         message = "Good Morning, " + name + ".";
     } else if(num == 2) {
-        message = "Good Afternoon " + name + ".";  
+        message = "Good Afternoon " + name + ".";
     } else {
         message = "Good Evening, " + name + ".";
-    } 
+    }
     var elem = document.getElementById("message");
     elem.innerHTML = message;
 
@@ -276,7 +276,7 @@ function clearaddons() {
             document.getElementById("colors").style.display = "none";
             document.getElementById("links").style.display = "none";
         }
-    },200);    
+    },200);
 }
 
 function addondelay() {
@@ -295,13 +295,13 @@ function togglelink() {
     if(checking == "none") {
         check.style.display = "block";
         setTimeout(function() {
-            opened = true;    
+            opened = true;
         },300);
 
     } else {
         check.style.display = "none";
         setTimeout(function() {
-            opened = false;    
+            opened = false;
         },300);
 
     }
@@ -334,8 +334,8 @@ function ontime() {
             if(hours == 0) {
                 hours = 12;
             }
-        }     
-    }    
+        }
+    }
 
     var elem = document.getElementById("time");
 
@@ -346,7 +346,7 @@ function ontime() {
 function locationweather() {
 
     var lat, long;
-    var localApi = "http://ip-api.com/json?callback=?";
+    var localApi = "https://ip-api.com/json?callback=?";
 
 
     $.getJSON(localApi, function(pos) {
@@ -358,25 +358,25 @@ function locationweather() {
         //long = -117.00;
         //zip = 91763;
 
-        var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+        var wapi = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
 
         jsonweather(wapi);
 
     }).fail(function() {
-        
+
         console.log("location api was blocked!!!");
         zip = "91763";
-        var wapi = "http://api.openweathermap.org/data/2.5/weather?lat=34.08&lon=-117.69&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+        var wapi = "https://api.openweathermap.org/data/2.5/weather?lat=34.08&lon=-117.69&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
         jsonweather(wapi);
-        
-    }); //end of getJSON
-}
 
-function jsonweather(url) {  
+    }); //end of getJSON
+}// end of lacationweather
+
+function jsonweather(url) {
 
     setTimeout(function() {
 
-        $.getJSON(url, function(num) { 
+        $.getJSON(url, function(num) {
 
                 //parse out all the needed info
                 city = num.name;
@@ -431,7 +431,7 @@ function jsonweather(url) {
 
                 setTimeout(function() {
                     if(retrievedtemp == "c") {
-                        forc(); 
+                        forc();
                     } else {
                         forf();
                     }
@@ -445,7 +445,7 @@ function jsonweather(url) {
                 element.innerHTML = weatherType;
 
                 element = document.getElementById("wind");
-                element.innerHTML = "Wind: " + speed + "mph " + direction + "<br><br>";   
+                element.innerHTML = "Wind: " + speed + "mph " + direction + "<br><br>";
 
                 element = document.getElementById("moreicon");
                 $("#moreicon").removeClass();
@@ -456,13 +456,13 @@ function jsonweather(url) {
                 element.classList.add(iconclass);
 
                 localStorage.setItem("zip" , zip);
-         
+
 
         }).fail(function(num) {
             console.log("weather api could not load!!!");
         });//end of getJSON
-        
-    },200);   
+
+    },200);
 }
 
 function temperature(str , str2) {
@@ -501,7 +501,7 @@ function forc() {
     document.getElementById("farenheight").classList.remove("chosen");
     document.getElementById("celcius").classList.add("chosen");
 
-    displaystring = ctemp + "&#176; C   " + iconP;  
+    displaystring = ctemp + "&#176; C   " + iconP;
     secondstr =  cmax + "&#176; / " + cmin + "&#176;";
 
     localStorage.setItem("temp" , "c");
@@ -556,7 +556,7 @@ function search() {
     elem.innerHTML = "<a id='click' target='_blank' href='" + google + "'></a>";
     document.getElementById("click").click();
 
-}//end of search 
+}//end of search
 
 function optionUp() {
     addondelay();
@@ -581,7 +581,7 @@ function change(color) {
     document.getElementById("searchbutton").style.color = color;
     document.getElementById("options").style.color = color;
     document.getElementById("settingbutton").style.color = color;
-    //$(".search").css("border-bottom", text); 
+    //$(".search").css("border-bottom", text);
     document.getElementById("searchinput").style.borderBottom = text;
 
     if(color == "white" || color == "chartreuse") {
@@ -634,8 +634,8 @@ function reset() {
 
 //function to show wind direction
 function getCardinal(angle) {
-    //easy to customize by changing the number of directions you have 
-    // thank you basarat from github     
+    //easy to customize by changing the number of directions you have
+    // thank you basarat from github
     var directions = 8;
 
     var degree = 360 / directions;
@@ -657,8 +657,6 @@ function getCardinal(angle) {
         return "W";
     if (angle >= 7 * degree && angle < 8 * degree)
         return "NW";
-    //Should never happen: 
+    //Should never happen:
     return "N";
 }
-
-
