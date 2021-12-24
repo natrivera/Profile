@@ -345,6 +345,7 @@ function ontime() {
 
 function locationweather() {
 
+    concole.log('using location');
     var lat, long;
     var localApi = "http://ip-api.com/json?callback=?";
 
@@ -374,6 +375,7 @@ function locationweather() {
 
 function jsonweather(url) {
 
+    console.log('using json');
     setTimeout(function() {
 
         $.getJSON(url, function(num) {
