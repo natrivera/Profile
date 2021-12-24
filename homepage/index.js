@@ -113,7 +113,7 @@ window.onload = function( ) {
         if(zip == null || zip == "null") {
             locationweather();
         }  else {
-            var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+            var url = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
             jsonweather(url);
         }
 
@@ -346,7 +346,7 @@ function ontime() {
 function locationweather() {
 
     var lat, long;
-    var localApi = "https://ip-api.com/json?callback=?";
+    var localApi = "http://ip-api.com/json?callback=?";
 
 
     $.getJSON(localApi, function(pos) {
@@ -536,7 +536,7 @@ function updatecity() {
     document.getElementById("city").style.display = "block";
 
     zip = document.getElementById("newzip").value;
-    var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
+    var url = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&appid=6ee606a8d671c5b28060f5bd4eb31d7c";
 
     jsonweather(url);
 }
