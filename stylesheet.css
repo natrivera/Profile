@@ -26,6 +26,9 @@ img {
 #portfolio a  div, #blog a  div  {
   margin: auto;
 }
+i {
+  margin: 2%;
+}
 .hidehov {
   position: absolute;
   left: 0;
