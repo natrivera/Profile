@@ -18,6 +18,9 @@ img {
   border-radius: 20px;
   margin: auto auto 4% auto;
 }
+#icon_row {
+  text-align: center;
+}
 #portfolio img, #blog img {
   border-radius: 2px;
   border: 2px solid #00BFFF;
